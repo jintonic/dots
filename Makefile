@@ -25,4 +25,4 @@ vim:
 info:
 	@echo $(TARGETS)
 
-.PHONY:all clean info
+.PHONY:all clean info $(TARGETS)
