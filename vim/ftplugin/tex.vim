@@ -49,8 +49,5 @@ let g:tex_comment_nospell=1
 let g:tex_fold_enabled=1
 setlocal fdm=syntax fen fdl=0
 
-" TIP: if you write your \label's as \label{fig:something}, then if you
-" type in \ref{fig: and press <C-n> you will automatically cycle through
-" all the figure labels. Very useful! Doesn't work somehow, have to do it
-" manually
-setlocal iskeyword+=:
+" supertab
+let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^', '\.']
