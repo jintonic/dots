@@ -4,13 +4,13 @@ TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 
 all:$(TARGETS)
 
-latexmk:
-	cp $@ ~/.$@
+latexmkrc:
+	ln -sf $(PWD)/$@ ~/.$@
 ctags:
-	cp $@ ~/.$@
+	ln -sf $(PWD)/$@ ~/.$@
 
 vim:
-	cp $@rc ~/.$@rc
+	ln -sf $(PWD)/$@rc ~/.$@rc
 	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort | uniq > /tmp/jspell
 	mv /tmp/jspell $@/spell/en.utf-8.add
 	mkdir -p ~/.$@/spell
