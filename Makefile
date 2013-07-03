@@ -9,23 +9,23 @@ latexmk:
 ctags:
 	cp $@ ~/.$@
 
-vim: bundle
+vim:
 	cp $@rc ~/.$@rc
 	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort | uniq > /tmp/jspell
-	cp /tmp/jspell $@/spell/en.utf-8.add
+	mv /tmp/jspell $@/spell/en.utf-8.add
 	mkdir -p ~/.$@/spell
-	mv /tmp/jspell ~/.$@/spell/en.utf-8.add
+	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
 	mkdir -p ~/.$@/syntax
-	cp $@/syntax/* ~/.$@/syntax
+	ln -sf $(PWD)/$@/syntax/* ~/.$@/syntax
 	mkdir -p ~/.$@/ftplugin
-	cp $@/ftplugin/* ~/.$@/ftplugin
+	ln -sf $(PWD)/$@/ftplugin/* ~/.$@/ftplugin
 	mkdir -p ~/.$@/snippets
-	cp $@/snippets/* ~/.$@/snippets
+	ln -sf $(PWD)/$@/snippets/* ~/.$@/snippets
 	mkdir -p ~/.$@/plugin
-	cp $@/plugin/* ~/.$@/plugin
+	ln -sf $(PWD)/$@/plugin/* ~/.$@/plugin
 	mkdir -p ~/.$@/dic
-	cp $@/dic/* ~/.$@/dic
+	ln -sf $(PWD)/$@/dic/* ~/.$@/dic
 
 bundle:
 	mkdir -p ~/.vim/autoload ~/.vim/bundle
