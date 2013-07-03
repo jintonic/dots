@@ -70,7 +70,7 @@ set wildmode=list:longest,full
 "highlight clear Search 
 "highlight Search cterm=reverse
 "highlight Pmenu ctermbg=8
-"highlight PmenuSel ctermfg=15 ctermbg=4
+highlight PmenuSel cterm=reverse
 
 " filetype {{{1
 filetype on		" enable filetype detection
