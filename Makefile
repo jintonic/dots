@@ -4,6 +4,8 @@ TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 
 all:$(TARGETS)
 
+latexmk:
+	cp $@ ~/.$@
 ctags:
 	cp $@ ~/.$@
 
