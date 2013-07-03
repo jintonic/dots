@@ -20,6 +20,8 @@ vim:
 	cp $@/ftplugin/* ~/.$@/ftplugin
 	mkdir -p ~/.$@/snippets
 	cp $@/snippets/* ~/.$@/snippets
+	mkdir -p ~/.$@/plugin
+	cp $@/plugin/* ~/.$@/plugin
 	mkdir -p ~/.$@/dic
 	cp $@/dic/* ~/.$@/dic
 
