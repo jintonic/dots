@@ -7,7 +7,7 @@ all:$(TARGETS)
 ctags:
 	cp $@ ~/.$@
 
-vim:
+vim: bundle
 	cp $@rc ~/.$@rc
 	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort | uniq > /tmp/jspell
 	cp /tmp/jspell $@/spell/en.utf-8.add
@@ -36,6 +36,7 @@ bundle:
 	cd ~/.vim/bundle; if [ -d L9 ]; then cd L9; git pull; else git clone https://github.com/vim-scripts/L9.git; fi
 	cd ~/.vim/bundle; if [ -d FuzzyFinder ]; then cd FuzzyFinder; git pull; else git clone https://github.com/vim-scripts/FuzzyFinder.git; fi
 	cd ~/.vim/bundle; if [ -d taskwarrior.vim ]; then cd taskwarrior.vim; git pull; else git clone https://github.com/framallo/taskwarrior.vim.git; fi
+	vim -X "+Helptags" "+q"
 
 info:
 	@echo $(TARGETS)
