@@ -1,0 +1,15 @@
+# use ./.scrc 
+set scrc
+
+# disable change from expression to value
+set !optimize
+
+# set file suffix of ascii output
+ascext "txt"
+
+# enable quick inserting of numbers
+set numeric
+
+# define format type 5 as yyyy-mm-dd
+# insert ^D by Ctrl-v + Ctrl-d
+format 5 = "%F"

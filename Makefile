@@ -4,9 +4,11 @@ TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 
 all:$(TARGETS)
 
+ctags:
+	ln -sf $(PWD)/$@ ~/.$@
 latexmkrc:
 	ln -sf $(PWD)/$@ ~/.$@
-ctags:
+scrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
 vim:
