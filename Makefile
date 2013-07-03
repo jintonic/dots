@@ -16,14 +16,14 @@ vim:
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
-	mkdir -p ~/.$@/syntax
-	ln -sf $(PWD)/$@/syntax/* ~/.$@/syntax
-	mkdir -p ~/.$@/ftplugin
-	ln -sf $(PWD)/$@/ftplugin/* ~/.$@/ftplugin
-	mkdir -p ~/.$@/snippets
-	ln -sf $(PWD)/$@/snippets/* ~/.$@/snippets
-	mkdir -p ~/.$@/plugin
-	ln -sf $(PWD)/$@/plugin/* ~/.$@/plugin
+	mkdir -p ~/.$@/after/syntax
+	ln -sf $(PWD)/$@/syntax/* ~/.$@/after/syntax
+	mkdir -p ~/.$@/after/ftplugin
+	ln -sf $(PWD)/$@/ftplugin/* ~/.$@/after/ftplugin
+	mkdir -p ~/.$@/after/snippets
+	ln -sf $(PWD)/$@/snippets/* ~/.$@/after/snippets
+	mkdir -p ~/.$@/after/plugin
+	ln -sf $(PWD)/$@/plugin/* ~/.$@/after/plugin
 	mkdir -p ~/.$@/dic
 	ln -sf $(PWD)/$@/dic/* ~/.$@/dic
 
