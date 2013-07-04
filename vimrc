@@ -37,7 +37,7 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 "set mouse=ar
 
 " look {{{1
-colorscheme torte
+colorscheme jintonic
 "set number
 
 "set cul "cursorline: highlight the line where the cursor is, makes Vim slow
@@ -59,18 +59,6 @@ set wildmode=list:longest,full
 " zg add word
 " zug undo adding word
 " zG add word for current buffer
-
-" highlight {{{1
-"highlight CursorLine cterm=none ctermbg=8 cterm=none
-"highlight Visual cterm=reverse ctermfg=8 ctermbg=15
-"highlight StatusLine cterm=reverse ctermbg=4
-"highlight LineNr ctermfg=8 cterm=bold
-"highlight Folded ctermbg=0 ctermfg=5
-"highlight SpellBad term=underline cterm=underline ctermbg=0 guisp=none
-"highlight clear Search 
-"highlight Search cterm=reverse
-"highlight Pmenu ctermbg=8
-"highlight PmenuSel ctermfg=15 ctermbg=4
 
 " filetype {{{1
 filetype on		" enable filetype detection

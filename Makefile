@@ -13,11 +13,6 @@ scrc:
 
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
-	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort | uniq > /tmp/jspell
-	mv /tmp/jspell $@/spell/en.utf-8.add
-	mkdir -p ~/.$@/spell
-	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
-	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
 	mkdir -p ~/.$@/after/syntax
 	ln -sf $(PWD)/$@/syntax/* ~/.$@/after/syntax
 	mkdir -p ~/.$@/after/ftplugin
@@ -26,8 +21,15 @@ vim:
 	ln -sf $(PWD)/$@/snippets/* ~/.$@/after/snippets
 	mkdir -p ~/.$@/after/plugin
 	ln -sf $(PWD)/$@/plugin/* ~/.$@/after/plugin
+	mkdir -p ~/.$@/after/colors
+	ln -sf $(PWD)/$@/colors/* ~/.$@/after/colors
 	mkdir -p ~/.$@/dic
 	ln -sf $(PWD)/$@/dic/* ~/.$@/dic
+	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort | uniq > /tmp/jspell
+	mv /tmp/jspell $@/spell/en.utf-8.add
+	mkdir -p ~/.$@/spell
+	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
+	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
 
 bundle:
 	mkdir -p ~/.vim/autoload ~/.vim/bundle
