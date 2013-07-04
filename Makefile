@@ -44,6 +44,12 @@ bundle:
 	cd ~/.vim/bundle; if [ -d taskwarrior.vim ]; then cd taskwarrior.vim; git pull; else git clone https://github.com/framallo/taskwarrior.vim.git; fi
 	vim -X "+Helptags" "+q"
 
+w3m:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/cgi-bin ~/.$@
+	ln -sf $(PWD)/$@/urimethodmap ~/.$@/urimethodmap
+	ln -sf $(PWD)/$@/bookmark.html ~/.$@/bookmark.html
+
 info:
 	@echo $(TARGETS)
 
