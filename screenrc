@@ -1,0 +1,164 @@
+startup_message off
+vbell 		off
+deflogin 	off # if no utmp, set it to off
+autodetach 	on  #detach on hangup
+
+attrcolor d -d
+attrcolor u "-u R"
+
+# make the shell in every window a non-login shell, 
+# make sure your bash startup file are set properly
+shell -$SHELL
+
+# the following is needed to set title automatically:
+shelltitle "] |Shell"
+
+# Scroll back
+# -----------
+# xterm will not allow scrolling back if the alternate
+# text buffer is selected (this happens when you start
+# e.g. 'vi'. When you run 'screen', the same thing happens.) 
+# The standard definitions of the termcap initialize capabilities
+# ti and te (smcup & rmcup in terminfo) switch to and from the alternate text
+# buffer. So you can tell xterm to enable scrolling back when
+# 'screen' is running by adding the line:
+termcapinfo xterm ti@:te@
+# this works perfect when you only work on one window.
+# But when you e.g. run 'man screen' on one of the windows,
+# then switch to another window, the history of the current
+# window is overlapped by the man contents on the previous 
+# window. In this situation, if you want to see the history
+# of your current window, you have to at first go to so-called
+# 'copy mode' of 'screen' by typing: '^a ESC', then you can 
+# use 'Page Up' and 'Page Down' to go back and forth in the 
+# current window's history buffer (which is different from
+# the xterm's history buffer). When you are done, type any key 
+# which is not functional in 'copy mode' 
+# to quit the 'copy mode'. You can use the following setting
+# to set the size of the history buffer of the current window:
+# (Use C-a i to view the current setting.)
+defscrollback 5000
+# suppress trailing blank lines when scrolling up text
+# into the history buffer. Turn compacting `on' to hold
+# more useful lines in your scrollback buffer
+compacthist on
+# Use the following line to tell applications (like vi) to
+# use "alternate screen" in 'screen'
+altscreen on
+# tabs
+# ----
+# 1. use caption to show tabbed window list:
+# caption always "%2=%-w%{= kw} %n*%t %{-}%+w"
+
+# 2. the following line tell screen to use
+#    TERM hardstatus line to show the window
+#    list. If TERM doesn't have hardstatus line
+#    screen uses the last line to show it.
+hardstatus lastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"
+
+# use the hard status line to display message
+hardstatus on
+
+################
+#
+# xterm tweaks
+#
+
+#xterm understands both im/ic and doesn't have a status line.
+#Note: Do not specify im and ic in the real termcap/info file as
+#some programs (e.g. vi) will not work anymore.
+termcap  xterm hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
+terminfo xterm hs@:cs=\E[%i%p1%d;%p2%dr:im=\E[4h:ei=\E[4l
+
+#80/132 column switching must be enabled for ^AW to work
+#change init sequence to not switch width
+termcapinfo  xterm Z0=\E[?3h:Z1=\E[?3l:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+
+# Make the output buffer large for (fast) xterms.
+#termcapinfo xterm* OL=10000
+termcapinfo xterm* OL=100
+
+# tell screen that xterm can switch to dark background and has function
+# keys.
+termcapinfo xterm 'VR=\E[?5h:VN=\E[?5l'
+termcapinfo xterm 'k1=\E[11~:k2=\E[12~:k3=\E[13~:k4=\E[14~'
+termcapinfo xterm 'kh=\EOH:kI=\E[2~:kD=\E[3~:kH=\EOF:kP=\E[5~:kN=\E[6~'
+
+# special xterm hardstatus: use the window title.
+termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+
+#terminfo xterm 'vb=\E[?5h$<200/>\E[?5l'
+termcapinfo xterm 'vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l'
+
+# emulate part of the 'K' charset
+termcapinfo   xterm 'XC=K%,%\E(B,[\304,\\\\\326,]\334,{\344,|\366,}\374,~\337'
+
+# xterm-52 tweaks:
+# - uses background color for delete operations
+termcapinfo xterm* be
+
+################
+#
+# keybindings
+#
+
+#remove some stupid / dangerous key bindings
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+#make them better
+bind 'K' kill
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+
+#bind c screen 1         # Window numbering starts at 1, not 0.
+#bind ^c screen 1
+
+#bindkey -k k1 select 1
+#bindkey -k k2 select 2
+#bindkey -k k3 select 3
+#bindkey -k k4 select 4
+#bindkey -k k5 select 5
+#bindkey -k k6 select 6
+#bindkey -k k7 select 7
+#bindkey -k k8 select 8
+#bindkey -k k9 windowlist -b
+#bindkey -k k; screen 1
+
+bindkey -k k9 eval "copy" "stuff ^u"
+bindkey -k k; eval "copy" "stuff ^d"
+bindkey -m -k k9 stuff ^u
+bindkey -m -k k; stuff ^d
+
+bindkey -k F1 prev
+bindkey -k F2 next
+
+# Yet another hack:
+# Prepend/append register [/] to the paste if ^a^] is pressed.
+# This lets me have autoindent mode in vi.
+register [ "\033:se noai\015a"
+register ] "\033:se ai\015a"
+bind ^] paste [.]
+
+#chdir      # go to home dir
+
+# default windows
+#screen 1
+screen 0 vifm
+# screen -t local 0
+# screen -t mail 1 mutt
+# screen -t 40 2 rlogin server
+
+# bind = resize =
+# bind + resize +1
+# bind - resize -1
+# bind _ resize max
+#
+# defnonblock 1
+# blankerprg rain -d 100
+# idle 30 blanker
