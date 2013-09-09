@@ -7,7 +7,7 @@ PATH=.:~/bin:$PATH
 # don't put duplicate lines or lines starting with space in the history,
 # and erase already existing duplicated lines
 HISTCONTROL=ignoreboth:erasedups
-HISTIGNORE="&:l[lsa]:[bf]g"
+HISTIGNORE="[ \t]*:&:l[lsa]:[bf]g:exit"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -85,6 +85,9 @@ fi
 alias ll='ls -AlFh'
 alias la='ls -Ah'
 alias l='ls -CFh'
+
+alias df='df -h'
+alias du='du -h'
 
 alias sd='screen -D -RR'
 
