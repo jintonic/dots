@@ -14,3 +14,4 @@ t1:      file:/cgi-bin/trg2011.cgi?%s
 t2:      file:/cgi-bin/trg2012.cgi?%s
 t3:      file:/cgi-bin/trg2013.cgi?%s
 ar:      file:/cgi-bin/arxiv.cgi?%s
+hj:      file:/cgi-bin/hj.cgi?%s
