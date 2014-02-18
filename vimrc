@@ -122,6 +122,10 @@ map \b :FufBuffer<CR>
 map \f :FufFile<CR>
 map \t :FufBufferTag<CR>
 
+if has("win32unix")
+  map \o :!cygstart.exe <cfile><CR><CR>
+endif
+
 "imap \{ {}<Esc>i
 "imap \( ()<Esc>i
 "imap \[ []<Esc>i
