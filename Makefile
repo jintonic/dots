@@ -20,6 +20,8 @@ bundle:
 	cd ~/.vim/bundle; if [ -d taskwarrior.vim ]; then cd taskwarrior.vim; git pull; else git clone https://github.com/framallo/taskwarrior.vim.git; fi
 	cd ~/.vim/bundle; if [ -d vim-markdown ]; then cd vim-markdown; git pull; else git clone https://github.com/plasticboy/vim-markdown.git; fi
 	vim -X "+Helptags" "+q"
+	cd ~/.vim/bundle; if [ -d vim-liquid ]; then cd vim-liquid; git pull; else git clone https://github.com/tpope/vim-liquid.git; fi
+	vim -X "+Helptags" "+q"
 
 ctags:
 	ln -sf $(PWD)/$@ ~/.$@
