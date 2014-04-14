@@ -19,7 +19,7 @@ highlight Type						gui=NONE
 
 " Console
 highlight Normal     ctermfg=LightGrey	ctermbg=Black
-highlight PmenuSel  					cterm=reverse 
+highlight PmenuSel   ctermfg=LightGrey  ctermbg=Magenta cterm=bold 
 highlight Search     ctermfg=Black	ctermbg=Red	cterm=NONE
 highlight Visual					cterm=reverse
 highlight Cursor     ctermfg=Black	ctermbg=Green	cterm=bold
