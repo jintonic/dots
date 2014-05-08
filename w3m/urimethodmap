@@ -1,6 +1,7 @@
 ro:      file:/cgi-bin/root.cgi?%s
 ba:      file:/cgi-bin/baidu.cgi?%s
 ci:      file:/cgi-bin/ciba.cgi?%s
+di:      file:/cgi-bin/dict.cgi?%s
 r0:      file:/cgi-bin/run2010.cgi?%s
 r1:      file:/cgi-bin/run2011.cgi?%s
 r2:      file:/cgi-bin/run2012.cgi?%s
