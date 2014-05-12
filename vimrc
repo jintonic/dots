@@ -4,6 +4,7 @@
 set vi='20,<50,s10,h,!,n~/.vim/viminfo "viminfo: save operation history
 set dir=/tmp// " where to save the swp files
 execute pathogen#infect()
+set term=linux
 
 " buffer {{{1
 " By default, if you modified the current buffer, you cannot switch to another
