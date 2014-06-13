@@ -9,7 +9,7 @@ bashrc:
 
 bundle:
 	mkdir -p ~/.vim/autoload ~/.vim/bundle
-	curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+	cd ~/.vim/autoload/; if [ ! -f pathogen.vim ]; then wget https://github.com/tpope/vim-pathogen/archive/master.zip; unzip master.zip; mv vim-pathogen-master/autoload/* .; rm -fr master* *master; fi
 	cd ~/.vim/bundle; if [ -d tlib_vim ]; then cd tlib_vim; git pull; else git clone https://github.com/tomtom/tlib_vim.git; fi
 	cd ~/.vim/bundle; if [ -d vim-addon-mw-utils ]; then cd vim-addon-mw-utils; git pull; else git clone https://github.com/MarcWeber/vim-addon-mw-utils.git; fi
 	cd ~/.vim/bundle; if [ -d vim-snipmate ]; then cd vim-snipmate; git pull; else git clone https://github.com/garbas/vim-snipmate.git; fi
