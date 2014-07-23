@@ -1,0 +1,28 @@
+
+GV.infoVerbose:		Errors
+GV.scale:		0
+GV.scaleBase:		1
+GV.fallbackOrientation: Portrait
+GV.orientation:		Automatic
+GV.fallbackPageMedia:   A4
+GV.pageMedia:		Automatic
+GV.swapLandscape:       False
+GV.autoResize:		True
+GV.antialias:		False
+GV.watchFile:		True
+GV.ignoreEOF:		True
+GV.respectDSC:		True
+GV.version:		gv 3.6.7.90
+
+GV.defaultSaveDir:      ~/
+GV.scratchDir:		/tmp/
+GV*dirs:		Home\n\
+			Tmp\n\
+			/usr/share/doc\n\
+			/usr/local/doc
+GV*filters:		None\n\
+			*.*ps* *.pdf*  no  .*\n\
+			*.*ps*   no  .*\n\
+			*.pdf*  no  .*\n\
+			no  .*
+GV*filter:		*.ps *.eps
