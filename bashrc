@@ -102,5 +102,6 @@ alias t='task'
 complete -o nospace -F _task t
 
 export WWW_HOME=~/.w3m/bookmark.html
+export LYNX_CFG=~/.lynx/lynx.cfg
 
 if [ -f ~/.bash_local ]; then . ~/.bash_local; fi
