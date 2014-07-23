@@ -1,0 +1,20 @@
+http://export.arxiv.org/rss/astro-ph.CO "arXiv" "articles"
+http://export.arxiv.org/rss/astro-ph.IM "arXiv" "articles"
+http://export.arxiv.org/rss/hep-ex "arXiv" "articles"
+http://export.arxiv.org/rss/nucl-ex "arXiv" "articles"
+http://export.arxiv.org/rss/physics.data-an "arXiv" "articles"
+http://export.arxiv.org/rss/physics.ins-det "arXiv" "articles"
+http://feeds.aps.org/rss/tocsec/PRL-ElementaryParticlesandFields.xml "articles"
+http://feeds.aps.org/rss/recent/rmp.xml "articles"
+http://www.interactions.org/rss/index.rdf "news"
+http://www.math.columbia.edu/~woit/wordpress/?feed=rss2 "blogs"
+http://physicsandphysicists.blogspot.com/feeds/posts/default "blogs"
+http://www.quantumdiaries.org/feed/ "blogs"
+http://resonaances.blogspot.com/feeds/posts/default "blogs"
+http://blogs.physicstoday.org/newspicks/atom.xml "blogs"
+http://feeds.feedburner.com/CernCourier "magzine"
+http://physicstoday.org/feed.xml "magzine"
+http://www.ipmu.jp/feeds/ja/public-communications/rss.xml "ipmu" "news"
+http://www.ipmu.jp/feeds/en/news/rss.xml ipmu news
+http://root.cern.ch/drupal/rss.xml root news
+http://root.cern.ch/drupal/blog/feed root news blog
