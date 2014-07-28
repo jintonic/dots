@@ -13,3 +13,7 @@ set numeric
 # define format type 5 as yyyy-mm-dd
 # insert ^D by Ctrl-v + Ctrl-d
 format 5 = "%F"
+
+set color
+color 1 = @white;@black
+color 7 = @white;@blue
