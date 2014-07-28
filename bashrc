@@ -1,7 +1,7 @@
 # ~/.bashrc: executed for non-login shells.
 
 # If not running interactively, just export PATH
-PATH=.:~/bin:$PATH
+PATH=.:$HOME/bin:$PATH
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history,
@@ -104,4 +104,4 @@ complete -o nospace -F _task t
 export WWW_HOME=~/.w3m/bookmark.html
 export LYNX_CFG=~/.lynx/lynx.cfg
 
-if [ -f ~/.bash_local ]; then . ~/.bash_local; fi
+if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
