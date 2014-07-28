@@ -1,0 +1,32 @@
+!*customization:	-color
+
+Rxvt*foreground: gray80
+Rxvt*background: black
+Rxvt*font: 9x15
+Rxvt*color4: DodgerBlue1
+Rxvt*color12: SteelBlue1
+Rxvt*scrollBar: false
+Rxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt.font: 9x15
+URxvt.imlocale: en_US.utf8
+URxvt.inputMethod:xim
+
+*VT100*font: 9x15
+*VT100*background: black
+*VT100*foreground: gray80
+
+xclock*update:            1
+xclock*analog:            false
+xclock*Foreground:        white
+xclock*background:        black
+
+xdvi.shrinkFactor:	6
+xdvi.expert:	true
+xfig.splash:	false
+xfig.startgridmode:	1
+xfig.inches:	false
+xfig.zoom:	1.5
+xfig.grid_color:	blue
+
+xdvi*font: -*-helvetica-medium-r-*-*-*-*-*-*-*-*-*-*
+
