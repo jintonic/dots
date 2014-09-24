@@ -1,3 +1,6 @@
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
-application/*; cygstart %s; copiousoutput;
-image/*; cygstart %s; copiousoutput;
+# first text/html is used to view html attachment after pressing v and m
+text/html; w3m -I %{charset} -T text/html %s
+# second text/html is used to auto display html attachment in mail
+text/html; w3m -I %{charset} -T text/html; copiousoutput
+application/*; cygstart %s; copiousoutput
+image/*; cygstart %s; copiousoutput
