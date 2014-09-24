@@ -1,4 +1,5 @@
 Abdus
+acretion
 addon
 AGN
 Akihiro
@@ -187,6 +188,7 @@ Majorana
 mathcal
 Mayle
 mBq
+metalicity
 metallicities
 metallicity
 meV
@@ -201,6 +203,7 @@ MOSFETs
 MPa
 Murayama's
 mV
+N2
 NaI
 Nakagawa
 Nakahata
@@ -247,6 +250,8 @@ pptx
 prefix
 Primakoff
 PRL
+PT100
+PTFE
 QCD
 QE
 Raffelt
@@ -261,6 +266,7 @@ san
 san's
 Sasso
 sciencenet
+scooby
 ScrapBook
 screenrc
 sekiya
@@ -279,13 +285,16 @@ snipmate
 SnipMate
 SNS
 Solaris
+spallation
 Spallation
 SRAM
 stackoverflow
+stdout
 stty
 svn
 SVN
 swagelok
+swappiness
 T2K
 Taikoyama
 Takachio
@@ -316,6 +325,7 @@ ULPA
 UML
 uninstall
 uri
+USCIS
 Vagins
 vifm
 vim
@@ -349,13 +359,3 @@ Yamashita's
 youtube
 Youtube
 Yukawa
-scooby
-spallation
-metalicity
-acretion
-swappiness
-stdout
-PT100
-PTFE
-USCIS
-N2
