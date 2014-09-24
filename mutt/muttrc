@@ -27,6 +27,7 @@ set realname="Jing LIU"
 # behavior
 unset mark_old # don't mark unread mail as old
 set pager_stop # don't go to next mail when browsing current one using PgUp & PgDn
+set include   # include original email in the reply
 
 # check new mails automatically, does not work,
 # but any key stroke in mutt invokes checking
@@ -56,5 +57,14 @@ auto_view text/html
 #______________________________________________________________________________
 # contacts
 
+# one can directly communicate with google contacts from the command line, eg.
+# https://pypi.python.org/pypi/goobook/ (python) and
+# http://piao-tech.blogspot.com/2010/01/google-contacts-in-mutt.html (Ruby)
+# or export selected contacts from google contacts to outlook or vCard formats
+# and then use some scripts to convert them to abook format, eg.
+# https://code.google.com/p/gmail-abook-contact-converter/
+# goobook does not work for me because the password sent to google cannot be 
+# recognized. The last script worked, but it dumps contacts to stdout. If I pipe
+# it to a file, error happens.
 set query_command ="abook --mutt-query '%s'"
-bind editor <Tab> complete-query
+bind editor <Tab> complete-query # very useful
