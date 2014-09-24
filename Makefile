@@ -64,6 +64,18 @@ w3m:
 	ln -sf $(PWD)/$@/urimethodmap ~/.$@/urimethodmap
 	ln -sf $(PWD)/$@/bookmark.html ~/.$@/bookmark.html
 
+mutt:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/color ~/.$@/color
+	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
+	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
+
+offlineimaprc:
+	ln -sf $(PWD)/$@ ~/.$@
+
+msmtprc:
+	ln -sf $(PWD)/$@ ~/.$@
+
 info:
 	@echo $(TARGETS)
 

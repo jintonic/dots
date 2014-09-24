@@ -1,0 +1,35 @@
+[general]
+# List of accounts to be synced, separated by a comma
+accounts = Work
+#ui = quiet # no output from running offlineimap
+
+[Account Work]
+# local <- sync -> remote
+localrepository = Work-Local
+remoterepository = Work-Remote
+# Status cache. Default is plain, which eventually becomes huge and slow.
+# status saved in ~/.offlineimap/
+status_backend = sqlite
+# Minutes between syncs
+autorefresh = 10
+# one can use cron instead
+
+[Repository Work-Local]
+# offlineimap only supports maildir for local repositories.
+type = Maildir
+localfolders = ~/mail
+# deleting ~/mail alone results in deleting all mails in server side as well!!!
+# directory ~/.offlineimap has to be deleted together if a full reset is needed
+
+[Repository Work-Remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = IMAP
+remotehost = exchange.usd.edu
+remoteuser = jing.liu
+# get password from ~/.netrc
+
+# only sync the following remote folders
+# http://docs.offlineimap.org/en/latest/nametrans.html
+folderfilter = lambda folder: folder in ['INBOX', 'Sent Items', "Drafts", "Received", "Deleted Items"]
+# shorten remote folders' names
+nametrans = lambda folder: re.sub('.*Sent Items$', 'Sent', re.sub('.*Deleted Items$', 'Trash', folder))

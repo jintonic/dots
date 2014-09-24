@@ -1,0 +1,60 @@
+# _____________________________________________________________________________
+# get mail
+
+# folders
+set mbox_type = Maildir # format of the mail folder
+# http://dev.mutt.org/trac/wiki/MuttGuide/Folders
+set folder = "~/mail" # define root folder
+set spoolfile = "+INBOX" # startup folder
+set record = "+Sent" # mail sent from mutt is saved here automatically
+set postponed = "+Drafts" # folder of drafts
+set mbox = "+Received" # folder to archive old mails
+# those local folders are synced with remote server by offlineimap
+# changes in mutt won't be saved to these folders unless $ is pressed or quit
+
+# _____________________________________________________________________________
+# send mail
+
+# sendmail itself is a mail server, it is too heavy
+# msmtp is newer than ssmtp; ssmtp is not maintained anymore
+# msmtp itself cannot send mail, it uses an existing mail server to do it
+# ~/.msmtprc is needed
+set sendmail="/usr/sbin/msmtp"
+set from="jing.liu@usd.edu" # otherwise does not work
+set realname="Jing LIU"
+
+# _____________________________________________________________________________
+# behavior
+unset mark_old # don't mark unread mail as old
+set pager_stop # don't go to next mail when browsing current one using PgUp & PgDn
+
+# check new mails automatically, does not work,
+# but any key stroke in mutt invokes checking
+mailboxes +INBOX
+set mail_check = 0
+set timeout = 1
+set check_new = yes
+
+# _____________________________________________________________________________
+# appearance
+
+source ~/.mutt/color
+set sort = threads
+set sort_aux = reverse-last-date-received
+set sort_re # thread based on reply_regexp
+
+# header
+ignore *
+unignore from: date subject to cc
+hdr_order From To Cc Date
+
+# _____________________________________________________________________________
+# attachment
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+
+#______________________________________________________________________________
+# contacts
+
+set query_command ="abook --mutt-query '%s'"
+bind editor <Tab> complete-query
