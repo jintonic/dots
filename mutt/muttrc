@@ -1,19 +1,32 @@
 # _____________________________________________________________________________
-# get mail
+# read mail
 
 # folders
 set mbox_type = Maildir # format of the mail folder
 # http://dev.mutt.org/trac/wiki/MuttGuide/Folders
 set folder = "~/mail" # define root folder
 set spoolfile = "+INBOX" # startup folder
-set record = "+Sent" # mail sent from mutt is saved here automatically
 set postponed = "+Drafts" # folder of drafts
-set mbox = "+Received" # folder to archive old mails
+set mbox = "+Archive" # folder to archive old mails
 # those local folders are synced with remote server by offlineimap
 # changes in mutt won't be saved to these folders unless $ is pressed or quit
 
+# check new mails automatically, does not work,
+# but any key stroke in mutt invokes checking
+mailboxes +INBOX
+set mail_check = 0
+set timeout = 1
+set check_new = yes
+
+# index
+unset mark_old # don't mark unread mail as old
+bind index <space>  collapse-thread
+
+# pager
+set pager_stop # don't go to next when browsing current mail using PgUp & PgDn
+
 # _____________________________________________________________________________
-# send mail
+# write mail
 
 # sendmail itself is a mail server, it is too heavy
 # msmtp is newer than ssmtp; ssmtp is not maintained anymore
@@ -22,19 +35,10 @@ set mbox = "+Received" # folder to archive old mails
 set sendmail="/usr/sbin/msmtp"
 set from="jing.liu@usd.edu" # otherwise does not work
 set realname="Jing LIU"
-
-# _____________________________________________________________________________
-# behavior
-unset mark_old # don't mark unread mail as old
-set pager_stop # don't go to next mail when browsing current one using PgUp & PgDn
 set include   # include original email in the reply
-
-# check new mails automatically, does not work,
-# but any key stroke in mutt invokes checking
-mailboxes +INBOX
-set mail_check = 0
-set timeout = 1
-set check_new = yes
+set forward_quote     # include original text on forward
+# http://dev.mutt.org/trac/wiki/MuttFaq/Folder
+folder-hook . 'set record="^"' # keep sent mail in the original thread
 
 # _____________________________________________________________________________
 # appearance
