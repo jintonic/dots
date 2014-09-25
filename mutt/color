@@ -27,12 +27,12 @@ mono  error         bold
 #color index         J_base          default         "~A~N!~T!~p!~Q!~F!~D"      # the rest, new
 color index         red             default         "~A"                        # all messages
 color index         brightred       default         "~E"                        # expired messages
-color index         blue            default         "~N"                        # new messages
-color index         blue            default         "~O"                        # old messages
+color index         magenta         default         "~N"                        # new messages
+color index         magenta         default         "~O"                        # old messages
 color index         brightmagenta   default         "~Q"                        # messages that have been replied to
 color index         brightcyan      default         "~R"                        # read messages
-color index         blue            default         "~U"                        # unread messages
-color index         blue            default         "~U~$"                      # unread, unreferenced messages
+color index         magenta         default         "~U"                        # unread messages
+color index         magenta         default         "~U~$"                      # unread, unreferenced messages
 color index         brightblue      default         "~v"                        # messages part of a collapsed thread
 color index         brightblue      default         "~P"                        # messages from me
 color index         cyan            default         "~p!~F"                     # messages to me
@@ -68,7 +68,7 @@ color header        blue            white         "^(Subject)"
 
 # body -----------------------------------------------------------------
 
-color quoted        blue            default         
+color quoted        brightblue      default         
 color quoted1       cyan            default         
 color quoted2       yellow          default         
 color quoted3       red             default         
