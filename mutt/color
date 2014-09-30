@@ -9,7 +9,7 @@ color markers       red             default
 color attachment    brightblue      default         
 color search        brightmagenta   default         
 color status        brightblue      white           
-color indicator     brightwhite     yellow          
+color indicator     brightwhite     brightblue          
 color tree          yellow          default                             # arrow in threads
 
 # basic monocolor screen
@@ -34,11 +34,11 @@ color index         brightcyan      default         "~R"                        
 color index         magenta         default         "~U"                        # unread messages
 color index         magenta         default         "~U~$"                      # unread, unreferenced messages
 color index         brightblue      default         "~v"                        # messages part of a collapsed thread
-color index         brightblue      default         "~P"                        # messages from me
-color index         cyan            default         "~p!~F"                     # messages to me
+color index         white           default         "~P"                        # messages from me
+color index         white           default         "~p!~F"                     # messages to me
 color index         cyan            default         "~N~p!~F"                   # new messages to me
 color index         cyan            default         "~U~p!~F"                   # unread messages to me
-color index         brightcyan      default         "~R~p!~F"                   # messages to me
+color index         white           default         "~R~p!~F"                   # messages to me
 color index         red             default         "~F"                        # flagged messages
 color index         red             default         "~F~p"                      # flagged messages to me
 color index         red             default         "~N~F"                      # new flagged messages
