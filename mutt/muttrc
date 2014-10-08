@@ -38,6 +38,7 @@ set realname="Jing LIU"
 set include   # include original email in the reply
 set forward_quote     # include original text on forward
 set fast_reply  # skip editing receivers and title before editing message
+set forward_format="FW:%s"
 # http://dev.mutt.org/trac/wiki/MuttFaq/Folder
 folder-hook . 'set record="^"' # keep sent mail in the original thread
 
