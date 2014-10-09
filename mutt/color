@@ -8,9 +8,9 @@ color message       cyan            default
 color markers       red             default           
 color attachment    brightblue      default         
 color search        brightmagenta   default         
-color status        brightblue      white           
-color indicator     brightwhite     brightblue          
-color tree          yellow          default                             # arrow in threads
+color status        brightwhite     brightblue           
+color indicator     yellow   default          
+color tree          magenta    default                             # arrow in threads
 
 # basic monocolor screen
 mono  bold          bold
@@ -50,11 +50,11 @@ color index         yellow          default         "~v~(~N)"                   
 color index         green           default         "~N~v~(~N)"                 # collapsed thread with unread parent
 # statusbg used to indicated flagged when foreground color shows other status
 # for collapsed thread
-color index         red             white           "~v~(~F)!~N"                # collapsed thread with flagged, no unread
-color index         yellow          white           "~v~(~F~N)"                 # collapsed thread with some unread & flagged
-color index         green           white           "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
-color index         green           white           "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
-color index         cyan            white           "~v~(~p)"                   # collapsed thread with unread parent, no unread inside, some to me directly
+color index         red             default           "~v~(~F)!~N"                # collapsed thread with flagged, no unread
+color index         yellow          default           "~v~(~F~N)"                 # collapsed thread with some unread & flagged
+color index         green           default           "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
+color index         green           default           "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
+color index         cyan            default           "~v~(~p)"                   # collapsed thread with unread parent, no unread inside, some to me directly
 color index         yellow          red             "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
 #color index         yellow          default         "~(~N)"                    # messages in threads with some unread
 #color index         green           default         "~S"                       # superseded messages
@@ -64,7 +64,7 @@ color index         yellow          red             "~v~(~D)"                   
 # message headers ------------------------------------------------------
 
 color hdrdefault    brightcyan      default         
-color header        blue            white         "^(Subject)"
+color header        magenta         default         "^(Subject)"
 
 # body -----------------------------------------------------------------
 
