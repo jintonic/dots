@@ -21,9 +21,13 @@ set check_new = yes
 # index
 unset mark_old # don't mark unread mail as old
 bind index <space>  collapse-thread
+folder-hook . "exec collapse-all" # collapse thread by default
+set index_format = "%4C %Z %{%b %d} %-15.15L %?M?(%2M)&(%2l)? (%?l?%4l&%4c?) %s"
 
 # pager
 set pager_stop # don't go to next when browsing current mail using PgUp & PgDn
+set pager_index_lines = 6 # show 5 mails in the list above currently open mail
+set delete # purge mails marked to delete when quit or change folder
 
 # _____________________________________________________________________________
 # write mail
@@ -36,6 +40,7 @@ set sendmail="/usr/sbin/msmtp"
 set from="jing.liu@usd.edu" # otherwise does not work
 set realname="Jing LIU"
 set include   # include original email in the reply
+set query_format = "%4c %t %-25.25a %-25.25n"
 set forward_quote     # include original text on forward
 set fast_reply  # skip editing receivers and title before editing message
 set forward_format="FW:%s"
