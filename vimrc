@@ -38,7 +38,8 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 "set mouse=ar
 
 " look {{{1
-colorscheme jintonic
+set background=dark
+colorscheme solarized
 "set number
 
 "set cul "cursorline: highlight the line where the cursor is, makes Vim slow

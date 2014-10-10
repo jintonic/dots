@@ -19,6 +19,7 @@ bundle:
 	cd ~/.vim/bundle; if [ -d FuzzyFinder ]; then cd FuzzyFinder; git pull; else git clone https://github.com/vim-scripts/FuzzyFinder.git; fi
 	cd ~/.vim/bundle; if [ -d taskwarrior.vim ]; then cd taskwarrior.vim; git pull; else git clone https://github.com/framallo/taskwarrior.vim.git; fi
 	cd ~/.vim/bundle; if [ -d vim-markdown ]; then cd vim-markdown; git pull; else git clone https://github.com/plasticboy/vim-markdown.git; fi
+	cd ~/.vim/bundle; if [ -d vim-colors-solarized ]; then cd vim-colors-solarized; git pull; else git clone https://github.com/altercation/vim-colors-solarized.git; fi
 	vim -X "+Helptags" "+q"
 	cd ~/.vim/bundle; if [ -d vim-liquid ]; then cd vim-liquid; git pull; else git clone https://github.com/tpope/vim-liquid.git; fi
 	vim -X "+Helptags" "+q"
@@ -26,7 +27,25 @@ bundle:
 ctags:
 	ln -sf $(PWD)/$@ ~/.$@
 
+dircolors:
+	ln -sf $(PWD)/$@ ~/.$@
+
 latexmkrc:
+	ln -sf $(PWD)/$@ ~/.$@
+
+minttyrc:
+	ln -sf $(PWD)/$@ ~/.$@
+
+msmtprc:
+	ln -sf $(PWD)/$@ ~/.$@
+
+mutt:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/color ~/.$@/color
+	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
+	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
+
+offlineimaprc:
 	ln -sf $(PWD)/$@ ~/.$@
 
 profile:
@@ -37,6 +56,12 @@ screenrc:
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
+
+w3m:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/cgi-bin ~/.$@
+	ln -sf $(PWD)/$@/urimethodmap ~/.$@/urimethodmap
+	ln -sf $(PWD)/$@/bookmark.html ~/.$@/bookmark.html
 
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
@@ -57,24 +82,6 @@ vim:
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
-
-w3m:
-	mkdir -p ~/.$@
-	ln -sf $(PWD)/$@/cgi-bin ~/.$@
-	ln -sf $(PWD)/$@/urimethodmap ~/.$@/urimethodmap
-	ln -sf $(PWD)/$@/bookmark.html ~/.$@/bookmark.html
-
-mutt:
-	mkdir -p ~/.$@
-	ln -sf $(PWD)/$@/color ~/.$@/color
-	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
-	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
-
-offlineimaprc:
-	ln -sf $(PWD)/$@ ~/.$@
-
-msmtprc:
-	ln -sf $(PWD)/$@ ~/.$@
 
 info:
 	@echo $(TARGETS)
