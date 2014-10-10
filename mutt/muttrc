@@ -28,6 +28,7 @@ set index_format = "%4C %Z %{%b %d} %-15.15L %?M?(%2M)&(%2l)? (%?l?%4l&%4c?) %s"
 set pager_stop # don't go to next when browsing current mail using PgUp & PgDn
 set pager_index_lines = 6 # show 5 mails in the list above currently open mail
 set delete # purge mails marked to delete when quit or change folder
+set confirmappend = no # don't ask when appending emails to a folder
 
 # _____________________________________________________________________________
 # write mail
