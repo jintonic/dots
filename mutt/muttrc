@@ -79,3 +79,5 @@ auto_view text/html
 # it to a file, error happens.
 set query_command ="abook --mutt-query '%s'"
 bind editor <Tab> complete-query # very useful
+# overwrite default create-alias key a:
+macro index,pager a "<pipe-message>abook --add-email<return>" "add sender"
