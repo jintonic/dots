@@ -69,8 +69,8 @@ hdr_order From To Cc Date
 # _____________________________________________________________________________
 # attachment
 set mailcap_path = ~/.mutt/mailcap
-auto_view text/html text/enriched application/x-gunzip application/postscript
-auto_view image/gif application/x-tar-gz
+auto_view text/html text/enriched
+#auto_view application/x-gunzip application/postscript image/gif application/x-tar-gz
 mime_lookup application/octet-stream
 
 #______________________________________________________________________________
