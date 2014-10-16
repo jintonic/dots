@@ -38,6 +38,7 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 
 " look {{{1
 set background=dark
+set term=xterm-256color
 colorscheme solarized
 "set number
 
