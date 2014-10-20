@@ -28,6 +28,10 @@ set pager_stop # don't go to next when browsing current mail using PgUp & PgDn
 set pager_index_lines = 6 # show 5 mails in the list above currently open mail
 set delete # purge mails marked to delete when quit or change folder
 set confirmappend = no # don't ask when appending emails to a folder
+set menu_scroll             # scroll in menus
+set smart_wrap              # don't split words
+set tilde                   # show tildes like in vim
+unset markers               # no ugly plus signs
 
 # _____________________________________________________________________________
 # write mail
@@ -41,11 +45,14 @@ set from="jing.liu@usd.edu" # otherwise does not work
 set realname="Jing LIU"
 set include   # include original email in the reply
 set query_format = "%4c %t %-25.25a %-25.25n"
-set forward_quote     # include original text on forward
 set fast_reply  # skip editing receivers and title before editing message
+set forward_quote = no  # do not quote forwarded message
+set fcc_attach    # save attachments with the body
+unset mime_forward   # forward attachments as part of body
 set forward_format="FW:%s"
 # http://dev.mutt.org/trac/wiki/MuttFaq/Folder
 folder-hook . 'set record="^"' # keep sent mail in the original thread
+set text_flowed # http://wcm1.web.rice.edu/mutt-tips.html
 
 # _____________________________________________________________________________
 # appearance
@@ -63,7 +70,9 @@ hdr_order From To Cc Date
 # _____________________________________________________________________________
 # attachment
 set mailcap_path = ~/.mutt/mailcap
-auto_view text/html
+auto_view text/html text/enriched
+#auto_view application/x-gunzip application/postscript image/gif application/x-tar-gz
+mime_lookup application/octet-stream
 
 #______________________________________________________________________________
 # contacts
@@ -79,3 +88,7 @@ auto_view text/html
 # it to a file, error happens.
 set query_command ="abook --mutt-query '%s'"
 bind editor <Tab> complete-query # very useful
+# overwrite default create-alias key a:
+macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "add sender"
+# add new key M:
+macro generic,index,pager M "<shell-escape>abook<return>" "launch abook"

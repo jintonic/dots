@@ -4,7 +4,6 @@
 set vi='20,<50,s10,h,!,n~/.vim/viminfo "viminfo: save operation history
 set dir=/tmp// " where to save the swp files
 execute pathogen#infect()
-set term=xterm
 
 " buffer {{{1
 " By default, if you modified the current buffer, you cannot switch to another
@@ -39,6 +38,7 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 
 " look {{{1
 set background=dark
+set term=xterm-256color
 colorscheme solarized
 "set number
 
@@ -146,3 +146,9 @@ cmap <C-U> <C-E><C-U>
 " super tab {{{1
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^']
+
+" mail {{{1
+" Vim knows mutts naming scheme for temporary files. If a file fits that
+" pattern, vim treats it as a mail
+autocmd FileType mail set spell
+autocmd FileType mail set fo+=aw

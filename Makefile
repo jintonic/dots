@@ -1,6 +1,18 @@
+# determine architecture
+ARC=Linux
+ifeq ($(OS),Windows_NT)
+  ARC=Windows
+else
+  UNAME_S := $(shell uname -s)
+  ifeq ($(UNAME_S),Darwin)
+    ARC=OSX
+  endif
+endif
+
 EXCLUDE=README.md
 EXCLUDE+=Makefile
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
+TARGETS+=terminfo
 
 all:$(TARGETS)
 
@@ -56,6 +68,11 @@ screenrc:
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
+
+terminfo:
+	infocmp | sed 's/kbs=^H/kbs=\\177/' > /tmp/ti.src
+	tic /tmp/ti.src
+	rm -f /tmp/ti.src
 
 w3m:
 	mkdir -p ~/.$@
