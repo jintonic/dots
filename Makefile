@@ -12,6 +12,7 @@ endif
 EXCLUDE=README.md
 EXCLUDE+=Makefile
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
+TARGETS+=terminfo
 
 all:$(TARGETS)
 
@@ -56,17 +57,17 @@ mutt:
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
 
-offlineimaprc:
-	ln -sf $(PWD)/$@ ~/.$@
-
-profile:
-	ln -sf $(PWD)/$@ ~/.$@
-
-screenrc:
-	ln -sf $(PWD)/$@ ~/.$@
-
-scrc:
-	ln -sf $(PWD)/$@ ~/.$@
+#offlineimaprc:
+#	ln -sf $(PWD)/$@ ~/.$@
+#
+#profile:
+#	ln -sf $(PWD)/$@ ~/.$@
+#
+#screenrc:
+#	ln -sf $(PWD)/$@ ~/.$@
+#
+#scrc:
+#	ln -sf $(PWD)/$@ ~/.$@
 
 terminfo:
 	infocmp | sed 's/kbs=^H/kbs=\\177/' > /tmp/ti.src
