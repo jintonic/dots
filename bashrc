@@ -90,6 +90,8 @@ alias df='df -h'
 alias du='du -h'
 
 alias sd='screen -D -RR'
+alias vi='vim -X'
+export EDITOR='vim -X'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
