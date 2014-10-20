@@ -146,3 +146,9 @@ cmap <C-U> <C-E><C-U>
 " super tab {{{1
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^']
+
+" mail {{{1
+" Vim knows mutts naming scheme for temporary files. If a file fits that
+" pattern, vim treats it as a mail
+autocmd FileType mail set spell
+autocmd FileType mail set fo+=aw
