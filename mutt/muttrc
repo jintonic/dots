@@ -52,6 +52,7 @@ unset mime_forward   # forward attachments as part of body
 set forward_format="FW:%s"
 # http://dev.mutt.org/trac/wiki/MuttFaq/Folder
 folder-hook . 'set record="^"' # keep sent mail in the original thread
+set text_flowed # http://wcm1.web.rice.edu/mutt-tips.html
 
 # _____________________________________________________________________________
 # appearance
