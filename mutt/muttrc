@@ -10,6 +10,7 @@ set postponed = "+Drafts" # folder of drafts
 set mbox = "+Archive" # folder to archive old mails
 # those local folders are synced with remote server by offlineimap
 # changes in mutt won't be saved to these folders unless $ is pressed or quit
+set sleep_time=0 # skip messages showed after each operation to fasten mutt
 
 # check new mails automatically, does not work,
 # but any key stroke in mutt invokes checking
@@ -31,7 +32,8 @@ set confirmappend = no # don't ask when appending emails to a folder
 set menu_scroll             # scroll in menus
 set smart_wrap              # don't split words
 set tilde                   # show tildes like in vim
-unset markers               # no ugly plus signs
+set nomarkers               # no ugly plus signs
+set smart_wrap # don't break words when wrapping lines (sometimes doesn't work)
 
 # _____________________________________________________________________________
 # write mail
