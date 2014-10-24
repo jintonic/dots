@@ -13,7 +13,8 @@ set mbox = "+Archive" # folder to archive old mails
 # changes in mutt won't be saved to these folders unless $ is pressed or quit
 set sleep_time=0 # skip messages showed after each operation to fasten mutt
 
-mailboxes +INBOX
+set check_new = yes
+mailboxes +INBOX # check INBOX for new mail
 # Any key stroke in mutt invokes updating fold status. If you type often, the
 # fold will be also checked often, which may not be necessary. mail_check
 # specify the minimal time interval for updating folds. If you set it to 10,
@@ -21,7 +22,8 @@ mailboxes +INBOX
 # second.
 set mail_check = 0 # update fold whenever there is a key stroke
 set timeout = 1 # update fold every 1 sec even if there is no key stroke
-set check_new = yes
+
+macro index,pager d "<save-message>+Trash<enter><sync-mailbox>" "Trash mail"
 
 # index
 unset mark_old # don't mark unread mail as old
