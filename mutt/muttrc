@@ -12,6 +12,8 @@ set mbox = "+Archive" # folder to archive old mails
 # those local folders are synced with remote server by offlineimap
 # changes in mutt won't be saved to these folders unless $ is pressed or quit
 set sleep_time=0 # skip messages showed after each operation to fasten mutt
+macro index,pager d "<save-message>+Trash<enter><sync-mailbox>" "Trash mail"
+macro index,pager a "<save-message>+Archive<enter><sync-mailbox>" "Archive mail" 
 
 set check_new = yes
 mailboxes +INBOX # check INBOX for new mail
@@ -22,8 +24,6 @@ mailboxes +INBOX # check INBOX for new mail
 # second.
 set mail_check = 0 # update fold whenever there is a key stroke
 set timeout = 1 # update fold every 1 sec even if there is no key stroke
-
-macro index,pager d "<save-message>+Trash<enter><sync-mailbox>" "Trash mail"
 
 # index
 unset mark_old # don't mark unread mail as old
@@ -96,6 +96,6 @@ mime_lookup application/octet-stream
 set query_command ="abook --mutt-query '%s'"
 bind editor <Tab> complete-query # very useful
 # overwrite default create-alias key a:
-macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "add sender"
+macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add sender"
 # add new key M:
 macro generic,index,pager M "<shell-escape>abook<return>" "launch abook"
