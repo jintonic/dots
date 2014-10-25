@@ -13,6 +13,7 @@ set mbox = "+Archive" # folder to archive old mails
 # changes in mutt won't be saved to these folders unless $ is pressed or quit
 set sleep_time=0 # skip messages showed after each operation to fasten mutt
 macro index,pager d "<save-message>+Trash<enter><sync-mailbox>" "Trash mail"
+macro index,pager - "<delete-message><sync-mailbox>" "Delete mail"
 macro index,pager a "<save-message>+Archive<enter><sync-mailbox>" "Archive mail" 
 
 set check_new = yes
