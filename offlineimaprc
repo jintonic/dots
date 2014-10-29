@@ -27,6 +27,9 @@ type = IMAP
 remotehost = exchange.usd.edu
 remoteuser = jing.liu
 # get password from ~/.netrc
+# keep connection with server
+holdconnectionopen = true
+keepalive = 60
 
 # only sync the following remote folders
 # http://docs.offlineimap.org/en/latest/nametrans.html
