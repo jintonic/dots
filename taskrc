@@ -1,6 +1,0 @@
-weekstart=Monday
-dateformat=Y/M/D
-dateformat.report=Y/M/D
-dateformat.annotation=Y/M/D
-calendar.details=full
-merge.default.uri=web:.task/
