@@ -70,9 +70,6 @@ screenrc:
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
-taskrc:
-	ln -sf $(PWD)/$@ ~/.$@
-
 terminfo:
 	infocmp | sed 's/kbs=^H/kbs=\\177/' > /tmp/ti.src
 	tic /tmp/ti.src
