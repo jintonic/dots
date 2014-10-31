@@ -53,6 +53,24 @@ set guifont=Courier_New:h12:b
 "set wildmenu "good for eyes, redundant if the following is set
 set wildmode=list:longest,full
 
+" airline
+set laststatus=2
+set noshowmode
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap g1 <Plug>AirlineSelectTab1
+nmap g2 <Plug>AirlineSelectTab2
+nmap g3 <Plug>AirlineSelectTab3
+nmap g4 <Plug>AirlineSelectTab4
+nmap g5 <Plug>AirlineSelectTab5
+nmap g6 <Plug>AirlineSelectTab6
+nmap g7 <Plug>AirlineSelectTab7
+nmap g8 <Plug>AirlineSelectTab8
+nmap g9 <Plug>AirlineSelectTab9
+
+""let g:airline#extensions#tabline#buffer_nr_show = 1
+
 " spell {{{1
 " set spell
 " ]s next error
@@ -68,13 +86,13 @@ filetype plugin on	" load plugins according to file type
 filetype indent on	" indent according to the file type
 set shiftwidth=2	" for filetype indent on and << >> C-t and C-d
 set smarttab		" insert space at the beginning of the line
-			" while insert tab at the other place
+" while insert tab at the other place
 "set tabstop=3		" to show real tab as 3 spaces
-   
+
 set ww=<,>,[,]	  " type left/right at the beginning/end of the line goes to the pre/next line
-                  " don't include h,l
+" don't include h,l
 set bs=2 		" allow bs go over start of insert
-			
+
 syntax on
 
 set ruler
