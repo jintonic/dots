@@ -58,6 +58,7 @@ set laststatus=2
 set noshowmode
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 nmap g1 <Plug>AirlineSelectTab1
 nmap g2 <Plug>AirlineSelectTab2
