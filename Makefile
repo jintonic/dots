@@ -80,6 +80,7 @@ w3m:
 	ln -sf $(PWD)/$@/cgi-bin ~/.$@
 	ln -sf $(PWD)/$@/urimethodmap ~/.$@/urimethodmap
 	ln -sf $(PWD)/$@/bookmark.html ~/.$@/bookmark.html
+	ln -sf $(PWD)/$@/config ~/.$@/config
 
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
