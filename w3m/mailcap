@@ -1,0 +1,2 @@
+application/*; cygstart %s; test=uname|grep -q CYGWIN
+image/*; cygstart %s; test=uname|grep -q CYGWIN
