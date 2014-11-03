@@ -69,7 +69,7 @@ mailer
 mailto_options 1
 editor vim -X
 urimethodmap ~/.w3m/urimethodmap, /etc/w3m/urimethodmap
-mailcap ~/.mutt/mailcap, /etc/w3m/mailcap
+mailcap ~/.w3m/mailcap, /etc/w3m/mailcap
 mime_types ~/.mime.types, /etc/mime.types
 index_file 
 cgi_bin ~/.w3m/cgi-bin
