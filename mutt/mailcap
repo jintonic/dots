@@ -2,5 +2,6 @@
 text/html; w3m -I %{charset} -T text/html %s
 # second text/html is used to auto display html attachment in mail
 text/html; w3m -I %{charset} -T text/html; copiousoutput
-application/*; cygstart %s; test=uname|grep -q CYGWIN
-image/*; cygstart %s; test=uname|grep -q CYGWIN
+# copiousoutput is used to prevent mutt delete tmp files for view:
+application/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
+image/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
