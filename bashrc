@@ -103,6 +103,9 @@ fi
 alias t='task'
 complete -o nospace -F _task t
 
+export HTTPS_PROXY="http://localhost:3128"
+export HTTP_PROXY="http://localhost:3128"
+export FTP_PROXY="http://localhost:3128"
 export WWW_HOME=~/.w3m/bookmark.html
 export LYNX_CFG=~/.lynx/lynx.cfg
 
