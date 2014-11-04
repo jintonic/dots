@@ -83,6 +83,9 @@ w3m:
 	ln -sf $(PWD)/$@/config ~/.$@/config
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 
+vifm:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/vifmrc ~/.$@/vifmrc
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
 	mkdir -p ~/.$@/after/syntax
