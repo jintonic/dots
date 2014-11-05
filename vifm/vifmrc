@@ -155,6 +155,9 @@ command vgrep vim "+grep %a"
 " root
 filetype *.root root -l %f
 
+" spread sheet
+filetype *.sc sc %f
+
 " Pdf
 filetype *.pdf cygstart %f,zathura %f,apvlv %f,xpdf %f
 fileview *.pdf pdftotext -nopgbrk %c -
