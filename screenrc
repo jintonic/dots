@@ -101,6 +101,7 @@ termcapinfo xterm* be
 #
 # keybindings
 #
+escape `` # change escape key from ^a to `
 
 #remove some stupid / dangerous key bindings
 bind k
