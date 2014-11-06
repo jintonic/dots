@@ -7,7 +7,7 @@ PATH=.:$HOME/bin:$PATH
 # don't put duplicate lines or lines starting with space in the history,
 # and erase already existing duplicated lines
 HISTCONTROL=ignoreboth:erasedups
-HISTIGNORE="[ \t]*:&:l[lsa]:[bf]g:exit"
+HISTIGNORE="[ ]*:&:l[lsa]:[bf]g:exit"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -101,7 +101,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 alias t='task'
-complete -o nospace -F _task t
+if [ -f ~/src/task/scripts/bash/task.sh ]; then
+  source ~/src/task/scripts/bash/task.sh
+  complete -o nospace -F _task t
+fi
 
 export HTTPS_PROXY="http://localhost:3128"
 export HTTP_PROXY="http://localhost:3128"
