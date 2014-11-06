@@ -171,5 +171,5 @@ autocmd FileType mail set spell
 autocmd FileType mail set fo+=aw
 
 " task {{{1
-let g:task_report_name="ls"
+let g:task_report_name="list"
 let g:task_default_prompt= ['description', 'project']
