@@ -41,6 +41,9 @@ set tilde                   # show tildes like in vim
 set nomarkers               # no ugly plus signs
 set smart_wrap # don't break words when wrapping lines (sometimes doesn't work)
 
+# speed up
+set header_cache =~/.mutt/cache/headers
+
 # _____________________________________________________________________________
 # write mail
 
