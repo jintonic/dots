@@ -1,0 +1,8 @@
+[push]
+  default = simple
+[user]
+  name = Jing LIU
+  email = jing.liu@usd.edu
+[alias]
+  br = branch
+  co = checkout
