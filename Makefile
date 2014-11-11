@@ -26,6 +26,7 @@ bundle:
 	cd ~/.vim/bundle; if [ -d vim-addon-mw-utils ]; then cd vim-addon-mw-utils; git pull; else git clone https://github.com/MarcWeber/vim-addon-mw-utils.git; fi
 	cd ~/.vim/bundle; if [ -d vim-snipmate ]; then cd vim-snipmate; git pull; else git clone https://github.com/garbas/vim-snipmate.git; fi
 	cd ~/.vim/bundle; if [ -d vcscommand.vim ]; then cd vcscommand.vim; git pull; else git clone https://github.com/vim-scripts/vcscommand.vim.git; fi
+	cd ~/.vim/bundle; if [ -d vim-fugitive ]; then cd vim-fugitive; git pull; else git clone git://github.com/tpope/vim-fugitive.git; fi
 	cd ~/.vim/bundle; if [ -d supertab ]; then cd supertab; git pull; else git clone https://github.com/ervandew/supertab.git; fi
 	cd ~/.vim/bundle; if [ -d L9 ]; then cd L9; git pull; else git clone https://github.com/vim-scripts/L9.git; fi
 	cd ~/.vim/bundle; if [ -d FuzzyFinder ]; then cd FuzzyFinder; git pull; else git clone https://github.com/vim-scripts/FuzzyFinder.git; fi
@@ -33,6 +34,7 @@ bundle:
 	cd ~/.vim/bundle; if [ -d vim-markdown ]; then cd vim-markdown; git pull; else git clone https://github.com/plasticboy/vim-markdown.git; fi
 	cd ~/.vim/bundle; if [ -d vim-colors-solarized ]; then cd vim-colors-solarized; git pull; else git clone https://github.com/altercation/vim-colors-solarized.git; fi
 	cd ~/.vim/bundle; if [ -d vim-airline ]; then cd vim-airline; git pull; else git clone https://github.com/bling/vim-airline.git; fi
+	cd ~/.vim/bundle; if [ -d vim-bufferline ]; then cd vim-bufferline; git pull; else git clone https://github.com/bling/vim-bufferline.git; fi
 	vim -X "+Helptags" "+q"
 	cd ~/.vim/bundle; if [ -d vim-liquid ]; then cd vim-liquid; git pull; else git clone https://github.com/tpope/vim-liquid.git; fi
 	vim -X "+Helptags" "+q"
