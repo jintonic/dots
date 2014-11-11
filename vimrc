@@ -54,21 +54,24 @@ set guifont=Courier_New:h12:b
 set wildmode=list:longest,full
 
 " airline
-"set laststatus=2
+set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1 " show buffer
-let g:airline#extensions#tabline#buffer_min_count = 2 " not show only 1 buffer
+"let g:airline#extensions#tabline#enabled = 1 " show buffer
+"let g:airline#extensions#tabline#buffer_min_count = 2 " not show only 1 buffer
 " map keys to open buffer quickly
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <Leader>1 <Plug>AirlineSelectTab1
-nmap <Leader>2 <Plug>AirlineSelectTab2
-nmap <Leader>3 <Plug>AirlineSelectTab3
-nmap <Leader>4 <Plug>AirlineSelectTab4
-nmap <Leader>5 <Plug>AirlineSelectTab5
-nmap <Leader>6 <Plug>AirlineSelectTab6
-nmap <Leader>7 <Plug>AirlineSelectTab7
-nmap <Leader>8 <Plug>AirlineSelectTab8
-nmap <Leader>9 <Plug>AirlineSelectTab9
+"let g:airline#extensions#tabline#buffer_idx_mode = 1
+"nmap <Leader>1 <Plug>AirlineSelectTab1
+"nmap <Leader>2 <Plug>AirlineSelectTab2
+"nmap <Leader>3 <Plug>AirlineSelectTab3
+"nmap <Leader>4 <Plug>AirlineSelectTab4
+"nmap <Leader>5 <Plug>AirlineSelectTab5
+"nmap <Leader>6 <Plug>AirlineSelectTab6
+"nmap <Leader>7 <Plug>AirlineSelectTab7
+"nmap <Leader>8 <Plug>AirlineSelectTab8
+"nmap <Leader>9 <Plug>AirlineSelectTab9
+
+" bufferline
+let g:bufferline_echo = 0
 
 " spell {{{1
 " set spell
@@ -101,7 +104,7 @@ set incsearch           " do incremental searching
 set hlsearch 		" highlight search
 set ignorecase
 
-autocmd BufEnter * cd %:p:h
+autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 
 " folding {{{1
 set fillchars=          "default vert:|,fold:-
