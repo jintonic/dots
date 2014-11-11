@@ -45,6 +45,9 @@ ctags:
 dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
 
+gitconfig:
+	ln -sf $(PWD)/$@ ~/.$@
+
 latexmkrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
