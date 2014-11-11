@@ -34,7 +34,6 @@ bundle:
 	cd ~/.vim/bundle; if [ -d vim-markdown ]; then cd vim-markdown; git pull; else git clone https://github.com/plasticboy/vim-markdown.git; fi
 	cd ~/.vim/bundle; if [ -d vim-colors-solarized ]; then cd vim-colors-solarized; git pull; else git clone https://github.com/altercation/vim-colors-solarized.git; fi
 	cd ~/.vim/bundle; if [ -d vim-airline ]; then cd vim-airline; git pull; else git clone https://github.com/bling/vim-airline.git; fi
-	cd ~/.vim/bundle; if [ -d vim-bufferline ]; then cd vim-bufferline; git pull; else git clone https://github.com/bling/vim-bufferline.git; fi
 	vim -X "+Helptags" "+q"
 	cd ~/.vim/bundle; if [ -d vim-liquid ]; then cd vim-liquid; git pull; else git clone https://github.com/tpope/vim-liquid.git; fi
 	vim -X "+Helptags" "+q"
