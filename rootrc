@@ -1,0 +1,134 @@
+# ROOT Environment settings are handled via the class TEnv. To see
+# which values are active do: gEnv->Print().
+
+# Path used by dynamic loader to find shared libraries.
+# This path will be appended to the (DY)LD_LIBRARY_PATH on Unix
+Unix.*.Root.DynamicPath:    .:$(HOME)/lib:
+
+# Path used to find macros.
+Unix.*.Root.MacroPath:      .:$(HOME)/.root:
+
+# Show where item is found in the specified path.
+Root.ShowPath:           false
+
+# Global debug mode. When >0 turns on progressively more details debugging.
+Root.Debug:              0
+
+# Ignore errors lower than the ignore level. Possible values:
+# Print, Info, Warning, Error, Break, SysError and Fatal.
+Root.ErrorIgnoreLevel:   Print
+
+# Default editor.
+Unix.*.Editor:           vim -X
+
+# Default 3d Viewer.
+# By default 3-D views are shown in the pad,
+# if the next line is activated, the default viewer will be OpenGL.
+#Viewer3D.DefaultDrawOption:   ogl
+
+# Default Fitter (current choices are Minuit and Fumili).
+Root.Fitter:             Minuit
+
+# Specify list of file endings which TTabCom (TAB completion) should ignore.
+TabCom.FileIgnore:       .o:.zip:.tar:.gz
+
+# TCanvas specific settings. Opaque move and resize show full pad during
+# the operation instead of only the outline. Especially for resize you'll
+# need serious CPU power. UseScreenFactor=true means to size canvas according
+# to size of screen, so a canvas still looks good on a low resolution
+# laptop screen without having to change canvas size in macros.
+# HighLightColor 2 = red. ShowEventStatus allows the event status bar to
+# be turned on by default. AutoExec allows TExec objects to be executed
+# on mouse and key events.
+Canvas.MoveOpaque:          false
+Canvas.ResizeOpaque:        false
+Canvas.UseScreenFactor:     false
+Canvas.HighLightColor:      2
+Canvas.ShowEventStatus:     true
+Canvas.ShowToolTips:        false
+Canvas.ShowToolBar:         false
+Canvas.ShowEditor:          false
+Canvas.AutoExec:            true
+Canvas.PrintDirectory       .
+#set the default precision when writing floating point numbers in TCanvas::SaveSource
+Canvas.SavePrecision        7
+
+# Printer settings.
+#Unix.*.Print.Command:       a2ps -P%p --landscape --columns=2 --margin=30 -rf8.0 %f
+#Print.Printer:              32-rb20-hp
+#Print.Directory:            .
+#Print.FileType:             pdf
+
+# Default histogram binnings for TTree::Draw().
+Hist.Binning.1D.x:          100
+
+Hist.Binning.2D.x:           40
+Hist.Binning.2D.y:           40
+Hist.Binning.2D.Prof:       100
+
+Hist.Binning.3D.x:           20
+Hist.Binning.3D.y:           20
+Hist.Binning.3D.z:           20
+Hist.Binning.3D.Profx:      100
+Hist.Binning.3D.Profy:      100
+
+# Default statistics parameters names.
+Hist.Stats.Entries    Entries
+Hist.Stats.Mean       Mean
+Hist.Stats.MeanX      Mean x
+Hist.Stats.MeanY      Mean y
+Hist.Stats.RMS        RMS
+Hist.Stats.RMSX       RMS x
+Hist.Stats.RMSY       RMS y
+Hist.Stats.Underflow  Underflow
+Hist.Stats.Overflow   Overflow
+Hist.Stats.Integral   Integral
+Hist.Stats.Skewness   Skewness
+Hist.Stats.SkewnessX  Skewness x
+Hist.Stats.SkewnessY  Skewness y
+Hist.Stats.Kurtosis   Kurtosis
+Hist.Stats.KurtosisX  Kurtosis x
+Hist.Stats.KurtosisY  Kurtosis y
+
+# Type of Browser: TRootBrowser or TRootBrowserLite
+Browser.Name:                TRootBrowserLite
+# Browser Options (plugins)
+# F: File browser E: Text Editor H: HTML browser 
+# C: Canvas I: I/O redirection P: Proof G: GL viewer
+Browser.Options:             FCEI
+
+# Rint (interactive ROOT executable) specific alias, logon and logoff macros.
+Rint.Load:               alias.C
+Rint.Logon:              logon.C
+Rint.Logoff:             logoff.C
+### Prompt colors
+# Whether to use default colors for light-on-dark (i.e. reverse) color scheme:
+#Rint.ReverseColor:        no
+# Prompt colors: #rgb or #rrggbb or color names:
+#  "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"
+#  "default" will keep the current terminal color.
+# can be combined with string containing "under" and "bold".
+#Rint.TypeColor:          bold blue
+#Rint.BracketColor:       bold green
+#Rint.BadBracketColor:    bold red underlined
+Rint.PromptColor:        green
+#Rint.TabComColor:        magenta
+#
+### History
+# Record session commands, set to "-" to turn off command recording.
+Rint.History:            $(HOME)/.root/history
+# Print a single line welcome message instead of the default verbose version
+Rint.WelcomeLite:      yes
+# When the interactive ROOT starts, it can automatically load some frequently
+# used includes. However, this introduces several overheads
+#  - A long list of CINT and system files will be kept open during the session
+#  - The initialisation takes more time (noticeable when using gdb or valgrind)
+#  - Memory overhead of about 5 Mbytes (1/3 of the base ROOT executable) when
+#    including <vector>
+# You can set the variable below to 0 to disable the loading of these
+# includes at startup. You can set the variable to 1 (default) to load
+# only <iostream> , <string> and <RTypesCint.h>. You can set it to 2 to
+# load in addition <vector> and <pair>.  We strongly recommend setting
+# the variable to 2 if your scripts include <vector> and you execute
+# your scripts multiple times.
+Rint.Includes:      1

@@ -93,6 +93,9 @@ alias sd='screen -D -RR'
 alias vi='vim -X'
 export EDITOR='vim -X'
 
+alias r='root -l'
+alias rbq='root -b -q'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
