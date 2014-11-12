@@ -70,6 +70,10 @@ profile:
 rootrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
+root:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/logon.C ~/.$@/logon.C
+
 screenrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
