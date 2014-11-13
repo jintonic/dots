@@ -109,10 +109,7 @@ if [ -f ~/src/task/scripts/bash/task.sh ]; then
   complete -o nospace -F _task t
 fi
 
-export HTTPS_PROXY="http://localhost:3128"
-export HTTP_PROXY="http://localhost:3128"
-export FTP_PROXY="http://localhost:3128"
 export WWW_HOME=~/.w3m/bookmark.html
-export LYNX_CFG=~/.lynx/lynx.cfg
+#export LYNX_CFG=~/.lynx/lynx.cfg
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
