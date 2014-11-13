@@ -96,6 +96,7 @@ w3m:
 vifm:
 	mkdir -p ~/.$@
 	ln -sf $(PWD)/$@/vifmrc ~/.$@/vifmrc
+	ln -sf $(PWD)/$@/colors ~/.$@/colors
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
 	mkdir -p ~/.$@/after/syntax
