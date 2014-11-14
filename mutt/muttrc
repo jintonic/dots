@@ -46,6 +46,8 @@ set header_cache =~/.mutt/cache/headers
 
 set nowait_key # don't need to press enter after using external programs
 
+macro pager,index , "!kill -USR1 `cat ~/.offlineimap/pid`^M" "sync imap"
+
 # _____________________________________________________________________________
 # write mail
 
