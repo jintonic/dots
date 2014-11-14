@@ -44,6 +44,8 @@ set smart_wrap # don't break words when wrapping lines (sometimes doesn't work)
 # speed up
 set header_cache =~/.mutt/cache/headers
 
+set nowait_key # don't need to press enter after using external programs
+
 # _____________________________________________________________________________
 # write mail
 
