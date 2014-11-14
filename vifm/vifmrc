@@ -248,7 +248,7 @@ filetype *.7z
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 
 " Office files
-filextype *.doc,*.docx,*.xls,*.xlsx cygstart %f,libreoffice %f &
+filextype *.doc,*.docx,*.xls,*.xlsx,*.ppt,*.pptx cygstart %f,libreoffice %f &
 fileview *.docx, docx2txt.pl %f -
 
 " Qt projects
