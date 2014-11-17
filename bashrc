@@ -114,4 +114,6 @@ export WWW_HOME=~/.w3m/bookmark.html
 
 export LC_ALL="en_US.UTF-8"
 
+export TEXMFHOME=~/.texmf
+
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
