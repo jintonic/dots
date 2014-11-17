@@ -37,18 +37,24 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 "set mouse=ar
 
 " look {{{1
+" disable tool bars in gvim
+set go=
+set guifont=Terminess\ Powerline\ 14
+
+" 256 color is a must for solarized to work
+if has("gui_running")
+  set columns=94
+  set number
+else
+  set term=xterm-256color
+endif
 set background=dark
-set term=xterm-256color
 colorscheme solarized
 "set number
 
 "set cul "cursorline: highlight the line where the cursor is, makes Vim slow
 "au WinLeave * set nocul "when leave a window, disable cursorline
 "au WinEnter * set cul
-
-" disable tool bars in gvim
-set go=
-set guifont=Courier_New:h12:b
 
 "set wildmenu "good for eyes, redundant if the following is set
 set wildmode=list:longest,full
