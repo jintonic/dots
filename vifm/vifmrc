@@ -165,6 +165,8 @@ fileview *.pdf pdftotext -nopgbrk %c -
 " PostScript
 filetype *.ps,*.ps.gz gv %c %i &
 
+filetype *.dvi xdvi %f &
+
 " Djvu
 filextype *.djvu cygstart %f,apvlv %f
 
