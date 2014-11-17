@@ -18,7 +18,9 @@ setlocal lcs=trail:.
 map \ls :exe '!xdvi -sourceposition '.line(".").expand("%")<CR><CR>
 " xdvi -> vim
 " vim has to be run in server mode: 
-" 	vim --servername VIM --remote-silent file.tex
+" 	vim --servername VIM file.tex
+" or
+" 	gvim file.tex (default server name is GVIM)
 " file has to be compiled with src option
 " 	$ latex --src file.tex
 " xdvi has to be run as: 
@@ -28,6 +30,8 @@ map \ls :exe '!xdvi -sourceposition '.line(".").expand("%")<CR><CR>
 " The last two can be set in ~/.latexmkrc
 " 	$latex='latex --src %O %S';
 " 	$dvi_previewer='start xdvi -editor "vim --remote-silent +%l %f" %O %S';
+" To use latexmk setting, one has to run latexmk first:
+" 	latexmk -dvi -pvc file
 
 " for fuzzy finder to work with ctags for latex
 let g:fuf_buffertag__tex='--language-force=latex'
