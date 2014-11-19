@@ -165,7 +165,7 @@ filetype *.pdf cygstart %f,zathura %f,apvlv %f,xpdf %f
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filetype *.ps,*.ps.gz gv %c %i &
+filetype *.ps,*.ps.gz,*.eps gv %c %i &
 
 filetype *.dvi xdvi %f &
 
