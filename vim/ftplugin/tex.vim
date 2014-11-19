@@ -46,6 +46,7 @@ let g:fuf_buffertag__tex='--language-force=latex'
 " --regex-latex=/\\subsection\*\{([^}]*)\}/\1/t,subsection/
 " --regex-latex=/\\subsubsection\*\{([^}]*)\}/\1/u,subsubsection/
 
+setlocal spell
 " do not spell check comments
 let g:tex_comment_nospell=1
 
