@@ -120,6 +120,10 @@ vim:
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
 
+Xdefaults:
+	ln -sf $(PWD)/$@ ~/.$@
+	xrdb ~/.$@
+
 info:
 	@echo $(TARGETS)
 
