@@ -122,7 +122,7 @@ vim:
 
 Xdefaults:
 	ln -sf $(PWD)/$@ ~/.$@
-	xrdb ~/.$@
+	touch ~/.startxwinrc
 
 info:
 	@echo $(TARGETS)
