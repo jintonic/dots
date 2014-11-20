@@ -152,6 +152,8 @@ command vgrep vim "+grep %a"
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
+filetype *.tex gvim %f &
+
 " root
 filetype *.root root -l %f
 
@@ -163,7 +165,9 @@ filetype *.pdf cygstart %f,zathura %f,apvlv %f,xpdf %f
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filetype *.ps,*.ps.gz gv %c %i &
+filetype *.ps,*.ps.gz,*.eps gv %c %i &
+
+filetype *.dvi xdvi %f &
 
 " Djvu
 filextype *.djvu cygstart %f,apvlv %f
@@ -248,7 +252,7 @@ filetype *.7z
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 
 " Office files
-filextype *.doc,*.docx,*.xls,*.xlsx cygstart %f,libreoffice %f &
+filextype *.doc,*.docx,*.xls,*.xlsx,*.ppt,*.pptx cygstart %f,libreoffice %f &
 fileview *.docx, docx2txt.pl %f -
 
 " Qt projects

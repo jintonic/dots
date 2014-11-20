@@ -21,12 +21,13 @@ xclock*Foreground:        white
 xclock*background:        black
 
 xdvi.shrinkFactor:	6
-xdvi.expert:	true
-xfig.splash:	false
+xdvi.expert:		true
+xdvi.watchFile: 	1
+xfig.splash:		false
 xfig.startgridmode:	1
-xfig.inches:	false
-xfig.zoom:	1.5
+xfig.inches:		false
+xfig.zoom:		1.5
 xfig.grid_color:	blue
 
-xdvi*font: -*-helvetica-medium-r-*-*-*-*-*-*-*-*-*-*
+!xdvi*font: -*-helvetica-medium-r-*-*-*-*-*-*-*-*-*-*
 

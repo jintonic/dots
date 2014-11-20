@@ -37,8 +37,18 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 "set mouse=ar
 
 " look {{{1
+" disable tool bars in gvim
+set go=
+set guifont=Terminess\ Powerline\ 14
+
+" 256 color is a must for solarized to work
+if has("gui_running")
+  set columns=94
+  set number
+else
+  set term=xterm-256color
+endif
 set background=dark
-set term=xterm-256color
 colorscheme solarized
 "set number
 
@@ -46,15 +56,11 @@ colorscheme solarized
 "au WinLeave * set nocul "when leave a window, disable cursorline
 "au WinEnter * set cul
 
-" disable tool bars in gvim
-set go=
-set guifont=Courier_New:h12:b
-
 "set wildmenu "good for eyes, redundant if the following is set
 set wildmode=list:longest,full
 
 " airline
-"set laststatus=2
+""set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " show buffer
 let g:airline#extensions#tabline#buffer_min_count = 2 " not show only 1 buffer
@@ -101,7 +107,7 @@ set incsearch           " do incremental searching
 set hlsearch 		" highlight search
 set ignorecase
 
-autocmd BufEnter * cd %:p:h
+autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
 
 " folding {{{1
 set fillchars=          "default vert:|,fold:-
@@ -137,10 +143,6 @@ map \g :execute "grep! --exclude=*Dict*" expand("<cword>") "*.cc *.hh" <Bar>cw<C
 map \m :make<CR>:cw<CR>
 map <space> <C-W><C-W>
 
-map \b :FufBuffer<CR>
-map \f :FufFile<CR>
-map \t :FufBufferTag<CR>
-
 if has("win32unix")
   map \o :!cygstart.exe <cfile><CR><CR>
 endif
@@ -171,5 +173,14 @@ autocmd FileType mail set spell
 autocmd FileType mail set fo+=aw
 
 " task {{{1
-let g:task_report_name="ls"
-let g:task_default_prompt= ['description', 'project', 'tag']
+let g:task_report_name="list"
+let g:task_default_prompt= ['description', 'project']
+
+" fugitive {{{1
+nmap <Leader>0 :Gstatus<CR>
+
+" fuzzy-finder {{{1
+map <Leader>b :FufBuffer<CR>
+map <Leader>f :FufFile<CR>
+map <Leader>t :FufBufferTag<CR>
+

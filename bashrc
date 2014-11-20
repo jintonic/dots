@@ -7,7 +7,7 @@ PATH=.:$HOME/bin:$PATH
 # don't put duplicate lines or lines starting with space in the history,
 # and erase already existing duplicated lines
 HISTCONTROL=ignoreboth:erasedups
-HISTIGNORE="[ \t]*:&:l[lsa]:[bf]g:exit"
+HISTIGNORE="[ ]*:&:l[lsa]:[bf]g:exit"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -93,6 +93,9 @@ alias sd='screen -D -RR'
 alias vi='vim -X'
 export EDITOR='vim -X'
 
+alias r='root -l'
+alias rbq='root -b -q'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -101,12 +104,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 alias t='task'
-complete -o nospace -F _task t
+if [ -f ~/src/task/scripts/bash/task.sh ]; then
+  source ~/src/task/scripts/bash/task.sh
+  complete -o nospace -F _task t
+fi
 
-export HTTPS_PROXY="http://localhost:3128"
-export HTTP_PROXY="http://localhost:3128"
-export FTP_PROXY="http://localhost:3128"
 export WWW_HOME=~/.w3m/bookmark.html
-export LYNX_CFG=~/.lynx/lynx.cfg
+#export LYNX_CFG=~/.lynx/lynx.cfg
+
+export LC_ALL="en_US.UTF-8"
+
+export TEXMFHOME=~/.texmf
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi

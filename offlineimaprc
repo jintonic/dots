@@ -1,7 +1,8 @@
 [general]
 # List of accounts to be synced, separated by a comma
 accounts = Work
-#ui = quiet # no output from running offlineimap
+# no output from running offlineimap
+# ui = quiet
 
 [Account Work]
 # local <- sync -> remote
