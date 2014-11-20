@@ -63,7 +63,7 @@ set query_format = "%4c %t %-25.25a %-25.25n"
 set fast_reply  # skip editing receivers and title before editing message
 set forward_quote = no  # do not quote forwarded message
 set fcc_attach    # save attachments with the body
-unset mime_forward   # forward attachments as part of body
+set nomime_forward   # don't forward everything all together
 set forward_format="FW:%s"
 # http://dev.mutt.org/trac/wiki/MuttFaq/Folder
 folder-hook . 'set record="^"' # keep sent mail in the original thread
