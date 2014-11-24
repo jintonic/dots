@@ -110,7 +110,8 @@ if [ -f ~/src/task/scripts/bash/task.sh ]; then
 fi
 
 export WWW_HOME=~/.w3m/bookmark.html
-#export LYNX_CFG=~/.lynx/lynx.cfg
+export LYNX_CFG=~/.lynx/lynx.cfg
+export LYNX_LSS=~/.lynx/lynx.lss
 
 export LC_ALL="en_US.UTF-8"
 
