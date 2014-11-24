@@ -49,6 +49,12 @@ gitconfig:
 latexmkrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
+lynx:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/lynx.cfg ~/.$@/lynx.cfg
+	ln -sf $(PWD)/$@/lynx.lss ~/.$@/lynx.lss
+	ln -sf $(PWD)/$@/jump.html ~/.$@/jump.html
+
 minttyrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
