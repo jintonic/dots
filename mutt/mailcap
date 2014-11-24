@@ -1,5 +1,6 @@
 # first text/html is used to view html attachment after pressing v and m
-text/html; w3m -I %{charset} -T text/html %s
+# nametemplate is used to assign a proper file type to the temp file
+text/html; w3m -I %{charset} -T text/html %s; nametemplate=%s.html
 # second text/html is used to auto display html attachment in mail
 text/html; w3m -I %{charset} -T text/html; copiousoutput
 # copiousoutput is used to prevent mutt delete tmp files for view:
