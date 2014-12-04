@@ -7,3 +7,5 @@ text/html; w3m -I %{charset} -T text/html -cols 70; copiousoutput
 # copiousoutput is used to prevent mutt delete tmp files for view:
 application/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
 image/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
+text/calendar; cygstart %s; copiousoutput; test=uname|grep -q CYGWIN; nametemplate=%s.ics
+
