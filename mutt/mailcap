@@ -2,7 +2,8 @@
 # nametemplate is used to assign a proper file type to the temp file
 text/html; w3m -I %{charset} -T text/html %s; nametemplate=%s.html
 # second text/html is used to auto display html attachment in mail
-text/html; w3m -I %{charset} -T text/html; copiousoutput
+# limiting line width to 70 so that no wired line breaks in reply
+text/html; w3m -I %{charset} -T text/html -cols 70; copiousoutput
 # copiousoutput is used to prevent mutt delete tmp files for view:
 application/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
 image/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
