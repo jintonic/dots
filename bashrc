@@ -99,15 +99,15 @@ alias rbq='root -b -q'
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-  . /etc/bash_completion
-fi
-
-alias t='task'
-if [ -f ~/src/task/scripts/bash/task.sh ]; then
-  source ~/src/task/scripts/bash/task.sh
-  complete -o nospace -F _task t
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#  . /etc/bash_completion
+#fi
+#
+#alias t='task'
+#if [ -f ~/src/task/scripts/bash/task.sh ]; then
+#  source ~/src/task/scripts/bash/task.sh
+#  complete -o nospace -F _task t
+#fi
 
 export WWW_HOME=~/.w3m/bookmark.html
 export LYNX_CFG=~/.lynx/lynx.cfg
