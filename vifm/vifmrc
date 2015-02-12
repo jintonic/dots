@@ -152,6 +152,8 @@ command vgrep vim "+grep %a"
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
+filetype *.fig xfig %f &
+
 filetype *.tex gvim %f &
 
 " root
