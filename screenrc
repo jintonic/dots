@@ -47,6 +47,7 @@ compacthist on
 altscreen on
 # tabs
 # ----
+backtick 1 30 30 sh -c 'ls -1 ~/mail/INBOX/new/ 2> /dev/null | wc -l'
 # 1. use caption to show tabbed window list:
 # caption always "%2=%-w%{= kw} %n*%t %{-}%+w"
 
@@ -54,7 +55,7 @@ altscreen on
 #    TERM hardstatus line to show the window
 #    list. If TERM doesn't have hardstatus line
 #    screen uses the last line to show it.
-hardstatus lastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"
+hardstatus lastline "%{= Bk}%H [%1`] | %-w%{= kB}%n*%t %{-}%+w"
 
 # use the hard status line to display message
 hardstatus on
@@ -149,8 +150,8 @@ bind ^] paste [.]
 #chdir      # go to home dir
 
 # default windows
-#screen 1
-screen 0 vifm
+screen 0
+screen 1 vifm
 # screen -t local 0
 # screen -t mail 1 mutt
 # screen -t 40 2 rlogin server
