@@ -1,6 +1,7 @@
 Abdus
 acretion
 addon
+Agilent
 AGN
 Akihiro
 Anpanman
@@ -120,6 +121,7 @@ gluons
 gmail
 gnuplot
 Gondolo
+GPIB
 GPS
 GRBs
 grep
@@ -288,6 +290,7 @@ QE
 Raffelt
 readline
 README
+RIGOL
 ROOT's
 ROOTSYS
 rsync
@@ -298,6 +301,7 @@ san's
 Sasso
 sciencenet
 scooby
+SCPI
 ScrapBook
 screenrc
 sekiya
@@ -399,7 +403,3 @@ Yamashita's
 youtube
 Youtube
 Yukawa
-RIGOL
-Agilent
-GPIB
-SCPI
