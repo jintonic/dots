@@ -75,6 +75,7 @@ nmap <Leader>6 <Plug>AirlineSelectTab6
 nmap <Leader>7 <Plug>AirlineSelectTab7
 nmap <Leader>8 <Plug>AirlineSelectTab8
 nmap <Leader>9 <Plug>AirlineSelectTab9
+let g:airline#extensions#whitespace#enabled = 0 " turn off trailing space check
 
 " spell {{{1
 " set spell
