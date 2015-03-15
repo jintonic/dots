@@ -256,14 +256,14 @@ filetype *.7z
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 
 " Office files
-filextype *.doc,*.docx,*.xls,*.xlsx,*.ppt,*.pptx cygstart %f,libreoffice %f &
+filetype *.doc,*.docx,*.xls,*.xlsx,*.ppt,*.pptx cygstart %f,libreoffice %f &
 fileview *.docx, docx2txt.pl %f -
 
 " Qt projects
 filextype *.pro qtcreator %f &
 
 " Directories
-filextype */ cygstart %f,
+filetype */ cygstart %f,
         \ {View in thunar}
         \ Thunar %f &,
 fileview .*/,*/ tree %f
