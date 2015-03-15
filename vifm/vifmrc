@@ -263,7 +263,7 @@ fileview *.docx, docx2txt.pl %f -
 filextype *.pro qtcreator %f &
 
 " Directories
-filextype */
+filextype */ cygstart %f,
         \ {View in thunar}
         \ Thunar %f &,
 fileview .*/,*/ tree %f
