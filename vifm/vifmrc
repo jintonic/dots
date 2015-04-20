@@ -174,7 +174,7 @@ filetype *.ps,*.ps.gz,*.eps gv %c %i &
 filetype *.dvi xdvi %f &
 
 " Djvu
-filextype *.djvu cygstart %f,apvlv %f
+filetype *.djvu cygstart %f,apvlv %f
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a cygstart %f,
@@ -185,7 +185,7 @@ filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a cygstart %f,
 fileviewer *.mp3 mp3info
 
 " Video
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv, cygstart %f,
+filetype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv, cygstart %f,
         \ {View using ffplay}
         \ ffplay -fs %c,
         \ {View using Dragon}
@@ -202,7 +202,7 @@ filetype *.html,*.htm w3m %f,lynx %f,cygstart %f,uzbl-browser %f %i &
 filetype *.o nm %f | less
 
 " Image
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f,
+filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f,
         \ {View in sxiv}
         \ sxiv,
         \ {View in gpicview}
