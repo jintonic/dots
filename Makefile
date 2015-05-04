@@ -74,6 +74,10 @@ offlineimaprc:
 profile:
 	ln -sf $(PWD)/$@ ~/.$@
 
+pygments:
+	curl 'https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py' | python
+	rm -f setuptools*
+	easy_install Pygments
 rootrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
