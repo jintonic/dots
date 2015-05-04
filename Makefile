@@ -65,6 +65,7 @@ mutt:
 	mkdir -p ~/.$@
 	mkdir -p ~/.$@/cache
 	ln -sf $(PWD)/$@/color ~/.$@/color
+	ln -sf $(PWD)/$@/sign ~/.$@/sign
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
 
