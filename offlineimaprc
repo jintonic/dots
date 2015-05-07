@@ -34,6 +34,6 @@ keepalive = 60
 
 # only sync the following remote folders
 # http://docs.offlineimap.org/en/latest/nametrans.html
-folderfilter = lambda folder: folder in ["INBOX", "Drafts", "Archive", "Deleted Items","Travel","Plasma","Finance","Fund","Outreach","Career","Family","Teaching","Lab","Gina","Service"]
+folderfilter = lambda folder: folder in ["INBOX", "Drafts", "Archive", "Deleted Items","Travel","Plasma","Finance","Fund","Outreach","Career","Family","Teaching","Lab","Gina","Service","Publication"]
 # shorten remote folders' names
 nametrans = lambda folder: re.sub('.*Deleted Items$', 'Trash', folder)
