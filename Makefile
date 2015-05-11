@@ -92,6 +92,9 @@ screenrc:
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
+startxwinrc:
+	ln -sf $(PWD)/$@ ~/.$@
+
 terminfo:
 	infocmp | sed 's/kbs=^H/kbs=\\177/' > /tmp/ti.src
 	tic /tmp/ti.src
