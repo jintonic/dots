@@ -185,3 +185,5 @@ map <Leader>b :FufBuffer<CR>
 map <Leader>f :FufFile<CR>
 map <Leader>t :FufBufferTag<CR>
 
+" jekyll {{{1
+let g:vim_markdown_frontmatter=1
