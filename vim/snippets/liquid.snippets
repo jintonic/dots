@@ -1,0 +1,33 @@
+snippet for
+	{% for ${1:element} in ${2:collection} %}
+	  ${3}
+	{% endfor %}
+snippet if
+	{% if ${1:cond} %}
+	  ${2}
+	{% endif %}
+snippet else
+	{% else %}
+	  ${1}
+snippet ifelse
+	{% if ${1:true} %}
+	  ${2}
+	{% else %}
+	  ${3}
+	{% endif %}
+snippet assign
+	{% assign ${1:var} = ${2:val} %}${3}
+snippet capture
+	{% capture ${1:var} %}${2}{% endcapture %}${3}
+snippet var
+	{{ ${1} }}${2}
+snippet comment
+	{% comment %}
+	${1}
+	{% endcomment %}
+snippet inc
+	{% include ${1:file} %}${2}
+snippet hl
+	{% highlight ${1:lang} %}
+	${2}
+	{% endhighlight %}
