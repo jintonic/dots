@@ -35,6 +35,7 @@ bundle:
 	cd ~/.vim/bundle; if [ -d vim-airline ]; then cd vim-airline; git pull; else git clone https://github.com/bling/vim-airline.git; fi
 	vim -X "+Helptags" "+q"
 	cd ~/.vim/bundle; if [ -d vim-liquid ]; then cd vim-liquid; git pull; else git clone https://github.com/tpope/vim-liquid.git; fi
+	cd ~/.vim/bundle; if [ -d vim-surround ]; then cd vim-surround; git pull; else git clone https://github.com/tpope/vim-surround.git; fi
 	vim -X "+Helptags" "+q"
 
 ctags:
