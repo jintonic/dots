@@ -1,53 +1,82 @@
-snippet #
+snippet 1
 	# ${1} #
 	
 	${2}
 
-snippet ##
+snippet 2
 	## ${1} ##
 	
 	${2}
 
-snippet ###
+snippet 3
 	### ${1} ###
 	
 	${2}
 
-snippet ####
+snippet 4
 	#### ${1} ####
 	
 	${2}
 
-snippet #####
+snippet 5
 	##### ${1} ######
 	
 	${2}
 
-snippet ######
+snippet 6
 	###### ${1} ######
 	
 	${2}
 
-snippet img
+snippet i
 	![${1}]({{site.exa}}/${2})
 	
 	${3}
 
-snippet cb
-	\`\`\`
-	${1}
+snippet c
+	\`\`\` ${1}
+	${2}
 	\`\`\`
 	
-	${2}
+	${3}
 
 snippet ic
 	\`${1}\` ${2}
 
-snippet ref
+snippet r
 	[${1}][] ${2}
 
-snippet url
-	[${1:text}](${2:http://}) ${3}
+snippet u
+	[${1}](${2}) ${3}
 
-snippet bib
-	[${1}]:${2:http://}
+snippet b
+	[${1}]:${2}
+
+snippet k
+	<kbd>${1}</kbd>${2}
+
+snippet t
+	---
+	tags: [${1}]
+	---
+	
+	${2}
+
+snippet y
+	---
+	${1}
+	---
+
+	${2}
+
+snippet ye
+	---
+	---
+
+	${1}
+
+snippet e
+	*${1}* ${2}
+
+snippet ee
+	**${1}** ${2}
