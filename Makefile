@@ -36,6 +36,7 @@ bundle:
 	vim -X "+Helptags" "+q"
 	cd ~/.vim/bundle; if [ -d vim-liquid ]; then cd vim-liquid; git pull; else git clone https://github.com/tpope/vim-liquid.git; fi
 	cd ~/.vim/bundle; if [ -d vim-surround ]; then cd vim-surround; git pull; else git clone https://github.com/tpope/vim-surround.git; fi
+	cd ~/.vim/bundle; if [ -d vim-repeat ]; then cd vim-repeat; git pull; else git clone https://github.com/tpope/vim-repeat.git; fi
 	vim -X "+Helptags" "+q"
 
 ctags:
