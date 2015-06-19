@@ -165,11 +165,11 @@ filetype *.root root -l %f
 filetype *.sc sc %f
 
 " Pdf
-filetype *.pdf cygstart %f,zathura %f,apvlv %f,xpdf %f
+filetype *.pdf cygstart %f,zathura %f,apvlv %f,xpdf %f &
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filetype *.ps,*.ps.gz,*.eps gv %c %i &
+filetype *.ps,*.ps.gz,*.eps gv %c %i, display %f &
 
 filetype *.dvi xdvi %f &
 
