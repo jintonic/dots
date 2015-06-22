@@ -6,6 +6,7 @@
    gROOT->SetStyle("Plain");
 
    // modify it:
+   gStyle->SetMarkerStyle(7);
    gStyle->SetLegendBorderSize(0);
    gStyle->SetTitleBorderSize(0);
    gStyle->SetOptStat(1111110); // show more information
