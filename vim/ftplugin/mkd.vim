@@ -4,6 +4,8 @@ setlocal formatoptions+=wa
 " show trailing space as .
 setlocal list
 setlocal lcs=trail:.
+" add one space after period instead of two
+setlocal nojoinspaces
 
 setlocal spell
 
