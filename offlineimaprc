@@ -31,6 +31,7 @@ remoteuser = jing.liu
 # keep connection with server
 holdconnectionopen = true
 keepalive = 60
+sslcacertfile = /etc/ssl/certs/usd.crt
 
 # only sync the following remote folders
 # http://docs.offlineimap.org/en/latest/nametrans.html
