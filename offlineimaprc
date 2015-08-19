@@ -25,7 +25,7 @@ localfolders = ~/mail
 [Repository Work-Remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 type = IMAP
-remotehost = exchange.usd.edu
+remotehost = exchmail.usd.edu
 remoteuser = jing.liu
 # get password from ~/.netrc
 # keep connection with server
