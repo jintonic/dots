@@ -16,6 +16,9 @@ TARGETS+=terminfo
 
 all:$(TARGETS)
 
+abookrc:
+	ln -sf $(PWD)/$@ ~/.$@
+
 asoundrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
