@@ -31,6 +31,9 @@ remoteuser = jing.liu
 # keep connection with server
 holdconnectionopen = true
 keepalive = 60
+# http://docs.offlineimap.org/en/latest/FAQ.html#how-do-i-generate-an-sslcacertfile-file
+# $ openssl s_client -connect exchmail.usd.edu:imaps -showcerts
+# save all output in between BEGINs and ENDs to usd.crt
 sslcacertfile = /etc/ssl/certs/usd.crt
 
 # only sync the following remote folders
