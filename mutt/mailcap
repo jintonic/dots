@@ -4,6 +4,8 @@ text/html; w3m -I %{charset} -T text/html %s; nametemplate=%s.html
 # second text/html is used to auto display html attachment in mail
 # limiting line width to 70 so that no wired line breaks in reply
 text/html; w3m -I %{charset} -T text/html -cols 70; copiousoutput
+
+# CYGWIN
 # copiousoutput is used to prevent mutt delete tmp files for view:
 application/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
 image/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
@@ -11,5 +13,5 @@ text/calendar; cygstart %s; copiousoutput; test=uname|grep -q CYGWIN; nametempla
 # press v, m to open text file in notepad.exe to print or convert to pdf
 text/plain; cygstart %s; copiousoutput; test=uname|grep -q CYGWIN; nametemplate=%s.txt
 
-# debian
+# LINUX
 application/pdf; zathura %s;copiousoutput; test=uname|grep -q Linux
