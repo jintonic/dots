@@ -16,6 +16,9 @@ TARGETS+=terminfo
 
 all:$(TARGETS)
 
+asoundrc:
+	ln -sf $(PWD)/$@ ~/.$@
+
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
@@ -135,6 +138,9 @@ vim:
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
+
+xsession:
+	ln -sf $(PWD)/$@ ~/.$@
 
 Xdefaults:
 	ln -sf $(PWD)/$@ ~/.$@
