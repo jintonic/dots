@@ -1,3 +1,10 @@
+# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+# ~/.dropbox-dist/dropboxd
+# wget https://www.dropbox.com/download?dl=packages/dropbox.py
+# mv dropbox.py ~/bin/dropbox
+# chmod 755 ~/bin/dropbox
+dropbox start
+
 # apt-get install scim scim-pinyin
 export XMODIFIERS="@im=SCIM"
 scim -d
