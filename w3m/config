@@ -40,7 +40,7 @@ no_proxy
 ftp_proxy http://localhost:3128
 https_proxy http://localhost:3128
 http_proxy http://localhost:3128
-use_proxy 1
+use_proxy 0
 max_news 50
 nntpmode 
 nntpserver 
