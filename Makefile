@@ -17,7 +17,9 @@ TARGETS+=terminfo
 all:$(TARGETS)
 
 abookrc:
-	ln -sf $(PWD)/$@ ~/.$@
+	mkdir -p ~/.abook
+	ln -sf $(PWD)/$@ ~/.abook/$@
+	ln -sf ~/Dropbox/computer/abook/addressbook ~/.abook/addressbook
 
 asoundrc:
 	ln -sf $(PWD)/$@ ~/.$@
