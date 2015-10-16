@@ -1,0 +1,12 @@
+# man abookrc
+field gnum = "Google number"
+field work2 = "Work phone 2"
+set index_format = " {name:22} {email:40} {phone:12|gnum|workphone|work2|mobile}"
+view CONTACT = name, email
+view ADDRESS = address, address2, city, state, zip, country
+view PHONE = phone, workphone, work2, gnum, mobile, fax
+view OTHER = nick, url, notes
+
+set www_command = w3m
+set address_style = us
+set add_email_prevent_duplicates = true
