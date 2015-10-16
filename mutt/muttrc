@@ -58,7 +58,7 @@ macro pager,index , "!kill -USR1 `cat ~/.offlineimap/pid`^M" "sync imap"
 # msmtp is newer than ssmtp; ssmtp is not maintained anymore
 # msmtp itself cannot send mail, it uses an existing mail server to do it
 # ~/.msmtprc is needed
-set sendmail="/usr/sbin/msmtp"
+set sendmail="msmtp"
 set from="jing.liu@usd.edu" # otherwise does not work
 set realname="Jing LIU"
 set include   # include original email in the reply
