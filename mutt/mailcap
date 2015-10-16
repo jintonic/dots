@@ -10,3 +10,6 @@ image/*; cygstart %s;copiousoutput; test=uname|grep -q CYGWIN
 text/calendar; cygstart %s; copiousoutput; test=uname|grep -q CYGWIN; nametemplate=%s.ics
 # press v, m to open text file in notepad.exe to print or convert to pdf
 text/plain; cygstart %s; copiousoutput; test=uname|grep -q CYGWIN; nametemplate=%s.txt
+
+# debian
+application/pdf; zathura %s;copiousoutput; test=uname|grep -q Linux
