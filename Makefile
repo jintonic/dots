@@ -65,6 +65,9 @@ lynx:
 	ln -sf $(PWD)/$@/lynx.lss ~/.$@/lynx.lss
 	ln -sf $(PWD)/$@/jump.html ~/.$@/jump.html
 
+mime.types:
+	ln -sf $(PWD)/$@ ~/.$@
+
 minttyrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
