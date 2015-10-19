@@ -15,3 +15,7 @@ text/plain; cygstart %s; copiousoutput; test=uname|grep -q CYGWIN; nametemplate=
 
 # LINUX
 application/pdf; zathura %s;copiousoutput; test=uname|grep -q Linux
+application/ppt; libreoffice -impress %s;copiousoutput; test=uname|grep -q Linux
+application/doc; libreoffice -writer %s;copiousoutput; test=uname|grep -q Linux
+image/*; display %s;copiousoutput; test=uname|grep -q Linux
+application/vnd.openxmlformats-officedocument.presentationml.presentation; libreoffice -impress %s;copiousoutput; test=uname|grep -q Linux
