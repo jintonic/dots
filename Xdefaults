@@ -51,6 +51,16 @@ URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12,xft:WenQuanYi Zen Hei Sha
 URxvt.imlocale: en_US.utf8
 Rxvt.inputMethod:xim
 
+! make clickable url in rxvt, man urxvt-matcher
+URxvt.perl-ext:           default,matcher
+URxvt.url-launcher:       chromium
+URxvt.keysym.C-Delete:    perl:matcher:last
+URxvt.keysym.M-Delete:    perl:matcher:list
+URxvt.matcher.button:     1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+URxvt.matcher.launcher.2: vim +$2 $1
+
 *VT100*font: 9x15
 *VT100*background: black
 *VT100*foreground: gray80
