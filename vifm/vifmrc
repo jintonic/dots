@@ -202,7 +202,7 @@ filetype *.html,*.htm w3m %f,lynx %f,cygstart %f,uzbl-browser %f %i &
 filetype *.o nm %f | less
 
 " Image
-filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f,
+filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f, display %f,
         \ {View in sxiv}
         \ sxiv,
         \ {View in gpicview}
