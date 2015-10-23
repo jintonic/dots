@@ -63,8 +63,8 @@ passwd_file ~/.w3m/passwd
 use_lessopen 0
 bgextviewer 1
 extbrowser3 
-extbrowser2 
-extbrowser cygstart
+extbrowser2 cygstart
+extbrowser mimeopen
 mailer 
 mailto_options 1
 editor vim -X
