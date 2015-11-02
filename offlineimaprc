@@ -2,7 +2,7 @@
 # List of accounts to be synced, separated by a comma
 accounts = Work
 # no output from running offlineimap
-# ui = quiet
+ui = quiet
 
 [Account Work]
 # local <- sync -> remote
@@ -12,7 +12,7 @@ remoterepository = Work-Remote
 # status saved in ~/.offlineimap/
 status_backend = sqlite
 # Minutes between syncs
-autorefresh = 10
+#autorefresh = 10
 # one can use cron instead
 
 [Repository Work-Local]
