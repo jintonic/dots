@@ -15,6 +15,6 @@ text/plain; cygstart %s; copiousoutput; test=uname|grep -q CYGWIN; nametemplate=
 
 # LINUX
 # https://wiki.archlinux.org/index.php/Xdg-open#perl-file-mimeinfo
-application/*; mimeopen %s;copiousoutput; test=uname|grep -q Linux
+application/*; mimeopen %s &2>/dev/null;copiousoutput; test=uname|grep -q Linux
 image/*; display %s;copiousoutput; test=uname|grep -q Linux
 
