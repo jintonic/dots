@@ -167,7 +167,7 @@ filetype *.root root -l %f
 filetype *.sc sc %f
 
 " Pdf
-filetype *.pdf cygstart %f,zathura %f 2>/dev/null &,apvlv %f,xpdf %f &
+filetype *.pdf cygstart %f, mimeopen %f &
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
@@ -176,7 +176,7 @@ filetype *.ps,*.ps.gz,*.eps gv %f 2>/dev/null &, display %f &
 filetype *.dvi xdvi %f 2>/dev/null &
 
 " Djvu
-filetype *.djvu cygstart %f,apvlv %f
+filetype *.djvu cygstart %f, mimeopen %f &
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a cygstart %f,
