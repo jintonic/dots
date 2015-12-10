@@ -53,7 +53,7 @@ Rxvt.inputMethod:xim
 
 ! make clickable url in rxvt, man urxvt-matcher
 URxvt.perl-ext:           default,matcher
-URxvt.url-launcher:       uzbl
+URxvt.url-launcher:       chromium
 URxvt.keysym.C-Delete:    perl:matcher:last
 URxvt.keysym.M-Delete:    perl:matcher:list
 URxvt.matcher.button:     1
