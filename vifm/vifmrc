@@ -152,7 +152,6 @@ command vgrep vim "+grep %a"
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
-filetype * cygstart %f, mimeopen %f &
 filetype *.desktop gov %f &
 
 filetype *.tex gvim %f &
@@ -262,6 +261,8 @@ filetype */ cygstart %f,
         \ {View in thunar}
         \ Thunar %f &,
 fileview .*/,*/ tree %f
+
+filetype * cygstart %f, mimeopen %f &
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
