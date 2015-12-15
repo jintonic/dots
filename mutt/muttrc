@@ -110,7 +110,7 @@ mime_lookup application/octet-stream
 # goobook does not work for me because the password sent to google cannot be 
 # recognized. The last script worked, but it dumps contacts to stdout. If I pipe
 # it to a file, error happens.
-set query_command ="abook --mutt-query '%s'"
+set query_command ="abook --datafile ~/Dropbox/addressbook --mutt-query '%s'"
 bind editor <Tab> complete-query # very useful
 # overwrite default create-alias key a:
 macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add sender"
