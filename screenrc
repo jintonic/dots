@@ -119,8 +119,8 @@ bind 'I' login on
 bind 'O' login off
 bind '}' history
 
-bind c screen 1         # Window numbering starts at 1, not 0.
-bind ^c screen 1
+#bind c screen 1         # Window numbering starts at 1, not 0.
+#bind ^c screen 1
 
 #bindkey -k k1 select 1
 #bindkey -k k2 select 2
@@ -151,7 +151,7 @@ bind ^] paste [.]
 #chdir      # go to home dir
 
 # default windows
-#screen 0
+screen 0
 screen 1 vifm
 # screen -t local 0
 # screen -t mail 1 mutt
