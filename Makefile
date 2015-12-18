@@ -16,6 +16,9 @@ TARGETS+=terminfo
 
 all:$(TARGETS)
 
+asoundrc:
+	ln -sf $(PWD)/$@ ~/.$@
+
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
@@ -56,6 +59,9 @@ lynx:
 	ln -sf $(PWD)/$@/lynx.cfg ~/.$@/lynx.cfg
 	ln -sf $(PWD)/$@/lynx.lss ~/.$@/lynx.lss
 	ln -sf $(PWD)/$@/jump.html ~/.$@/jump.html
+
+mime.types:
+	ln -sf $(PWD)/$@ ~/.$@
 
 minttyrc:
 	ln -sf $(PWD)/$@ ~/.$@
@@ -135,6 +141,9 @@ vim:
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
+
+xsession:
+	ln -sf $(PWD)/$@ ~/.$@
 
 Xdefaults:
 	ln -sf $(PWD)/$@ ~/.$@

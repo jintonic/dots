@@ -1,0 +1,18 @@
+# $ apt-get install alsa-utils
+# $ aplay -l # list cards
+# $ aplay -L|less # list cards and devices
+
+# defind default sound card (alsa default is hw:0,0)
+pcm.!default {
+   type plug  # plugin http://www.alsa-project.org/main/index.php/Asoundrc#Plugins
+   slave {
+     pcm "hw:2,0"
+   }	
+}
+ctl.!default {
+   type hw
+   card 2
+}
+
+# $ aplay /usr/share/sounds/alsa/Noise.wav
+# $ alsamixer

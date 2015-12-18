@@ -152,9 +152,7 @@ command vgrep vim "+grep %a"
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
-filetype *.chm cygsart %f
-
-filetype *.fig xfig %f &
+filetype *.desktop gov %f &
 
 filetype *.tex gvim %f &
 
@@ -165,16 +163,12 @@ filetype *.root root -l %f
 filetype *.sc sc %f
 
 " Pdf
-filetype *.pdf cygstart %f,zathura %f,apvlv %f,xpdf %f &
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filetype *.ps,*.ps.gz,*.eps gv %c %i, display %f &
+filetype *.ps,*.ps.gz,*.eps gv %f 2>/dev/null &, display %f &
 
-filetype *.dvi xdvi %f &
-
-" Djvu
-filetype *.djvu cygstart %f,apvlv %f
+filetype *.dvi xdvi %f 2>/dev/null &
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a cygstart %f,
@@ -202,7 +196,7 @@ filetype *.html,*.htm w3m %f,lynx %f,cygstart %f,uzbl-browser %f %i &
 filetype *.o nm %f | less
 
 " Image
-filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f,
+filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f, display %f,
         \ {View in sxiv}
         \ sxiv,
         \ {View in gpicview}
@@ -256,7 +250,6 @@ filetype *.7z
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 
 " Office files
-filetype *.doc,*.docx,*.xls,*.xlsx,*.ppt,*.pptx cygstart %f,libreoffice %f &
 fileview *.docx, docx2txt.pl %f -
 
 " Qt projects
@@ -267,6 +260,8 @@ filetype */ cygstart %f,
         \ {View in thunar}
         \ Thunar %f &,
 fileview .*/,*/ tree %f
+
+filetype * cygstart %f, mimeopen %f &
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide

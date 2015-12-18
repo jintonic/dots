@@ -1,15 +1,65 @@
-!*customization:	-color
+*customization:	-color
 
-Rxvt*foreground: gray80
-Rxvt*background: black
-Rxvt*font: 9x15
-Rxvt*color4: DodgerBlue1
-Rxvt*color12: SteelBlue1
+!!Source http://github.com/altercation/solarized
+
+URxvt*background: #002b36
+URxvt*foreground: #657b83
+URxvt*fadeColor: #002b36
+URxvt*cursorColor: #93a1a1
+
+!! black dark/light
+URxvt*color0: #073642
+URxvt*color8: #002b36
+
+!! red dark/light
+URxvt*color1: #dc322f
+URxvt*color9: #cb4b16
+
+!! green dark/light
+URxvt*color2: #859900
+URxvt*color10: #586e75
+
+!! yellow dark/light
+URxvt*color3: #b58900
+URxvt*color11: #657b83
+
+!! blue dark/light
+URxvt*color4: #268bd2
+URxvt*color12: #839496
+
+!! magenta dark/light
+URxvt*color5: #d33682
+URxvt*color13: #6c71c4
+
+!! cyan dark/light
+URxvt*color6: #2aa198
+URxvt*color14: #93a1a1
+
+!! white dark/light
+URxvt*color7: #eee8d5
+URxvt*color15: #fdf6e3
+
 Rxvt*scrollBar: false
 Rxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
-URxvt.font: 9x15
+
+! git clone https://github.com/powerline/fonts.git
+! cd fonts
+! ./install.sh
+! fc-list | grep Powerline
+! apt-get install fonts-wqy-zenhei
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12,xft:WenQuanYi Zen Hei Sharp,9x15
 URxvt.imlocale: en_US.utf8
-URxvt.inputMethod:xim
+Rxvt.inputMethod:xim
+
+! make clickable url in rxvt, man urxvt-matcher
+URxvt.perl-ext:           default,matcher
+URxvt.url-launcher:       chromium
+URxvt.keysym.C-Delete:    perl:matcher:last
+URxvt.keysym.M-Delete:    perl:matcher:list
+URxvt.matcher.button:     1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+URxvt.matcher.launcher.2: vim +$2 $1
 
 *VT100*font: 9x15
 *VT100*background: black
