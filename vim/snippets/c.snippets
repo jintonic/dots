@@ -93,12 +93,12 @@ snippet case
 ## Loops
 # for
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	for (int ${2:i}=0; $2<${1:count}; $2${3:++}) {
 		${4:/* code */}
 	}${5}
 # for (custom)
 snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
+	for (${1:i}=${2:0}; ${3:$1<10}; $1${4:++}) {
 		${5:/* code */}
 	}${6}
 # while
