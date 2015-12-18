@@ -12,7 +12,7 @@ endif
 EXCLUDE=README.md
 EXCLUDE+=Makefile
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=terminfo
+TARGETS+=terminfo ssh_config
 
 all:$(TARGETS)
 
@@ -99,6 +99,9 @@ screenrc:
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
+
+ssh_config:
+	ln -sf $(PWD)/ssh/config ~/.ssh
 
 startxwinrc:
 	ln -sf $(PWD)/$@ ~/.$@
