@@ -154,7 +154,7 @@ command vgrep vim "+grep %a"
 
 filetype *.desktop gov %f &
 
-filetype *.tex gvim %f &
+filetype *.tex vex %f
 
 " root
 filetype *.root root -l %f
