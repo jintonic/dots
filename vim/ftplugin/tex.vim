@@ -21,15 +21,18 @@ map \ls :exe '!xdvi -sourceposition '.line(".").expand("%")<CR><CR>
 " 	vim --servername VIM file.tex
 " or
 " 	gvim file.tex (default server name is GVIM)
+" or
+" 	gvim -v --servername VIM file.tex (run gvim in terminal)
+" 	
 " file has to be compiled with src option
 " 	$ latex --src file.tex
 " xdvi has to be run as: 
-" 	xdvi -editor "vim --remote-silent +%l %f" file.dvi
+" 	xdvi -editor "gvim --servername VIM --remote-silent +%l %f" file.dvi
 " C-leftClick in xdvi will bring vim to the right position
 "
 " The last two can be set in ~/.latexmkrc
 " 	$latex='latex --src %O %S';
-" 	$dvi_previewer='start xdvi -editor "vim --remote-silent +%l %f" %O %S';
+" 	$dvi_previewer='start xdvi -editor "gvim --servername VIM --remote-silent +%l %f" %O %S';
 " To use latexmk setting, one has to run latexmk first:
 " 	latexmk -dvi -pvc file
 

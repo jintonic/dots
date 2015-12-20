@@ -12,7 +12,7 @@ endif
 EXCLUDE=README.md
 EXCLUDE+=Makefile
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=terminfo ssh_config
+TARGETS+=bin ssh_config terminfo
 
 all:$(TARGETS)
 
@@ -21,6 +21,10 @@ asoundrc:
 
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
+
+bin:
+	mkdir -p ~/$@
+	for each in `ls -1 $@`; do ln -sf $(PWD)/$@/$$each ~/$@/; done
 
 bundle:
 	mkdir -p ~/.vim/autoload ~/.vim/bundle
