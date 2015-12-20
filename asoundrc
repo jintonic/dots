@@ -6,12 +6,12 @@
 pcm.!default {
    type plug  # plugin http://www.alsa-project.org/main/index.php/Asoundrc#Plugins
    slave {
-     pcm "hw:1,0"
+     pcm "hw:2,0"
    }	
 }
 ctl.!default {
    type hw
-   card 1
+   card 2
 }
 
 # $ aplay /usr/share/sounds/alsa/Noise.wav

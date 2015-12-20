@@ -1,0 +1,23 @@
+# setups for all hosts
+Host *
+# request response from server every 60 s
+ServerAliveInterval 60
+# try 3 times before quit if no response from server
+ServerAliveCountMax 3
+
+# setups for github
+Host gh
+HostName github.com
+User git
+
+# hpc.usd.edu
+Host hpc
+HostName 206.176.3.178
+User Jing.Liu
+ForwardX11 yes
+
+# nice DAQ
+Host nice
+HostName sc2-200.sc.usd.edu
+User rdlab
+ForwardX11 yes

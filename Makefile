@@ -12,14 +12,9 @@ endif
 EXCLUDE=README.md
 EXCLUDE+=Makefile
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=terminfo
+TARGETS+=terminfo ssh_config
 
 all:$(TARGETS)
-
-abookrc:
-	mkdir -p ~/.abook
-	ln -sf $(PWD)/$@ ~/.abook/$@
-	ln -sf ~/Dropbox/computer/abook/addressbook ~/.abook/addressbook
 
 asoundrc:
 	ln -sf $(PWD)/$@ ~/.$@
@@ -104,6 +99,9 @@ screenrc:
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
+
+ssh_config:
+	ln -sf $(PWD)/ssh/config ~/.ssh
 
 startxwinrc:
 	ln -sf $(PWD)/$@ ~/.$@
