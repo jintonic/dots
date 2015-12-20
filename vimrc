@@ -39,7 +39,7 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 " look {{{1
 " disable tool bars in gvim
 set go=
-set guifont=Terminess\ Powerline\ 14
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 12,9x15
 
 " 256 color is a must for solarized to work
 if has("gui_running")
@@ -62,6 +62,7 @@ set wildmode=list:longest,full
 " airline
 ""set laststatus=2
 let g:airline_powerline_fonts = 1
+
 let g:airline#extensions#tabline#enabled = 1 " show buffer
 let g:airline#extensions#tabline#buffer_min_count = 2 " not show only 1 buffer
 " map keys to open buffer quickly
