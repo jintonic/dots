@@ -1,0 +1,7 @@
+#!/bin/sh
+w3m -dump http://www.accuweather.com/en/us/vermillion-sd/57069/weather-forecast/335570 |\
+  sed -e '0,/    Currently/d'\
+  -e 's/    MinuteCast.*$//'\
+  -e 's/    more.*$//'\
+  -e 's/DEG/°F/'\
+  -e '/Video Weather Forecast/q'
