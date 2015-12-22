@@ -1,0 +1,2 @@
+#!/bin/sh
+gvim -v --servername TEX $1
