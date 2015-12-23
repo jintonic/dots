@@ -84,7 +84,7 @@ fi
 # some more ls aliases
 alias ll='ls -AlFh'
 alias la='ls -Ah'
-alias l='ls -CFh'
+alias l='ls -ClFh'
 
 alias df='df -h'
 alias du='du -h'
