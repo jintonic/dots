@@ -1,0 +1,5 @@
+#!/bin/sh
+if [ ! -f $HOME/bin/HepRApp.jar ]; then
+  wget -P $HOME/bin http://www.slac.stanford.edu/~perl/HepRApp/HepRApp.jar
+fi
+java -jar $HOME/bin/HepRApp.jar -opt ~/.hvrc -file $1
