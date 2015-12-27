@@ -162,7 +162,7 @@ filetype *.tex vex %f
 filetype *.txt vi %f
 
 filetype *.heprep hv %f &
-filetype *.prim dawn %f &
+filetype *.prim dawn %f 2> /dev/null &
 
 " root
 filetype *.root root -l %f
