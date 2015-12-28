@@ -126,6 +126,7 @@ w3m:
 	ln -sf $(PWD)/$@/bookmark.html ~/.$@/bookmark.html
 	ln -sf $(PWD)/$@/config ~/.$@/config
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
+	ln -sf $(PWD)/$@/keymap ~/.$@/keymap
 
 vifm:
 	mkdir -p ~/.$@
