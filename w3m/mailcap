@@ -2,4 +2,4 @@ application/*; cygstart %s; test=uname|grep -q CYGWIN
 image/*; cygstart %s; test=uname|grep -q CYGWIN
 
 application/*; mimeopen %s; test=uname|grep -q Linux
-image/*; mimeopen %s; test=uname|grep -q Linux
+image/*; display %s; test=uname|grep -q Linux
