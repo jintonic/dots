@@ -116,13 +116,13 @@ nextpage_topline 0
 label_topline 0
 show_srch_str 1
 show_lnum 0
-fold_line 0
+fold_line 1
 image_map_list 1
-imgdisplay w3mimgdisplay
+imgdisplay 
 image_scale 100
-ext_image_viewer 1
+ext_image_viewer 0
 max_load_image 4
-auto_image 1
+auto_image 0
 pseudo_inlines 1
 display_image 0
 view_unseenobject 1
