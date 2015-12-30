@@ -104,12 +104,14 @@ set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
+mark 2 ~/Dropbox/funding/ 2016/
 mark b ~/bin/
-mark h ~/
-mark r ~/rdlab/
-mark d ~/Dropbox/
+mark d ~/Dropbox/ computer/
+mark e ~/Dropbox/diary/ edit
+mark g ~/physino cs/
+mark h ~/ dots/
+mark r ~/rdlab/ CS/
 mark t ~/rdlab/teaching/
-mark f ~/Dropbox/funding/
 
 " :com[mand] command_name action
 " The following macros can be used in a command
