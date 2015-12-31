@@ -97,6 +97,8 @@ export EDITOR='vim -X'
 alias r='root -l'
 alias rbq='root -b -q'
 
+alias news='newsbeuter -q'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
