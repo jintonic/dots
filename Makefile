@@ -136,16 +136,8 @@ vifm:
 
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
-	mkdir -p ~/.$@/after/syntax
-	ln -sf $(PWD)/$@/syntax/* ~/.$@/after/syntax
-	mkdir -p ~/.$@/after/ftplugin
-	ln -sf $(PWD)/$@/ftplugin/* ~/.$@/after/ftplugin
-	mkdir -p ~/.$@/after/snippets
-	ln -sf $(PWD)/$@/snippets/* ~/.$@/after/snippets
-	mkdir -p ~/.$@/after/plugin
-	ln -sf $(PWD)/$@/plugin/* ~/.$@/after/plugin
-	mkdir -p ~/.$@/after/colors
-	ln -sf $(PWD)/$@/colors/* ~/.$@/after/colors
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/after ~/.$@/
 	mkdir -p ~/.$@/dic
 	ln -sf $(PWD)/$@/dic/* ~/.$@/dic
 	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort | uniq > /tmp/jspell
