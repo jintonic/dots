@@ -19,6 +19,8 @@ syn keyword Type SQUARE SQUARE_XZ SQUARE_XY SQUARE_YZ
 
 syn match PreProc "^#include"
 
+syn keyword Constant ON OFF TRUE FALSE
+
 syn keyword Constant G4_H
 syn keyword Constant G4_He
 syn keyword Constant G4_Li
