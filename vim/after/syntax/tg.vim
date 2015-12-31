@@ -3,5 +3,6 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn keyword tgKeyword mixt volu place place_param color colour
-syn keyword tgType BOX TUBE
+syn keyword Statement mixt volu place place_param color colour rotm
+syn keyword Type BOX TUBE LINEAR_X
+syn keyword Constant G4_AIR G4_Au
