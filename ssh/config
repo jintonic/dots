@@ -4,7 +4,6 @@ Host *
 ServerAliveInterval 60
 # try 3 times before quit if no response from server
 ServerAliveCountMax 3
-PubkeyAcceptedKeyTypes ssh-dss
 
 # setups for github
 Host gh
