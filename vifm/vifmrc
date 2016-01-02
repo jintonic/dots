@@ -176,7 +176,7 @@ filetype *.sc sc %f
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filetype *.ps,*.ps.gz,*.eps gv %f 2>/dev/null &, display %f &
+filetype *.ps,*.ps.gz,*.eps qpdfview %f &, gv %f 2>/dev/null &, display %f &
 
 filetype *.dvi xdvi %f 2>/dev/null &
 
