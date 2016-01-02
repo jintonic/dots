@@ -151,7 +151,7 @@ command vgrep vim "+grep %a"
 " :filetype extensions FUSE_MOUNT2|some_mount_command using %PARAM and %DESTINATION_DIR variables
 " %PARAM and %DESTINATION_DIR are filled in by vifm at runtime.
 " A sample line might look like this:
-" :filetype *.ssh FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
+filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 " %PARAM value is filled from the first line of file (whole line).
 " Example first line for SshMount filetype: root@127.0.0.1:/
 "
@@ -206,11 +206,11 @@ filetype *.html,*.htm w3m %f,lynx %f,cygstart %f,uzbl-browser %f %i &
 filetype *.o nm %f | less
 
 " Image
-filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f, display %f &,
+filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm, cygstart %f,
         \ {View in sxiv}
         \ sxiv,
         \ {View in gpicview}
-        \ gpicview %c,
+        \ gpicview %f &, display %f &,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm convert -identify %f -verbose /dev/null
 
 " MD5
