@@ -17,7 +17,7 @@ TARGETS+=bin ssh_config terminfo
 all:$(TARGETS)
 
 asoundrc:
-	ln -sf $(PWD)/$@ ~/.$@
+	n=`lspci|grep audio|wc -l`; if [ $$n != "1" ]; then ln -sf $(PWD)/$@ ~/.$@; fi
 
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
