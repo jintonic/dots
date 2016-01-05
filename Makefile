@@ -151,7 +151,6 @@ xsession:
 
 Xdefaults:
 	ln -sf $(PWD)/$@ ~/.$@
-	touch ~/.startxwinrc
 
 info:
 	@echo $(TARGETS)
