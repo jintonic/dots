@@ -163,7 +163,7 @@ filetype *.desktop gov %f &
 filetype *.tex vex %f
 filetype *.txt vim %f
 
-filetype *.fig xfig %f &
+filetype *.fig xfig %f 2>/dev/null &
 
 filetype *.heprep hv %f &
 filetype *.prim dawn %f 2> /dev/null &
