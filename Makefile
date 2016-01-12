@@ -12,7 +12,7 @@ endif
 EXCLUDE=README.md
 EXCLUDE+=Makefile
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=bin ssh_config terminfo
+TARGETS+=bin ssh_config terminfo xfig
 
 all:$(TARGETS)
 
@@ -145,6 +145,12 @@ vim:
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add "+mkspell! %" "+q"
+
+xfig:
+	if [ ! -d ~/.xfig ]; then \
+	  wget https://gsalam.web.cern.ch/gsalam/repository/software/Feynman_Diagrams.tgz; \
+	  tar xfvz Feynman_Diagrams.tgz; rm -f Feynman_Diagrams.tgz; \
+	  mv Feynman_Diagrams ~/.xfig; fi
 
 xsession:
 	ln -sf $(PWD)/$@ ~/.$@
