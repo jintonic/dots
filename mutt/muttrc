@@ -101,6 +101,11 @@ mime_lookup application/octet-stream
 #______________________________________________________________________________
 # contacts
 
+set alias_file= ~/.abook/aliases
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
+
 # one can directly communicate with google contacts from the command line, eg.
 # https://pypi.python.org/pypi/goobook/ (python) and
 # http://piao-tech.blogspot.com/2010/01/google-contacts-in-mutt.html (Ruby)
