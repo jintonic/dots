@@ -75,8 +75,8 @@ set forward_format="FW:%s"
 folder-hook . 'set record="^"' # keep sent mail in the original thread
 set text_flowed # http://wcm1.web.rice.edu/mutt-tips.html
 
-set signature=~/.mutt/sign
-set sig_dashes=no # remove "-- \n" before the signature
+#set signature=~/.mutt/sign
+#set sig_dashes=no # remove "-- \n" before the signature
 
 # _____________________________________________________________________________
 # appearance
