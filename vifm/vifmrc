@@ -108,8 +108,9 @@ mark 2 ~/Dropbox/funding/ 2016/
 mark b ~/bin/
 mark d ~/Dropbox/ computer/
 mark e ~/Dropbox/diary/ edit
-mark g ~/physino cs/
+mark g ~/physino/ cs/
 mark h ~/ dots/
+mark n ~/ npp/ npp.tex
 mark r ~/rdlab/ CS/
 mark t ~/rdlab/teaching/
 
