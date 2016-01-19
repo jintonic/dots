@@ -110,7 +110,7 @@ mark d ~/Dropbox/ computer/
 mark e ~/Dropbox/diary/ edit
 mark g ~/physino/ cs/
 mark h ~/ dots/
-mark n ~/ npp/ npp.tex
+mark n ~/npp/ npp.tex
 mark r ~/rdlab/ CS/
 mark t ~/rdlab/teaching/
 
