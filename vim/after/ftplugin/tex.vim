@@ -59,3 +59,11 @@ setlocal fdm=syntax fen fdl=0
 
 " supertab
 let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^', '\.']
+
+" deal with long lines
+set wrap
+set linebreak " don't break words when wrapping
+vnoremap j gj
+vnoremap k gk
+nnoremap j gj
+nnoremap k gk
