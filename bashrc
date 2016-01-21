@@ -91,6 +91,7 @@ alias du='du -h'
 
 alias sd='screen -D -RR'
 alias sw='screen -wipe'
+alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
 alias vi='vim -X'
 export EDITOR='vim -X'
 
