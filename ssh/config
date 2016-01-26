@@ -21,3 +21,8 @@ Host nice
 HostName sc2-200.sc.usd.edu
 User rdlab
 ForwardX11 yes
+
+Host ak119
+HostName sc2-98.sc.usd.edu
+User rdlab
+ForwardX11 yes
