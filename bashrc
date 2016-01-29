@@ -121,4 +121,6 @@ export LC_ALL="en_US.UTF-8"
 
 export TEXMFHOME=~/.texmf
 
+export LD_LIBRARY_PATH=$HOME/lib
+
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
