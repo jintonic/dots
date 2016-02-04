@@ -78,6 +78,7 @@ xfig.startgridmode:	1
 xfig.inches:		false
 xfig.zoom:		1.5
 xfig.grid_color:	blue
+xfig.library_dir: 	~/.xfig
 
 !xdvi*font: -*-helvetica-medium-r-*-*-*-*-*-*-*-*-*-*
 

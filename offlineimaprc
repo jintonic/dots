@@ -21,6 +21,7 @@ type = Maildir
 localfolders = ~/mail
 # deleting ~/mail alone results in deleting all mails in server side as well!!!
 # directory ~/.offlineimap has to be deleted together if a full reset is needed
+nametrans = lambda f: re.sub('Deleted', 'Deleted Items', re.sub('Sent', 'Sent Items', f))
 
 [Repository Work-Remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
@@ -38,6 +39,8 @@ sslcacertfile = /etc/ssl/certs/usd.crt
 
 # only sync the following remote folders
 # http://docs.offlineimap.org/en/latest/nametrans.html
-folderfilter = lambda folder: folder in ["INBOX", "Drafts", "Archive", "Deleted Items","Travel","Plasma","Finance","Fund","Outreach","Career","Family","Teaching","Lab","Gina","Service","Publication"]
+#folderfilter = lambda folder: folder in ["INBOX", "Drafts", "Archive", "Deleted Items","Travel","Plasma","Finance","Fund","Outreach","Career","Family","Teaching","Lab","Gina","Service","Publication","761"]
+# skip syncing the following folders
+folderfilter = lambda f: not re.search('(^Junk|^RSS|^Sync|^Ta|^Co|^Cal|^Jo|^No|^Ou)', f)
 # shorten remote folders' names
-nametrans = lambda folder: re.sub('.*Deleted Items$', 'Trash', folder)
+nametrans = lambda folder: re.sub(' Items.*$', '', folder)

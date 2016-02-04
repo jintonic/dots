@@ -91,6 +91,7 @@ alias du='du -h'
 
 alias sd='screen -D -RR'
 alias sw='screen -wipe'
+alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
 alias vi='vim -X'
 export EDITOR='vim -X'
 
@@ -119,5 +120,7 @@ export LYNX_LSS=~/.lynx/lynx.lss
 export LC_ALL="en_US.UTF-8"
 
 export TEXMFHOME=~/.texmf
+
+export LD_LIBRARY_PATH=$HOME/lib
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi

@@ -108,8 +108,9 @@ mark 2 ~/Dropbox/funding/ 2016/
 mark b ~/bin/
 mark d ~/Dropbox/ computer/
 mark e ~/Dropbox/diary/ edit
-mark g ~/physino cs/
+mark g ~/physino/ cs/
 mark h ~/ dots/
+mark n ~/npp/ npp.tex
 mark r ~/rdlab/ CS/
 mark t ~/rdlab/teaching/
 
@@ -161,7 +162,9 @@ filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
 
 filetype *.tex vex %f
-filetype *.txt vi %f
+filetype *.txt vim %f
+
+filetype *.fig xfig %f 2>/dev/null &
 
 filetype *.heprep hv %f &
 filetype *.prim dawn %f 2> /dev/null &
@@ -173,10 +176,11 @@ filetype *.root root -l %f
 filetype *.sc sc %f
 
 " Pdf
+filetype *.pdf qpdfview %f &, xpdf %f 2>/dev/null &
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filetype *.ps,*.ps.gz,*.eps qpdfview %f &, gv %f 2>/dev/null &, display %f &
+filetype *.ps,*.ps.gz,*.eps gv %f &, display %f &
 
 filetype *.dvi xdvi %f 2>/dev/null &
 
