@@ -96,6 +96,7 @@ electropolished
 Elog
 EoS
 eps
+EPSCoR
 esac
 etc
 eV
@@ -140,6 +141,7 @@ GRBs
 grep
 gv
 hadronic
+Hafnia
 Hamamatsu
 helicity
 HEPA
@@ -164,6 +166,7 @@ Ichimura
 icrr
 IHEP
 Ikenoyama
+Inconel
 inflaton
 INFN
 init
@@ -368,6 +371,7 @@ Tasaka
 TClonesArray
 tetraphenyl
 TeV
+thermalized
 TMC
 TObject
 Todo
@@ -405,6 +409,7 @@ weblog
 wiki
 wikipedia
 WIMPs
+WIPP
 WLS
 WPI
 www
@@ -428,10 +433,4 @@ Yamashita's
 youtube
 Youtube
 Yukawa
-EPSCoR
 zotero
-WIPP
-thermalized
-Hafnia
-Inconel
-arXiv
