@@ -15,11 +15,17 @@ Host hpc
 HostName 206.176.3.178
 User Jing.Liu
 ForwardX11 yes
+ForwardX11Trusted yes
 
 # nice DAQ
 Host nice
 HostName sc2-200.sc.usd.edu
 User rdlab
+ForwardX11 yes
+
+Host ak308
+HostName 206.176.6.176
+User jingliu
 ForwardX11 yes
 
 Host ak119
