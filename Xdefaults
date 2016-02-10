@@ -47,13 +47,13 @@ Rxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
 ! ./install.sh
 ! fc-list | grep Powerline
 ! apt-get install fonts-wqy-zenhei
-URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12,xft:WenQuanYi Zen Hei Sharp,9x15
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12:Bold,xft:WenQuanYi Zen Hei Sharp,9x15
 URxvt.imlocale: en_US.utf8
 Rxvt.inputMethod:xim
 
 ! make clickable url in rxvt, man urxvt-matcher
 URxvt.perl-ext:           default,matcher
-URxvt.url-launcher:       chromium
+URxvt.url-launcher:       iceweasel
 URxvt.keysym.C-Delete:    perl:matcher:last
 URxvt.keysym.M-Delete:    perl:matcher:list
 URxvt.matcher.button:     1
