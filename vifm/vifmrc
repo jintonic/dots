@@ -176,7 +176,7 @@ filetype *.root root -l %f
 filetype *.sc sc %f
 
 " Pdf
-filetype *.pdf qpdfview %f &, xpdf %f 2>/dev/null &
+filetype *.pdf qpdfview --unique %f &, xpdf %f 2>/dev/null &
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
