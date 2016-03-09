@@ -15,6 +15,7 @@ call dein#add('Shougo/unite-outline')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neopairs.vim')
 call dein#add('Shougo/vimproc.vim', {
       \ 'build': {
       \     'cygwin': 'make -f make_cygwin.mak',
@@ -203,8 +204,8 @@ nmap <Leader>0 :Gstatus<CR>
 
 " unite {{{1
 silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file/async<cr>
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline outline<cr>
 nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
 " neocomplete {{{1
