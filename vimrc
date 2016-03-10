@@ -3,7 +3,36 @@
 " global setups {{{1
 set vi='20,<50,s10,h,!,n~/.vim/viminfo "viminfo: save operation history
 set dir=/tmp// " where to save the swp files
-execute pathogen#infect()
+
+" plugins {{{1
+" https://herringtondarkholme.github.io/2016/02/26/dein/
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.vim/dein')) " plugins' root path
+
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/unite-outline')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neopairs.vim')
+call dein#add('Shougo/vimproc.vim', {
+      \ 'build': {
+      \     'cygwin': 'make -f make_cygwin.mak',
+      \     'mac': 'make -f make_mac.mak',
+      \     'linux': 'make',
+      \     'unix': 'gmake',
+      \    },
+      \ })
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-liquid')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-repeat')
+call dein#add('plasticboy/vim-markdown')
+call dein#add('bling/vim-airline')
+call dein#add('altercation/vim-colors-solarized')
+
+call dein#end()
 
 " buffer {{{1
 " By default, if you modified the current buffer, you cannot switch to another
@@ -49,7 +78,7 @@ else
   set term=xterm-256color
 endif
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 "set number
 
 "set cul "cursorline: highlight the line where the cursor is, makes Vim slow
@@ -164,25 +193,36 @@ cmap <Esc>b <S-Left>
 cmap <Esc>f <S-Right>
 cmap <C-U> <C-E><C-U>
 
-" super tab {{{1
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^']
-
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that
 " pattern, vim treats it as a mail
 autocmd FileType mail set spell
 autocmd FileType mail set fo+=aw
 
-" task {{{1
-let g:task_report_name="list"
-let g:task_default_prompt= ['description', 'project']
-
 " fugitive {{{1
 nmap <Leader>0 :Gstatus<CR>
 
-" fuzzy-finder {{{1
-map <Leader>b :FufBuffer<CR>
-map <Leader>f :FufFile<CR>
-map <Leader>t :FufBufferTag<CR>
+" unite {{{1
+silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file/async<cr>
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline outline<cr>
+nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
+" neocomplete {{{1
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-g> neocomplete#undo_completion()
+
+" neosnippet {{{1
+imap <expr><TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ neosnippet#expandable_or_jumpable() ?
+      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" Enable snipMate compatibility feature
+let g:neosnippet#enable_snipmate_compatibility = 1
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/after/snippets'
