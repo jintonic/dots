@@ -203,8 +203,10 @@ autocmd FileType mail set fo+=aw
 nmap <Leader>0 :Gstatus<CR>
 
 " unite {{{1
-silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file/async<cr>
+" too fuzzy to narrow down candidate:
+"silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" file/async would not allow going up directory
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline outline<cr>
 nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
