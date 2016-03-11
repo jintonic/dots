@@ -6,8 +6,8 @@
 dropbox start
 
 # apt-get install scim scim-pinyin
-#export XMODIFIERS="@im=SCIM"
-#scim -d
+export XMODIFIERS="@im=SCIM"
+scim -d
 
 while true; do
   MAIL=`ls -1 $HOME/mail/INBOX/new | wc -l`
