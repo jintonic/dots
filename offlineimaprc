@@ -26,12 +26,13 @@ nametrans = lambda f: re.sub('Deleted', 'Deleted Items', re.sub('Sent', 'Sent It
 [Repository Work-Remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 type = IMAP
-remotehost = exchmail.usd.edu
+ssl = yes
+remotehost = exchange.usd.edu
 remoteuser = jing.liu
 # get password from ~/.netrc
 # keep connection with server
-holdconnectionopen = true
-keepalive = 60
+#holdconnectionopen = true
+#keepalive = 60
 # http://docs.offlineimap.org/en/latest/FAQ.html#how-do-i-generate-an-sslcacertfile-file
 # $ openssl s_client -connect exchmail.usd.edu:imaps -showcerts
 # save all output in between BEGINs and ENDs to usd.crt
