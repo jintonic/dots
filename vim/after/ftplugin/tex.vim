@@ -37,7 +37,7 @@ map \ls :exe '!xdvi -sourceposition '.line(".").expand("%")<CR><CR>
 " 	latexmk -dvi -pvc file
 
 " for fuzzy finder to work with ctags for latex
-let g:fuf_buffertag__tex='--language-force=latex'
+"let g:fuf_buffertag__tex='--language-force=latex'
 " one has to put the following to ~/.ctags at the same time
 " --langdef=latex
 " --langmap=latex:.tex
@@ -54,11 +54,12 @@ setlocal spell
 let g:tex_comment_nospell=1
 
 " enable folder
-let g:tex_fold_enabled=1
-setlocal fdm=syntax fen fdl=0
+"let g:tex_fold_enabled=1
+"setlocal fdm=syntax fen fdl=0
+" disabled due to conflict with neocomplete
 
 " supertab
-let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^', '\.']
+"let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^', '\.']
 
 " deal with long lines
 set wrap
