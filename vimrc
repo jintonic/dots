@@ -197,7 +197,8 @@ cmap <C-U> <C-E><C-U>
 " Vim knows mutts naming scheme for temporary files. If a file fits that
 " pattern, vim treats it as a mail
 autocmd FileType mail set spell
-autocmd FileType mail set fo+=aw
+" I have to remove a option for it conflict with neocomplete
+autocmd FileType mail set fo+=w
 
 " fugitive {{{1
 nmap <Leader>0 :Gstatus<CR>
