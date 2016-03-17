@@ -1,23 +1,28 @@
 snippet t1
+options head
 	${1} {{{1~
 	${2}
 	}}}
 
 snippet t2
+options head
 	${1} {{{2~
 	${2}
 	}}}
 
 snippet t3
-	${1} {{{2~
+options head
+	${1} {{{3~
 	${2}
 	}}}
 
 snippet >
+options head
 	>
 	  ${1}
 	<
-${2}
+        ${2}
 
 snippet todo
+options head
 		*Todo	${1}
