@@ -14,6 +14,13 @@ setlocal formatoptions+=w
 setlocal list
 setlocal lcs=trail:.
 
+" disable automatical indent of \item provided by indent/tex.vim
+let g:tex_indent_items=0
+" disable automatical indent of the following items
+let g:tex_noindent_env='document\|verbatim\|frame'
+" disable automatical conversion of 8 spaces to a tab
+setlocal noexpandtab
+
 " vim -> xdvi
 map \ls :exe '!xdvi -sourceposition '.line(".").expand("%")<CR><CR>
 " xdvi -> vim
