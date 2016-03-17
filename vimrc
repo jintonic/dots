@@ -172,21 +172,11 @@ map \v :e ~/.vimrc<CR>
 "map \g :execute "vimgrep /" . expand("<cword>") . "/j *.cc *.hh" <Bar> cw<CR> 
 map \g :execute "grep! --exclude=*Dict*" expand("<cword>") "*.cc *.hh" <Bar>cw<CR>
 map \m :make<CR>:cw<CR>
-map <space> <C-W><C-W>
+map <space> <C-E>
 
 if has("win32unix")
   map \o :!cygstart.exe <cfile><CR><CR>
 endif
-
-"imap \{ {}<Esc>i
-"imap \( ()<Esc>i
-"imap \[ []<Esc>i
-"imap \. ()->
-
-"imap <Esc><BS> <C-W>
-"imap <Esc>b <C-O>b
-"imap <Esc>f <C-O>w
-"imap <Esc>d <C-O>dw
 
 cmap <Esc><BS> <C-W>
 cmap <Esc>b <S-Left>
@@ -215,14 +205,15 @@ nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase
 let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " neosnippet {{{1
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" use tab to select candidate or jump in between space holders
+imap <expr><TAB> pumvisible() ? "\<C-n>" :
+      \ neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
+" use enter to expand snippet
+imap <expr><space> neosnippet#expandable() ?
+      \ "\<Plug>(neosnippet_expand)" :  "\<space>"
 " Enable snipMate compatibility feature
 let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
