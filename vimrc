@@ -221,9 +221,7 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " neosnippet {{{1
-imap <expr><TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ neosnippet#expandable_or_jumpable() ?
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 " Enable snipMate compatibility feature
 let g:neosnippet#enable_snipmate_compatibility = 1
