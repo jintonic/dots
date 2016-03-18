@@ -6,6 +6,8 @@ Agilent
 AGN
 Akihiro
 Anpanman
+APD
+APDs
 API
 Aprile
 APS
@@ -171,6 +173,7 @@ inflaton
 INFN
 init
 interdigit
+iOS
 ipad
 iPad
 IPMU
@@ -227,7 +230,9 @@ Majorana
 Masuda
 mathcal
 Mayle
+mBar
 mBq
+MCA
 metalicity
 metallicities
 metallicity
@@ -277,6 +282,7 @@ Ohnishi
 Oka
 org
 Orionis
+ORTEC
 Otsuka
 outgassing
 Pajero
@@ -315,6 +321,7 @@ QE
 Raffelt
 readline
 README
+RGA
 RIGOL
 ROOT's
 ROOTSYS
@@ -434,15 +441,3 @@ youtube
 Youtube
 Yukawa
 zotero
-WIPP
-thermalized
-Hafnia
-Inconel
-arXiv
-ORTEC
-APDs
-APD
-RGA
-mBar
-MCA
-iOS
