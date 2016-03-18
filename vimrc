@@ -10,12 +10,11 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein')) " plugins' root path
 
 call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/unite.vim',{'on_cmd': ['Unite']})
 call dein#add('Shougo/unite-outline')
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('Shougo/neopairs.vim')
+call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
+call dein#add('Shougo/neosnippet.vim', {'on_i': 1})
+call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
 call dein#add('Shougo/vimproc.vim', {
       \ 'build': {
       \     'cygwin': 'make -f make_cygwin.mak',
@@ -25,10 +24,10 @@ call dein#add('Shougo/vimproc.vim', {
       \    },
       \ })
 call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-liquid')
+call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
-call dein#add('plasticboy/vim-markdown')
+call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
 call dein#add('bling/vim-airline')
 call dein#add('altercation/vim-colors-solarized')
 
