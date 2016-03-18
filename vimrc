@@ -3,7 +3,35 @@
 " global setups {{{1
 set vi='20,<50,s10,h,!,n~/.vim/viminfo "viminfo: save operation history
 set dir=/tmp// " where to save the swp files
-execute pathogen#infect()
+
+" plugins {{{1
+" https://herringtondarkholme.github.io/2016/02/26/dein/
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.vim/dein')) " plugins' root path
+
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/unite.vim',{'on_cmd': ['Unite']})
+call dein#add('Shougo/unite-outline')
+call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
+call dein#add('Shougo/neosnippet.vim', {'on_i': 1})
+call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
+call dein#add('Shougo/vimproc.vim', {
+      \ 'build': {
+      \     'cygwin': 'make -f make_cygwin.mak',
+      \     'mac': 'make -f make_mac.mak',
+      \     'linux': 'make',
+      \     'unix': 'gmake',
+      \    },
+      \ })
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-repeat')
+call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
+call dein#add('bling/vim-airline')
+call dein#add('altercation/vim-colors-solarized')
+
+call dein#end()
 
 " buffer {{{1
 " By default, if you modified the current buffer, you cannot switch to another
@@ -49,7 +77,7 @@ else
   set term=xterm-256color
 endif
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 "set number
 
 "set cul "cursorline: highlight the line where the cursor is, makes Vim slow
@@ -143,46 +171,49 @@ map \v :e ~/.vimrc<CR>
 "map \g :execute "vimgrep /" . expand("<cword>") . "/j *.cc *.hh" <Bar> cw<CR> 
 map \g :execute "grep! --exclude=*Dict*" expand("<cword>") "*.cc *.hh" <Bar>cw<CR>
 map \m :make<CR>:cw<CR>
-map <space> <C-W><C-W>
+map <space> <C-E>
 
 if has("win32unix")
   map \o :!cygstart.exe <cfile><CR><CR>
 endif
-
-"imap \{ {}<Esc>i
-"imap \( ()<Esc>i
-"imap \[ []<Esc>i
-"imap \. ()->
-
-"imap <Esc><BS> <C-W>
-"imap <Esc>b <C-O>b
-"imap <Esc>f <C-O>w
-"imap <Esc>d <C-O>dw
 
 cmap <Esc><BS> <C-W>
 cmap <Esc>b <S-Left>
 cmap <Esc>f <S-Right>
 cmap <C-U> <C-E><C-U>
 
-" super tab {{{1
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabNoCompleteAfter = [',', '\s', '\<', '\_^']
-
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that
 " pattern, vim treats it as a mail
 autocmd FileType mail set spell
-autocmd FileType mail set fo+=aw
-
-" task {{{1
-let g:task_report_name="list"
-let g:task_default_prompt= ['description', 'project']
+" I have to remove a option for it conflict with neocomplete
+autocmd FileType mail set fo+=w
 
 " fugitive {{{1
 nmap <Leader>0 :Gstatus<CR>
 
-" fuzzy-finder {{{1
-map <Leader>b :FufBuffer<CR>
-map <Leader>f :FufFile<CR>
-map <Leader>t :FufBufferTag<CR>
+" unite {{{1
+" too fuzzy to narrow down candidate:
+"silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" file/async would not allow going up directory
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline outline<cr>
+nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
+" neocomplete {{{1
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase
+let g:neocomplete#enable_smart_case = 1
+inoremap <expr><C-g> neocomplete#undo_completion()
+
+" neosnippet {{{1
+" use tab to select candidate or jump in between space holders
+imap <expr><TAB> pumvisible() ? "\<C-n>" :
+      \ neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
+" use enter to expand snippet
+imap <expr><space> neosnippet#expandable() ?
+      \ "\<Plug>(neosnippet_expand)" :  "\<space>"
+" Enable snipMate compatibility feature
+let g:neosnippet#enable_snipmate_compatibility = 1
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/after/snippets'

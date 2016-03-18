@@ -1,0 +1,86 @@
+snippet href
+	\href{${1}}{${2}}
+
+#PREAMBLE
+#newcommand
+snippet nc
+	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}}${4}
+#newunicodechar
+snippet nuc
+	\newunicodechar{${1}}{${2:\ensuremath}${3:tex-substitute}}}
+#DeclareMathOperator
+snippet dmo
+	\DeclareMathOperator{${1}}{${2}}
+
+#DOCUMENT
+snippet thm
+	\begin[${1:author}]{${2:thm}}
+	${3}
+	\end{$1}
+# Gather(ed)
+snippet gat
+	\begin{gather${1:ed}}
+		${2}
+	\end{gather$1}
+# Equation
+snippet eq
+options head
+	\begin{equation}
+		${1}
+	\end{equation}
+# Equation
+snippet eq*
+options head
+	\begin{equation*}
+		${1}
+	\end{equation*}
+# Unnumbered Equation
+snippet \
+options head
+	\[
+		${1}
+	\]
+# Itemize
+snippet itm
+	\begin{itemize}
+	  \item ${1}
+	\end{itemize}
+# Matrix
+snippet mat
+	\begin{${1:p/b/v/V/B/small}matrix}
+	  ${2}
+	\end{$1matrix}
+# Split
+snippet spl
+	\begin{split}
+	  ${1}
+	\end{split}
+snippet Figure
+	${1:Figure}~\ref{f:${2}}${3}
+snippet Table
+	${1:Table}~\ref{t:${2}}${3}
+snippet Listing
+	${1:Listing}~\ref{${2:list}}${3}
+snippet Section
+	${1:Section}~\ref{s:${2}}${3}
+snippet Page
+	${1:page}~\pageref{${2}}${3}
+snippet Index
+	\index{${1:index}}${2}
+#Citations
+snippet fcite
+	\footcite[${1}]{${2}}${3}
+#Formating text: italic, bold, underline, small capital, emphase ..
+snippet underline
+	\underline{${1:text}}
+snippet \emph
+alias emph \emph{
+	\emph{${1:text}}${0}
+#misc
+snippet footnote
+	\footnote{${1:text}}
+#math
+snippet stackrel
+	\stackrel{${1:above}}{${2:below}} ${3}
+snippet sum
+	\sum^{${1:n}}_{${2:i=1}}{${3}}
