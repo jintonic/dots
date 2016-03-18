@@ -55,6 +55,7 @@ minttyrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
 msmtprc:
+	chmod 600 $(PWD)/$@
 	ln -sf $(PWD)/$@ ~/.$@
 
 mutt:
