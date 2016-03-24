@@ -210,7 +210,7 @@ inoremap <expr><C-g> neocomplete#undo_completion()
 " use tab to select candidate or jump in between space holders
 imap <expr><TAB> pumvisible() ? "\<C-n>" :
       \ neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
-" use enter to expand snippet
+" use space to expand snippet
 imap <expr><space> neosnippet#expandable() ?
       \ "\<Plug>(neosnippet_expand)" :  "\<space>"
 " Enable snipMate compatibility feature
