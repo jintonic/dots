@@ -67,6 +67,7 @@ const
 CP
 CPT
 CRESST
+cryostats
 CsI
 CTA
 Ctrl
@@ -161,6 +162,7 @@ Hosokawa's
 http
 https
 Huangshi
+Hubei
 HV
 hwclock
 IceCube
@@ -211,6 +213,7 @@ Kusaba
 LabVIEW
 LAr
 LBNE
+LBNL
 Leff
 Leptogenesis
 LHC
@@ -250,6 +253,7 @@ Moriyama's
 MOSFETs
 Mozumi
 MPa
+MPI
 Murata
 Murayama
 Murayama's
@@ -302,6 +306,7 @@ photoelectron
 php
 physino
 pions
+PI's
 PMTs
 png
 postdoc
@@ -331,6 +336,7 @@ Salam
 san
 san's
 Sasso
+SBIR
 sciencenet
 scooby
 SCPI
@@ -441,9 +447,4 @@ youtube
 Youtube
 Yukawa
 zotero
-MPI
-LBNL
-SBIR
-Hubei
-PI's
-cryostats
+TEXONO
