@@ -15,14 +15,14 @@ call dein#add('Shougo/unite-outline')
 call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
 call dein#add('Shougo/neosnippet.vim', {'on_i': 1})
 call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
-call dein#add('Shougo/vimproc.vim', {
-      \ 'build': {
-      \     'cygwin': 'make -f make_cygwin.mak',
-      \     'mac': 'make -f make_mac.mak',
-      \     'linux': 'make',
-      \     'unix': 'gmake',
-      \    },
-      \ })
+"call dein#add('Shougo/vimproc.vim', {
+"      \ 'build': {
+"      \     'cygwin': 'make -f make_cygwin.mak',
+"      \     'mac': 'make -f make_mac.mak',
+"      \     'linux': 'make',
+"      \     'unix': 'gmake',
+"      \    },
+"      \ })
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
