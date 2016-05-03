@@ -207,12 +207,10 @@ let g:neocomplete#enable_smart_case = 1
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " neosnippet {{{1
-" use tab to select candidate or jump in between space holders
-imap <expr><TAB> pumvisible() ? "\<C-n>" :
-      \ neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
-" use space to expand snippet
-imap <expr><space> neosnippet#expandable() ?
-      \ "\<Plug>(neosnippet_expand)" :  "\<space>"
+" use TAB to expand snippet or jump in between space holders
+imap <expr><TAB> neosnippet#expandable() ?
+      \ "\<Plug>(neosnippet_expand)" : neosnippet#jumpable() ?
+      \ "\<Plug>(neosnippet_jump)" : "\<TAB>"
 " Enable snipMate compatibility feature
 let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
