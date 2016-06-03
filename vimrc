@@ -15,14 +15,14 @@ call dein#add('Shougo/unite-outline')
 call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
 call dein#add('Shougo/neosnippet.vim', {'on_i': 1})
 call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
-call dein#add('Shougo/vimproc.vim', {
-      \ 'build': {
-      \     'cygwin': 'make -f make_cygwin.mak',
-      \     'mac': 'make -f make_mac.mak',
-      \     'linux': 'make',
-      \     'unix': 'gmake',
-      \    },
-      \ })
+"call dein#add('Shougo/vimproc.vim', {
+"      \ 'build': {
+"      \     'cygwin': 'make -f make_cygwin.mak',
+"      \     'mac': 'make -f make_mac.mak',
+"      \     'linux': 'make',
+"      \     'unix': 'gmake',
+"      \    },
+"      \ })
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
@@ -207,12 +207,10 @@ let g:neocomplete#enable_smart_case = 1
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " neosnippet {{{1
-" use tab to select candidate or jump in between space holders
-imap <expr><TAB> pumvisible() ? "\<C-n>" :
-      \ neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<TAB>"
-" use space to expand snippet
-imap <expr><space> neosnippet#expandable() ?
-      \ "\<Plug>(neosnippet_expand)" :  "\<space>"
+" use TAB to expand snippet or jump in between space holders
+imap <expr><TAB> neosnippet#expandable() ?
+      \ "\<Plug>(neosnippet_expand)" : neosnippet#jumpable() ?
+      \ "\<Plug>(neosnippet_jump)" : "\<TAB>"
 " Enable snipMate compatibility feature
 let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets

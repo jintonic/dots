@@ -54,10 +54,6 @@ mime.types:
 minttyrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
-msmtprc:
-	chmod 600 $(PWD)/$@
-	ln -sf $(PWD)/$@ ~/.$@
-
 mutt:
 	mkdir -p ~/.$@
 	mkdir -p ~/.$@/cache
@@ -65,9 +61,6 @@ mutt:
 	ln -sf $(PWD)/$@/sign ~/.$@/sign
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
-
-offlineimaprc:
-	ln -sf $(PWD)/$@ ~/.$@
 
 profile:
 	ln -sf $(PWD)/$@ ~/.$@
