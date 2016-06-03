@@ -23,6 +23,7 @@ call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
 "      \     'unix': 'gmake',
 "      \    },
 "      \ })
+call dein#add('Konfekt/FastFold')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
