@@ -109,6 +109,7 @@ let g:airline#extensions#whitespace#enabled = 0 " turn off trailing space check
 
 " spell {{{1
 " set spell
+set spellfile=~/.vim/spell/en.utf-8.add
 " ]s next error
 " [s previous error
 " z= suggested corrections
