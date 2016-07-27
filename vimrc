@@ -206,6 +206,8 @@ nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase
 let g:neocomplete#enable_smart_case = 1
+" https://github.com/Shougo/neocomplete.vim/issues/332
+let g:neocomplete#enable_fuzzy_completion = 0
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " neosnippet {{{1
