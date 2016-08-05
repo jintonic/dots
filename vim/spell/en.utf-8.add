@@ -80,6 +80,7 @@ daq
 DAQ
 dbus
 Debian
+dewar
 directory
 DM
 DNP
@@ -442,7 +443,6 @@ XMan
 XMan's
 xmass
 XMASS
-XOutputROOT
 XVertex
 yamashita
 Yamashita
@@ -454,9 +454,10 @@ zotero
 dewar
 AGe
 feedthrough
-GEFICA
 MGDO
 QFT
 eq
 HSA
 SDSR
+GEFICA
+gefica
