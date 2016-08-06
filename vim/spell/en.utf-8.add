@@ -2,6 +2,7 @@ Abdus
 Abt
 acretion
 addon
+AGe
 Agilent
 AGN
 Akeley
@@ -103,6 +104,7 @@ Elog
 EoS
 eps
 EPSCoR
+eq
 esac
 etc
 eV
@@ -114,6 +116,7 @@ Facebook
 FADC
 Fano
 Fastlane
+feedthrough
 feedthroughs
 Feedthroughs
 Fermilab
@@ -132,6 +135,8 @@ Garching
 Gargamelle
 gcc
 Geant4
+gefica
+GEFICA
 GeV
 Gifu
 github
@@ -162,6 +167,7 @@ Hirano
 Homestake
 Hosokawa
 Hosokawa's
+HSA
 http
 https
 Huangshi
@@ -245,6 +251,7 @@ metallicity
 meV
 MeV
 MEXT
+MGDO
 microphonics
 Minamino
 Miuchi
@@ -327,6 +334,7 @@ PT100
 PTFE
 QCD
 QE
+QFT
 Raffelt
 readline
 README
@@ -346,6 +354,7 @@ scooby
 SCPI
 ScrapBook
 screenrc
+SDSR
 sekiya
 Sekiya
 sensei
@@ -451,13 +460,3 @@ youtube
 Youtube
 Yukawa
 zotero
-dewar
-AGe
-feedthrough
-MGDO
-QFT
-eq
-HSA
-SDSR
-GEFICA
-gefica
