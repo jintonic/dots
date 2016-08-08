@@ -4,4 +4,4 @@ syn keyword cppNumber  kWhite kBlack kRed kYellow kBlue kGreen kGray
 syn keyword cppBoolean kTRUE kFALSE
 
 " Geant4 extentions
-syn keyword cppType    G4String G4cout G4cerr
+syn keyword cppType    G4String G4cout G4cerr G4endl G4int G4float G4double G4bool
