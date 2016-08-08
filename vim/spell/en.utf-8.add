@@ -30,6 +30,7 @@ bashrc
 bin2root
 blazars
 blog
+blogs
 Blogs
 BNC
 bnl
@@ -205,6 +206,7 @@ Kaluza
 Kamioka
 KamLAND
 Kashiwa
+Kato
 Kavli
 Kenkyutou
 Ketek
@@ -220,6 +222,7 @@ kuraray
 Kurary
 Kusaba
 LabVIEW
+laminator
 LAr
 LBNE
 LBNL
@@ -239,6 +242,7 @@ LVD
 LXe
 m3
 Majorana
+Masaki
 Masuda
 mathcal
 Mayle
@@ -312,6 +316,7 @@ PEs
 phonons
 photocathode
 photocathodes
+photodiode
 photoelectron
 php
 physino
@@ -421,6 +426,8 @@ UHV
 ULPA
 Umemoto
 UML
+undoped
+Undoped
 uninstall
 uri
 USCIS
@@ -460,12 +467,3 @@ youtube
 Youtube
 Yukawa
 zotero
-GEFICA
-gefica
-blogs
-Masaki
-Kato
-laminator
-photodiode
-undoped
-Undoped
