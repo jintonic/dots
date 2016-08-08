@@ -37,7 +37,6 @@ gitconfig:
 
 hvrc:
 	ln -sf $(PWD)/$@ ~/.$@
-	ln -sf $(PWD)/bin/hv ~/bin/hv
 
 latexmkrc:
 	ln -sf $(PWD)/$@ ~/.$@
