@@ -2,6 +2,7 @@ Abdus
 Abt
 acretion
 addon
+AGe
 Agilent
 AGN
 Akeley
@@ -29,6 +30,7 @@ bashrc
 bin2root
 blazars
 blog
+blogs
 Blogs
 BNC
 bnl
@@ -103,6 +105,7 @@ Elog
 EoS
 eps
 EPSCoR
+eq
 esac
 etc
 eV
@@ -114,6 +117,7 @@ Facebook
 FADC
 Fano
 Fastlane
+feedthrough
 feedthroughs
 Feedthroughs
 Fermilab
@@ -164,6 +168,7 @@ Hirano
 Homestake
 Hosokawa
 Hosokawa's
+HSA
 http
 https
 Huangshi
@@ -201,6 +206,7 @@ Kaluza
 Kamioka
 KamLAND
 Kashiwa
+Kato
 Kavli
 Kenkyutou
 Ketek
@@ -216,6 +222,7 @@ kuraray
 Kurary
 Kusaba
 LabVIEW
+laminator
 LAr
 LBNE
 LBNL
@@ -235,6 +242,7 @@ LVD
 LXe
 m3
 Majorana
+Masaki
 Masuda
 mathcal
 Mayle
@@ -247,6 +255,7 @@ metallicity
 meV
 MeV
 MEXT
+MGDO
 microphonics
 Minamino
 Miuchi
@@ -307,6 +316,7 @@ PEs
 phonons
 photocathode
 photocathodes
+photodiode
 photoelectron
 php
 physino
@@ -329,6 +339,7 @@ PT100
 PTFE
 QCD
 QE
+QFT
 Raffelt
 readline
 README
@@ -348,6 +359,7 @@ scooby
 SCPI
 ScrapBook
 screenrc
+SDSR
 sekiya
 Sekiya
 sensei
@@ -414,6 +426,8 @@ UHV
 ULPA
 Umemoto
 UML
+undoped
+Undoped
 uninstall
 uri
 USCIS
@@ -445,7 +459,6 @@ XMan
 XMan's
 xmass
 XMASS
-XOutputROOT
 XVertex
 yamashita
 Yamashita
