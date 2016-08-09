@@ -9,8 +9,7 @@ else
   endif
 endif
 
-EXCLUDE=README.md
-EXCLUDE+=Makefile
+EXCLUDE=README.md Makefile xsession fonts
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo xfig
 
@@ -31,6 +30,15 @@ ctags:
 
 dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
+
+fonts:
+	mkdir -p ~/jintonic/
+	if [ -d ~/jintonic/powerline-fonts ]; then \
+	  cd ~/jintonic/powerline-fonts && git pull && install.sh; \
+	else \
+	  cd ~/jintonic; \
+	  git clone https://github.com/powerline/fonts.git powerline-fonts; \
+	fi
 
 gitconfig:
 	ln -sf $(PWD)/$@ ~/.$@
