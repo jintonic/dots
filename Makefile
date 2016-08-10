@@ -32,11 +32,11 @@ dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
 
 fonts:
-	mkdir -p ~/jintonic/
-	if [ -d ~/jintonic/powerline-fonts ]; then \
-	  cd ~/jintonic/powerline-fonts && git pull && install.sh; \
+	mkdir -p ~/github/
+	if [ -d ~/github/powerline-fonts ]; then \
+	  cd ~/github/powerline-fonts && git pull && install.sh; \
 	else \
-	  cd ~/jintonic; \
+	  cd ~/github; \
 	  git clone https://github.com/powerline/fonts.git powerline-fonts; \
 	fi
 
