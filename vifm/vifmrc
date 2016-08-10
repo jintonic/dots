@@ -113,11 +113,10 @@ mark e ~/Dropbox/diary/ edit
 mark g ~/Dropbox/greencard/
 mark h ~/ mail/
 mark i ~/rdlab/ inventory/
-mark j ~/jintonic/ dots/
-mark m ~/jintonic/ MaGe/
+mark m ~/github/ MaGe/
 mark n ~/rdlab/experiment/NICE/ log/
 mark o ~/overleaf/ minutes/
-mark p ~/physino/ cs/
+mark p ~/github/physino/ cs/
 mark r ~/rdlab/ CS/
 mark t ~/rdlab/teaching/
 
