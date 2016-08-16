@@ -23,6 +23,7 @@ call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
 "      \     'unix': 'gmake',
 "      \    },
 "      \ })
+call dein#add('Konfekt/FastFold')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
@@ -108,6 +109,7 @@ let g:airline#extensions#whitespace#enabled = 0 " turn off trailing space check
 
 " spell {{{1
 " set spell
+set spellfile=~/.vim/spell/en.utf-8.add
 " ]s next error
 " [s previous error
 " z= suggested corrections
@@ -204,6 +206,8 @@ nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase
 let g:neocomplete#enable_smart_case = 1
+" https://github.com/Shougo/neocomplete.vim/issues/332
+let g:neocomplete#enable_fuzzy_completion = 0
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " neosnippet {{{1

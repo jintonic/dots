@@ -9,8 +9,7 @@ else
   endif
 endif
 
-EXCLUDE=README.md
-EXCLUDE+=Makefile
+EXCLUDE=README.md Makefile xsession fonts
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo xfig
 
@@ -32,12 +31,20 @@ ctags:
 dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
 
+fonts:
+	mkdir -p ~/github/
+	if [ -d ~/github/powerline-fonts ]; then \
+	  cd ~/github/powerline-fonts && git pull && install.sh; \
+	else \
+	  cd ~/github; \
+	  git clone https://github.com/powerline/fonts.git powerline-fonts; \
+	fi
+
 gitconfig:
 	ln -sf $(PWD)/$@ ~/.$@
 
 hvrc:
 	ln -sf $(PWD)/$@ ~/.$@
-	ln -sf $(PWD)/bin/hv ~/bin/hv
 
 latexmkrc:
 	ln -sf $(PWD)/$@ ~/.$@
@@ -54,10 +61,6 @@ mime.types:
 minttyrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
-msmtprc:
-	chmod 600 $(PWD)/$@
-	ln -sf $(PWD)/$@ ~/.$@
-
 mutt:
 	mkdir -p ~/.$@
 	mkdir -p ~/.$@/cache
@@ -65,9 +68,6 @@ mutt:
 	ln -sf $(PWD)/$@/sign ~/.$@/sign
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
-
-offlineimaprc:
-	ln -sf $(PWD)/$@ ~/.$@
 
 profile:
 	ln -sf $(PWD)/$@ ~/.$@
