@@ -138,6 +138,9 @@ xfig:
 	  tar xfvz Feynman_Diagrams.tgz; rm -f Feynman_Diagrams.tgz; \
 	  mv Feynman_Diagrams ~/.xfig; fi
 
+xpdfrc:
+	ln -sf $(PWD)/$@ ~/.$@
+
 xsession:
 	ln -sf $(PWD)/$@ ~/.$@
 
