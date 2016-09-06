@@ -1,6 +1,6 @@
 " a: automatically reformat a paragraph, 
 " w: trailing space is used to indicate a continuous paragraph
-setlocal formatoptions+=wa
+setlocal formatoptions+=w
 " show trailing space as .
 setlocal list
 setlocal lcs=trail:.
