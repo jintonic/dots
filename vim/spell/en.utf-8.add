@@ -361,6 +361,7 @@ SCPI
 ScrapBook
 screenrc
 SDSR
+sed
 sekiya
 Sekiya
 sensei
@@ -384,6 +385,7 @@ Soudan
 spallation
 Spallation
 SRAM
+src
 SSN
 stackoverflow
 stdout
@@ -401,6 +403,7 @@ Takeuchi
 Takiya
 Tasaka
 TClonesArray
+terminfo
 tetraphenyl
 TeV
 TEXONO
@@ -468,6 +471,3 @@ youtube
 Youtube
 Yukawa
 zotero
-terminfo
-src
-sed
