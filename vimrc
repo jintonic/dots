@@ -184,6 +184,19 @@ cmap <Esc>b <S-Left>
 cmap <Esc>f <S-Right>
 cmap <C-U> <C-E><C-U>
 
+" Emacs key bindings in insert mode
+im <C-B> <Left>
+im <C-F> <Right>
+im b <Esc>bi
+im f <Esc>ea
+im <C-A> <Home>
+im <C-E> <End>
+
+im <C-K> <Esc>lDa
+im <C-U> <Esc>d0xi
+im d <Esc>lcaw
+" Alt+Backspace does not work, have to use <C-W>
+
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that
 " pattern, vim treats it as a mail
