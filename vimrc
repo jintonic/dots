@@ -197,6 +197,9 @@ im <C-U> <Esc>d0xi
 im d <Esc>lcaw
 " Alt+Backspace does not work, have to use <C-W>
 
+im <C-S> <Esc>:w<CR>li
+im <C-Q> <Esc>:wq<CR>
+
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that
 " pattern, vim treats it as a mail
