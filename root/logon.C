@@ -8,6 +8,7 @@
    // modify it:
    gStyle->SetMarkerStyle(7);
    gStyle->SetLegendBorderSize(0);
+   gStyle->SetLegendFont(22);
    gStyle->SetTitleBorderSize(0);
    gStyle->SetOptStat(1111110); // show more information
    gStyle->SetOptFit(); // show fit result

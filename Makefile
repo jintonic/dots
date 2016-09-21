@@ -9,8 +9,7 @@ else
   endif
 endif
 
-EXCLUDE=README.md
-EXCLUDE+=Makefile
+EXCLUDE=README.md Makefile xsession fonts
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo xfig
 
@@ -32,12 +31,20 @@ ctags:
 dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
 
+fonts:
+	mkdir -p ~/github/
+	if [ -d ~/github/powerline-fonts ]; then \
+	  cd ~/github/powerline-fonts && git pull && install.sh; \
+	else \
+	  cd ~/github; \
+	  git clone https://github.com/powerline/fonts.git powerline-fonts; \
+	fi
+
 gitconfig:
 	ln -sf $(PWD)/$@ ~/.$@
 
 hvrc:
 	ln -sf $(PWD)/$@ ~/.$@
-	ln -sf $(PWD)/bin/hv ~/bin/hv
 
 latexmkrc:
 	ln -sf $(PWD)/$@ ~/.$@
@@ -130,6 +137,9 @@ xfig:
 	  wget https://gsalam.web.cern.ch/gsalam/repository/software/Feynman_Diagrams.tgz; \
 	  tar xfvz Feynman_Diagrams.tgz; rm -f Feynman_Diagrams.tgz; \
 	  mv Feynman_Diagrams ~/.xfig; fi
+
+xpdfrc:
+	ln -sf $(PWD)/$@ ~/.$@
 
 xsession:
 	ln -sf $(PWD)/$@ ~/.$@

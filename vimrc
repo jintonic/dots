@@ -109,6 +109,7 @@ let g:airline#extensions#whitespace#enabled = 0 " turn off trailing space check
 
 " spell {{{1
 " set spell
+set spellfile=~/.vim/spell/en.utf-8.add
 " ]s next error
 " [s previous error
 " z= suggested corrections
@@ -183,6 +184,12 @@ cmap <Esc>b <S-Left>
 cmap <Esc>f <S-Right>
 cmap <C-U> <C-E><C-U>
 
+" Emacs key bindings in insert mode
+im <C-B> <Left>
+im <C-F> <Right>
+im <C-A> <Home>
+im <C-E> <End>
+
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that
 " pattern, vim treats it as a mail
@@ -205,6 +212,8 @@ nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase
 let g:neocomplete#enable_smart_case = 1
+" https://github.com/Shougo/neocomplete.vim/issues/332
+let g:neocomplete#enable_fuzzy_completion = 0
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 " neosnippet {{{1

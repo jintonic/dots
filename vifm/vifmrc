@@ -104,13 +104,19 @@ set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
-mark 2 ~/Dropbox/funding/ 2016/
+mark 1 ~/Dropbox/funding/ 17/
+mark a ~/Dropbox/app/ associate/
 mark b ~/bin/
+mark c ~/rdlab/CS/ CLI/
 mark d ~/Dropbox/ computer/
 mark e ~/Dropbox/diary/ edit
-mark g ~/physino/ cs/
-mark h ~/ dots/
-mark n ~/npp/ npp.tex
+mark g ~/Dropbox/greencard/
+mark h ~/ mail/
+mark i ~/rdlab/ inventory/
+mark m ~/github/ MaGe/
+mark n ~/rdlab/experiment/NICE/ log/
+mark o ~/overleaf/ minutes/
+mark p ~/github/physino/ cs/
 mark r ~/rdlab/ CS/
 mark t ~/rdlab/teaching/
 
@@ -162,7 +168,7 @@ filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
 
 filetype *.tex vex %f
-filetype *.txt vim %f
+filetype *.txt,*.c,*.C,*.cc,*.cpp,*.h,*.H,*.hh,*.hpp,*.md,*.markdown,*.bib,*rc,*.d,*.yml,*.css,*.R,*.gnu,*.sh,*.pl vim %f
 
 filetype *.fig xfig %f 2>/dev/null &
 
@@ -176,7 +182,7 @@ filetype *.root root -l %f
 filetype *.sc sc %f
 
 " Pdf
-filetype *.pdf qpdfview --unique %f &, xpdf %f 2>/dev/null &
+filetype *.pdf qpdfview --unique %f &, cygstart %f, xpdf %f 2>/dev/null &
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript

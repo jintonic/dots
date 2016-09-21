@@ -2,6 +2,7 @@ Abdus
 Abt
 acretion
 addon
+AGe
 Agilent
 AGN
 Akeley
@@ -29,6 +30,7 @@ bashrc
 bin2root
 blazars
 blog
+blogs
 Blogs
 BNC
 bnl
@@ -80,6 +82,7 @@ daq
 DAQ
 dbus
 Debian
+dewar
 directory
 DM
 DNP
@@ -102,6 +105,7 @@ Elog
 EoS
 eps
 EPSCoR
+eq
 esac
 etc
 eV
@@ -113,6 +117,7 @@ Facebook
 FADC
 Fano
 Fastlane
+feedthrough
 feedthroughs
 Feedthroughs
 Fermilab
@@ -131,6 +136,8 @@ Garching
 Gargamelle
 gcc
 Geant4
+gefica
+GEFICA
 GeV
 Gifu
 github
@@ -161,6 +168,7 @@ Hirano
 Homestake
 Hosokawa
 Hosokawa's
+HSA
 http
 https
 Huangshi
@@ -189,6 +197,7 @@ jFET
 jing
 Jing
 Jinping
+JINST
 Jocelynn
 Jozsef
 jp
@@ -198,6 +207,7 @@ Kaluza
 Kamioka
 KamLAND
 Kashiwa
+Kato
 Kavli
 Kenkyutou
 Ketek
@@ -213,6 +223,7 @@ kuraray
 Kurary
 Kusaba
 LabVIEW
+laminator
 LAr
 LBNE
 LBNL
@@ -232,6 +243,7 @@ LVD
 LXe
 m3
 Majorana
+Masaki
 Masuda
 mathcal
 Mayle
@@ -244,6 +256,7 @@ metallicity
 meV
 MeV
 MEXT
+MGDO
 microphonics
 Minamino
 Miuchi
@@ -288,6 +301,7 @@ Ohnishi
 Oka
 org
 Orionis
+ORSP
 ORTEC
 Otsuka
 outgassing
@@ -301,9 +315,11 @@ PDG
 pentakis
 perturbative
 PEs
+Pfeiffer
 phonons
 photocathode
 photocathodes
+photodiode
 photoelectron
 php
 physino
@@ -326,6 +342,7 @@ PT100
 PTFE
 QCD
 QE
+QFT
 Raffelt
 readline
 README
@@ -333,6 +350,7 @@ RGA
 RIGOL
 ROOT's
 ROOTSYS
+Rozzy
 rsync
 RTTI
 Salam
@@ -345,6 +363,8 @@ scooby
 SCPI
 ScrapBook
 screenrc
+SDSR
+sed
 sekiya
 Sekiya
 sensei
@@ -368,6 +388,7 @@ Soudan
 spallation
 Spallation
 SRAM
+src
 SSN
 stackoverflow
 stdout
@@ -385,6 +406,7 @@ Takeuchi
 Takiya
 Tasaka
 TClonesArray
+terminfo
 tetraphenyl
 TeV
 TEXONO
@@ -411,6 +433,8 @@ UHV
 ULPA
 Umemoto
 UML
+undoped
+Undoped
 uninstall
 uri
 USCIS
@@ -442,7 +466,6 @@ XMan
 XMan's
 xmass
 XMASS
-XOutputROOT
 XVertex
 yamashita
 Yamashita
@@ -451,3 +474,5 @@ youtube
 Youtube
 Yukawa
 zotero
+MacOS
+ConFlat

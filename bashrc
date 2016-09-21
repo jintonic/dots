@@ -4,6 +4,8 @@
 PATH=.:$HOME/bin:$PATH
 [ -z "$PS1" ] && return
 
+stty -ixon # disable C-q C-s
+
 # don't put duplicate lines or lines starting with space in the history,
 # and erase already existing duplicated lines
 HISTCONTROL=ignoreboth:erasedups
