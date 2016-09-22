@@ -66,6 +66,7 @@ colliders
 conf
 config
 Conflat
+ConFlat
 const
 CP
 CPT
@@ -242,6 +243,7 @@ LUX
 LVD
 LXe
 m3
+MacOS
 Majorana
 Masaki
 Masuda
@@ -474,5 +476,3 @@ youtube
 Youtube
 Yukawa
 zotero
-MacOS
-ConFlat
