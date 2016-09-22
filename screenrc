@@ -103,7 +103,8 @@ termcapinfo xterm* be
 #
 # keybindings
 #
-escape `` # change escape key from ^a to `
+#escape `` # change escape key from ^a to `
+escape ^Qq # change escape key from ^a to ^q
 
 #remove some stupid / dangerous key bindings
 bind k
@@ -122,10 +123,23 @@ bind '}' history
 #bind c screen 1         # Window numbering starts at 1, not 0.
 #bind ^c screen 1
 
-#bindkey -k k1 select 1
-#bindkey -k k2 select 2
-#bindkey -k k3 select 3
-#bindkey -k k4 select 4
+# make it work for PuTTY in Windows
+terminfo * k1=\EOP
+terminfo * k2=\EOQ
+terminfo * k3=\EOR
+terminfo * k4=\EOS
+terminfo * k5=\E[15~
+terminfo * k6=\E[17~
+terminfo * k7=\E[18~
+terminfo * k8=\E[19~
+terminfo * k9=\E[20~
+terminfo * F1=\E[23~
+terminfo * F2=\E[24~
+
+bindkey -k k1 select 1
+bindkey -k k2 select 2
+bindkey -k k3 select 3
+bindkey -k k4 select 4
 #bindkey -k k5 select 5
 #bindkey -k k6 select 6
 #bindkey -k k7 select 7
