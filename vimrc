@@ -79,7 +79,7 @@ else
 endif
 set background=dark
 silent! colorscheme solarized
-"set number
+set number
 
 "set cul "cursorline: highlight the line where the cursor is, makes Vim slow
 "au WinLeave * set nocul "when leave a window, disable cursorline
@@ -183,6 +183,12 @@ cmap <Esc><BS> <C-W>
 cmap <Esc>b <S-Left>
 cmap <Esc>f <S-Right>
 cmap <C-U> <C-E><C-U>
+
+" Emacs key bindings in insert mode
+im <C-B> <Left>
+im <C-F> <Right>
+im <C-A> <Home>
+im <C-E> <End>
 
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that
