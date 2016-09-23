@@ -79,7 +79,7 @@ else
 endif
 set background=dark
 silent! colorscheme solarized
-set number
+"set number
 
 "set cul "cursorline: highlight the line where the cursor is, makes Vim slow
 "au WinLeave * set nocul "when leave a window, disable cursorline
