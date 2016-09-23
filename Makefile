@@ -94,6 +94,10 @@ startxwinrc:
 
 terminfo:
 	infocmp | sed 's/kbs=^H/kbs=\\177/' > /tmp/ti.src
+	sed -i 's/kf1=\\EOP/kf1=\\E[11~/' /tmp/ti.src
+	sed -i 's/kf2=\\EOQ/kf2=\\E[12~/' /tmp/ti.src
+	sed -i 's/kf3=\\EOR/kf3=\\E[13~/' /tmp/ti.src
+	sed -i 's/kf4=\\EOS/kf4=\\E[14~/' /tmp/ti.src
 	tic /tmp/ti.src
 	rm -f /tmp/ti.src
 
