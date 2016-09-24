@@ -99,6 +99,9 @@ termcapinfo   xterm 'XC=K%,%\E(B,[\304,\\\\\326,]\334,{\344,|\366,}\374,~\337'
 # - uses background color for delete operations
 termcapinfo xterm* be
 
+# enable F1, 2, 3, 4 in xterm
+termcapinfo xterm* 'k1=\EOP:k2=\EOQ:k3=\EOR:k4=\EOS'
+
 ################
 #
 # keybindings
@@ -120,7 +123,7 @@ bind 'I' login on
 bind 'O' login off
 bind '}' history
 
-#bind c screen 1         # Window numbering starts at 1, not 0.
+bind c screen 1         # Window numbering starts at 1, not 0.
 #bind ^c screen 1
 
 bindkey -k k1 select 1
@@ -128,7 +131,7 @@ bindkey -k k2 select 2
 bindkey -k k3 select 3
 bindkey -k k4 select 4
 bindkey -k k5 select 5 
-bindkey -k k6 screen
+bindkey -k k6 screen 1
 #bindkey -k k7 select 7
 #bindkey -k k8 select 8
 #bindkey -k k9 windowlist -b
@@ -152,7 +155,6 @@ bind ^] paste [.]
 #chdir      # go to home dir
 
 # default windows
-screen 0
 screen 1 vifm
 # screen -t local 0
 # screen -t mail 1 mutt
