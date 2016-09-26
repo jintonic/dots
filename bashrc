@@ -86,7 +86,6 @@ fi
 # some more ls aliases
 alias ll='ls -AlFh'
 alias la='ls -Ah'
-alias l='ls -ClFh'
 
 alias df='df -h'
 alias du='du -h'
@@ -96,6 +95,8 @@ alias sw='screen -wipe'
 alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
 alias vi='vim -X'
 export EDITOR='vim -X'
+alias micro='TERM=xterm-256color micro'
+alias ev='emacs -nw'
 
 alias r='root -l'
 alias rbq='root -b -q'
@@ -124,5 +125,14 @@ export LC_ALL="en_US.UTF-8"
 export TEXMFHOME=~/.texmf
 
 export LD_LIBRARY_PATH=$HOME/lib
+
+export MANPATH=~/man:$MANPATH
+
+l () {
+  tempfile=$(mktemp 2> /dev/null)
+  rover --save-cwd "$tempfile" "$PWD" ~/Dropbox ~/github ~/overleaf ~/rdlab
+  cd "$(cat $tempfile)"
+  rm -f $tempfile
+}
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
