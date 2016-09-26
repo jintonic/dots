@@ -94,7 +94,6 @@ alias sd='screen -D -RR'
 alias sw='screen -wipe'
 alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
 alias vi='vim -X'
-export EDITOR='vim -X'
 alias micro='TERM=xterm-256color micro'
 alias ev='emacs -nw'
 
@@ -128,6 +127,9 @@ export LD_LIBRARY_PATH=$HOME/lib
 
 export MANPATH=~/man:$MANPATH
 
+export EDITOR='vim -X'
+export PAGER='less'
+export ROVER_OPEN='~/bin/open'
 l () {
   tempfile=$(mktemp 2> /dev/null)
   rover --save-cwd "$tempfile" "$PWD" ~/Dropbox ~/github ~/overleaf ~/rdlab
