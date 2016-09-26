@@ -128,4 +128,11 @@ export LD_LIBRARY_PATH=$HOME/lib
 
 export MANPATH=~/man:$MANPATH
 
+l () {
+  tempfile=$(mktemp 2> /dev/null)
+  rover --save-cwd "$tempfile" "$PWD" ~/Dropbox ~/github ~/overleaf ~/rdlab
+  cd "$(cat $tempfile)"
+  rm -f $tempfile
+}
+
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
