@@ -1,0 +1,7 @@
+#!/bin/sh
+OS=`uname`
+if [ "$OS" = "Linux" ]; then
+  nohup mimeopen "$@" >/dev/null &
+else
+  cygstart "$@"
+fi
