@@ -4,6 +4,16 @@
 set vi='20,<50,s10,h,!,n~/.vim/viminfo "viminfo: save operation history
 set dir=/tmp// " where to save the swp files
 
+autocmd BufAdd * :call <SID>DeleteBufferIfEmpty()
+function! s:DeleteBufferIfEmpty()
+  " If no name and no content
+  if bufname('%') == '' && line('$') == 1 && getline(1) == ''
+    bwipe
+    " This will trigger filetype detection, mainly to trigger syntax highlighting
+    doautocmd BufRead
+  endif
+endfunction
+
 " plugins {{{1
 " https://herringtondarkholme.github.io/2016/02/26/dein/
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim

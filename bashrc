@@ -93,7 +93,6 @@ alias du='du -h'
 alias sd='screen -D -RR'
 alias sw='screen -wipe'
 alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
-alias vi='vim -X'
 alias micro='TERM=xterm-256color micro'
 alias ev='emacs -nw'
 
@@ -127,7 +126,15 @@ export LD_LIBRARY_PATH=$HOME/lib
 
 export MANPATH=~/man:$MANPATH
 
-export EDITOR='vim -X'
+xproc=`ps a | grep "bin[/]X"`
+hasX=${#xproc}
+if [ $hasX != 0 ]; then
+  export EDITOR='vim --servername VIM --remote-silent'
+  alias vi='vim --remote-silent'
+else
+  export EDITOR='vim -X'
+  alias vi='vim -X'
+fi
 export PAGER='less'
 export ROVER_OPEN='~/bin/open'
 l () {
