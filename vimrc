@@ -160,10 +160,10 @@ set foldlevel=1
 " mapping {{{1
 " mapping of function keys
 " first command toggles options, second reports status
-nn <F6> :setlocal number! number?<CR>
-nn <F7> :setlocal spell! spell?<CR>
-nn <F8> :setlocal paste! paste?<CR>
-set pastetoggle=<F8> " toggle past in insert mode
+"nn <F6> :setlocal number! number?<CR>
+"nn <F7> :setlocal spell! spell?<CR>
+"nn <F8> :setlocal paste! paste?<CR>
+"set pastetoggle=<F8> " toggle past in insert mode
 
 map \a :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
 map \s :e %<.cc<CR>
