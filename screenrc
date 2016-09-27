@@ -8,7 +8,8 @@ attrcolor u "-u R"
 
 # make the shell in every window a non-login shell, 
 # make sure your bash startup file are set properly
-shell -$SHELL
+# I have to comment out this to make chdir work
+#shell -$SHELL
 
 # the following is needed to set title automatically:
 shelltitle "] |Shell"
@@ -131,9 +132,9 @@ bindkey -k k2 select 2
 bindkey -k k3 select 3
 bindkey -k k4 select 4
 bindkey -k k5 select 5 
-bindkey -k k6 screen 1
-#bindkey -k k7 select 7
-#bindkey -k k8 select 8
+bindkey -k k6 select 6
+bindkey -k k7 select 7
+bindkey -k k8 screen 1
 #bindkey -k k9 windowlist -b
 #bindkey -k k; screen 1
 
@@ -152,7 +153,7 @@ register [ "\033:se noai\015a"
 register ] "\033:se ai\015a"
 bind ^] paste [.]
 
-#chdir      # go to home dir
+chdir      # go to home dir
 
 # default windows
 screen 1
