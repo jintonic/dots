@@ -3,6 +3,5 @@ if [ ${#STY} -gt 0 ]; then
   screen -X chdir $1;
   screen 1;
 else
-  echo "haha";
   bash;
 fi
