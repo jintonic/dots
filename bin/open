@@ -5,11 +5,11 @@ case "$1" in
     gvim -v --servername=VIM --remote-silent $1 ;;
   *.aux)
     latexmk -pvc ${1%.aux} ;;
-  *.txt|*[Mm]akefile|*.cmake)
+  *.txt|*[Mm]akefile|*.cmake|*.mk)
     gvim -v --servername=VIM --remote-silent $1 ;;
   *rc|*.vim|*emacs|*.el|*Xdefaults|*xsession)
     gvim -v --servername=VIM --remote-silent $1 ;;
-  *.cxx|*.[cC]|*.cc|*.cpp|*.hpp*.[hH]|*.hh)
+  *.cxx|*.[cC]|*.cc|*.cpp|*.hpp*.[hH]|*.hh|*.h)
     gvim -v --servername=VIM --remote-silent $1 ;;
   *.markdown|*.md|*.yml|*.css|*.xml)
     gvim -v --servername=VIM --remote-silent $1 ;;
