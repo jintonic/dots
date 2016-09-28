@@ -3,6 +3,8 @@ if [ -x "$1" ]; then $1; exit; fi
 case "$1" in
   *.sty|*.tex|*.bib|*.bbl)
     gvim -v --servername=VIM --remote-silent $1 ;;
+  *.aux)
+    latexmk -pvc ${1%.aux} ;;
   *.txt|*[Mm]akefile|*.cmake)
     gvim -v --servername=VIM --remote-silent $1 ;;
   *rc|*.vim|*emacs|*.el|*Xdefaults|*xsession)
