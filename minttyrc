@@ -24,3 +24,5 @@ White=238,232,213
 BoldWhite=253,246,227
 BoldAsFont=no
 Font=Sauce Code Powerline
+CursorType=block
+AltFnShortcuts=no
