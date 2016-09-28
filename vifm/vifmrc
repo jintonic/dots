@@ -168,7 +168,7 @@ filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
 
 filetype *.tex vex %f
-filetype *.txt,*.c,*.C,*.cc,*.cpp,*.h,*.H,*.hh,*.hpp,*.md,*.markdown,*.bib,*rc,*.d,*.yml,*.css,*.R,*.gnu,*.sh,*.pl vim %f
+filetype *.txt,*.c,*.C,*.cc,*.cpp,*.h,*.H,*.hh,*.hpp,*.md,*.markdown,*.bib,*rc,*.d,*.yml,*.css,*.R,*.gnu,*.sh,*.pl,*akefile vim %f
 
 filetype *.fig xfig %f 2>/dev/null &
 
@@ -334,11 +334,3 @@ nmap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nmap ,w :set wrap!<cr>
-
-" Example of standard two-panel file managers mappings
-nmap <f3> :!less %f<cr>
-nmap <f4> :edit<cr>
-nmap <f5> :copy<cr>
-nmap <f6> :move<cr>
-nmap <f7> :mkdir<space>
-nmap <f8> :delete<cr>

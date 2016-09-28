@@ -1,0 +1,74 @@
+#!/bin/sh
+if [ -x "$1" ]; then $1; exit; fi
+case "$1" in
+  *.sty|*.tex|*.bib|*.bbl)
+    gvim -v --servername=VIM --remote-silent $1 ;;
+  *.aux)
+    latexmk -pvc ${1%.aux} ;;
+  *.txt|*[Mm]akefile|*.cmake|*.mk)
+    gvim -v --servername=VIM --remote-silent $1 ;;
+  *rc|*.vim|*emacs|*.el|*Xdefaults|*xsession)
+    gvim -v --servername=VIM --remote-silent $1 ;;
+  *.cxx|*.[cC]|*.cc|*.cpp|*.hpp*.[hH]|*.hh|*.h)
+    gvim -v --servername=VIM --remote-silent $1 ;;
+  *.markdown|*.md|*.yml|*.css|*.xml)
+    gvim -v --servername=VIM --remote-silent $1 ;;
+  *.R)
+    Rscript $1 ;;
+  *.gnu)
+    gnuplot $1 ;;
+  *.sh)
+    source $1 ;;
+  *.pl)
+    perl $1 ;;
+  *.py)
+    python $1 ;;
+  *.rb)
+    ruby $1 ;;
+  *.[1-9]|*.[1-9].gz|*.[1-9]pm)
+    man ./$1 ;;
+  *.root)
+    root -l $1 ;;
+  *.dvi)
+    nohup xdvi $1 >/dev/null 2>&1 & ;;
+  *.ps|*.eps|*.ps.gz)
+    nohup gv $1 >/dev/null 2>&1 & ;;
+  *.fig)
+    nohup xfig $1 >/dev/null 2>&1 & ;;
+  *.heprep)
+    nohup hv $1 >/dev/null 2>&1 &;;
+  *.prim)
+    nohup dawn $1 >/dev/null 2>&1 &;;
+  *.o|*.a|*.so)
+    nm $1 | less ;;
+  *.zip|*.jar)
+    zip -f $1 | less ;;
+  *.info.gz)
+    info $1 ;;
+  *.tgz|*.tar.gz)
+    tar xfvz $1 ;;
+  *.tar.bz2|*.tbz2|*.tar.bz)
+    tar xfvj $1 ;;
+  *.sc)
+    sc $1 ;;
+  *)
+    OS=`uname`
+    if [ "$OS" = "Linux" ]; then
+      if hash mimeopen 2>/dev/null; then
+	nohup mimeopen "$1" >/dev/null &
+      else
+	case "$1" in
+	  *.htm|*.html)
+	    w3m $1 ;;
+	  *.pdf)
+	    nohup xpdf $1 >/dev/null 2>&1 & ;;
+	  *.pbm|*.bmp|*.gif|*.xpm|*.jpg|*.jpeg|*.png|*.JPG|*.PNG|*.JPEG)
+	    nohup display $1 & ;;
+	  *)
+	    less $1
+	esac
+      fi
+    else
+      cygstart "$1"
+    fi
+esac

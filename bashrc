@@ -93,8 +93,6 @@ alias du='du -h'
 alias sd='screen -D -RR'
 alias sw='screen -wipe'
 alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
-alias vi='vim -X'
-export EDITOR='vim -X'
 alias micro='TERM=xterm-256color micro'
 alias ev='emacs -nw'
 
@@ -127,5 +125,18 @@ export TEXMFHOME=~/.texmf
 export LD_LIBRARY_PATH=$HOME/lib
 
 export MANPATH=~/man:$MANPATH
+
+export EDITOR='vim -X'
+alias vi='vim -X'
+export PAGER='less'
+export ROVER_OPEN='open'
+l () {
+  tempfile=$(mktemp 2> /dev/null)
+  rover --save-cwd "$tempfile" "$PWD" ~/Dropbox ~/github ~/overleaf ~/rdlab
+  cd "$(cat $tempfile)"
+  rm -f $tempfile
+}
+
+export ROVER_SHELL='rosh'
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi

@@ -4,6 +4,16 @@
 set vi='20,<50,s10,h,!,n~/.vim/viminfo "viminfo: save operation history
 set dir=/tmp// " where to save the swp files
 
+autocmd BufAdd * :call <SID>DeleteBufferIfEmpty()
+function! s:DeleteBufferIfEmpty()
+  " If no name and no content
+  if bufname('%') == '' && line('$') == 1 && getline(1) == ''
+    bwipe
+    " This will trigger filetype detection, mainly to trigger syntax highlighting
+    doautocmd BufRead
+  endif
+endfunction
+
 " plugins {{{1
 " https://herringtondarkholme.github.io/2016/02/26/dein/
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
@@ -160,10 +170,10 @@ set foldlevel=1
 " mapping {{{1
 " mapping of function keys
 " first command toggles options, second reports status
-nn <F6> :setlocal number! number?<CR>
-nn <F7> :setlocal spell! spell?<CR>
-nn <F8> :setlocal paste! paste?<CR>
-set pastetoggle=<F8> " toggle past in insert mode
+"nn <F6> :setlocal number! number?<CR>
+"nn <F7> :setlocal spell! spell?<CR>
+"nn <F8> :setlocal paste! paste?<CR>
+"set pastetoggle=<F8> " toggle past in insert mode
 
 map \a :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
 map \s :e %<.cc<CR>
@@ -189,6 +199,9 @@ im <C-B> <Left>
 im <C-F> <Right>
 im <C-A> <Home>
 im <C-E> <End>
+
+im <C-S> <Esc>:w<CR>li
+im <C-Q> <Esc>:wq<CR>
 
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that

@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ ${#STY} -gt 0 ]; then
+  screen -X chdir $1;
+  screen 1;
+else
+  bash;
+fi
