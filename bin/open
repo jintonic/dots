@@ -1,7 +1,31 @@
 #!/bin/sh
-OS=`uname`
-if [ "$OS" = "Linux" ]; then
-  nohup mimeopen "$@" >/dev/null &
-else
-  cygstart "$@"
-fi
+case "$1" in
+  *rc|*.R|*.gnu|*.[cC]|*.cc|*.[hH]|*.hh|*.sh|*.md|*.tex|*.bib|*.py|*.rb|*[Mm]akefile)
+    gvim -v --servername=VIM --remote-silent $1 ;;
+  *.[1-9])
+    man -l $1 ;;
+  *.root)
+    root -l $1 ;;
+  *)
+    OS=`uname`
+    if [ "$OS" = "Linux" ]; then
+      if hash mimeopen 2>/dev/null; then
+	nohup mimeopen "$1" >/dev/null &
+      else
+	case "$1" in
+	  *.htm|*.html)
+	    w3m $1 ;;
+	  *.pdf)
+	    xpdf $1 ;;
+	  *.ps|*.eps)
+	    gv $1 ;;
+	  *.jpg|*.jpeg|*.png|*.JPG|*.PNG|*.JPEG)
+	    display $1 ;;
+	  *)
+	    less $1
+	esac
+      fi
+    else
+      cygstart "$1"
+    fi
+esac

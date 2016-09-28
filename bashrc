@@ -126,15 +126,8 @@ export LD_LIBRARY_PATH=$HOME/lib
 
 export MANPATH=~/man:$MANPATH
 
-xproc=`ps a | grep "bin[/]X"`
-hasX=${#xproc}
-if [ $hasX != 0 ]; then
-  export EDITOR='vim --servername VIM --remote-silent'
-  alias vi='vim --remote-silent'
-else
-  export EDITOR='vim -X'
-  alias vi='vim -X'
-fi
+export EDITOR='vim -X'
+alias vi='vim -X'
 export PAGER='less'
 export ROVER_OPEN='~/bin/open'
 l () {
