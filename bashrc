@@ -93,6 +93,13 @@ alias du='du -h'
 alias sd='screen -D -RR'
 alias sw='screen -wipe'
 alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
+# refresh display setting for old screen session
+if [ ${#STY} -gt 0 ]; then
+  export DISPLAY=`cat ~/.display`
+else
+  echo $DISPLAY > ~/.display
+fi
+
 alias micro='TERM=xterm-256color micro'
 alias ev='emacs -nw'
 
