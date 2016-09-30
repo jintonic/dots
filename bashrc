@@ -94,7 +94,7 @@ alias sd='screen -D -RR'
 alias sw='screen -wipe'
 alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
 # refresh display setting for old screen session
-if [ ${#STY} -gt 0 ]; then
+if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
   export DISPLAY=`cat ~/.display`
 else
   echo $DISPLAY > ~/.display

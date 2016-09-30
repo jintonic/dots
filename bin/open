@@ -1,4 +1,10 @@
 #!/bin/sh
+
+# refresh display setting for old screen session
+if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
+  export DISPLAY=`cat ~/.display`
+fi
+
 if [ -x "$1" ]; then $1; exit; fi
 case "$1" in
   *.sty|*.tex|*.bib|*.bbl)
