@@ -9,9 +9,9 @@ else
   endif
 endif
 
-EXCLUDE=README.md Makefile xsession fonts
+EXCLUDE=README.md Makefile xsession fonts rover.patch
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=bin terminfo xfig
+TARGETS+=bin terminfo
 
 all:$(TARGETS)
 
@@ -82,6 +82,15 @@ rootrc:
 root:
 	mkdir -p ~/.$@
 	ln -sf $(PWD)/$@/logon.C ~/.$@/logon.C
+
+rover:
+	mkdir -p ~/github/
+	if [ -d ~/github/$@ ]; then \
+	  cd ~/github/$@ && git pull; \
+	else \
+	  cd ~/github && git clone https://github.com/lecram/$@.git; \
+	fi
+	cd ~/github/$@ && patch -p0 < ../dots/$@.patch && make install
 
 screenrc:
 	ln -sf $(PWD)/$@ ~/.$@
