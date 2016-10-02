@@ -90,9 +90,11 @@ alias la='ls -Ah'
 alias df='df -h'
 alias du='du -h'
 
+alias sb='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
 alias sd='screen -D -RR'
+alias sl='screen -list'
 alias sw='screen -wipe'
-alias ss='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
+alias ss='screen -X source ~/.screenrc'
 # refresh display setting for old screen session
 if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
   export DISPLAY=`cat ~/.display`
@@ -100,7 +102,7 @@ else
   echo $DISPLAY > ~/.display
 fi
 
-alias micro='TERM=xterm-256color micro'
+alias mdp='TERM=xterm-256color mdp'
 alias ev='emacs -nw'
 
 alias r='root -l'
@@ -136,14 +138,15 @@ export MANPATH=~/man:$MANPATH
 export EDITOR='vim -X'
 alias vi='vim -X'
 export PAGER='less'
-export ROVER_OPEN='open'
-l () {
+export ROVER_OPEN='rope'
+l () { # run rover in customized environment
   tempfile=$(mktemp 2> /dev/null)
-  rover --save-cwd "$tempfile" "$PWD" ~/Dropbox ~/github ~/overleaf ~/rdlab
+  SHELL="rose $tempfile" rover --save-cwd "$tempfile" "$PWD" ~/Dropbox ~/github ~/overleaf ~/rdlab ~/phys492
   cd "$(cat $tempfile)"
   rm -f $tempfile
+  if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
+    export DISPLAY=`cat ~/.display`
+  fi
 }
-
-export ROVER_SHELL='rosh'
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
