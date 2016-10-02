@@ -1,0 +1,112 @@
+diff -u ./.gitignore ../rover.old/.gitignore
+--- ./.gitignore	2016-10-02 07:14:49.757990100 -0500
++++ ../rover.old/.gitignore	2016-09-30 03:46:34.685626400 -0500
+@@ -1 +1,2 @@
+ rover
++rover.exe
+diff -u ./config.h ../rover.old/config.h
+--- ./config.h	2016-10-02 07:14:49.789247400 -0500
++++ ../rover.old/config.h	2016-09-30 03:45:53.819732000 -0500
+@@ -15,46 +15,46 @@
+ #define RVK_HOME        "H"
+ #define RVK_TARGET      "t"
+ #define RVK_REFRESH     "r"
+-#define RVK_SHELL       "^M"
++#define RVK_SHELL       "s"
+ #define RVK_VIEW        " "
+ #define RVK_EDIT        "e"
+-#define RVK_OPEN        "o"
++#define RVK_OPEN        "^M"
+ #define RVK_SEARCH      "/"
+-#define RVK_TG_FILES    "f"
+-#define RVK_TG_DIRS     "d"
+-#define RVK_TG_HIDDEN   "s"
+-#define RVK_NEW_FILE    "n"
+-#define RVK_NEW_DIR     "N"
+-#define RVK_RENAME      "R"
+-#define RVK_DELETE      "D"
+-#define RVK_TG_MARK     "m"
+-#define RVK_INVMARK     "M"
++#define RVK_TG_FILES    "F"
++#define RVK_TG_DIRS     "D"
++#define RVK_TG_HIDDEN   "."
++#define RVK_NEW_FILE    "N"
++#define RVK_NEW_DIR     "n"
++#define RVK_RENAME      "c"
++#define RVK_DELETE      "d"
++#define RVK_TG_MARK     "y"
++#define RVK_INVMARK     "Y"
+ #define RVK_MARKALL     "a"
+-#define RVK_MARK_DELETE "X"
+-#define RVK_MARK_COPY   "C"
+-#define RVK_MARK_MOVE   "V"
++#define RVK_MARK_DELETE "x"
++#define RVK_MARK_COPY   "p"
++#define RVK_MARK_MOVE   "m"
+ 
+ /* Colors available: DEFAULT, RED, GREEN, YELLOW, BLUE, CYAN, MAGENTA, WHITE, BLACK. */
+-#define RVC_CWD         GREEN
++#define RVC_CWD         YELLOW
+ #define RVC_STATUS      CYAN
+ #define RVC_BORDER      BLUE
+-#define RVC_SCROLLBAR   CYAN
++#define RVC_SCROLLBAR   MAGENTA
+ #define RVC_LINK        CYAN
+ #define RVC_HIDDEN      YELLOW
+ #define RVC_EXEC        GREEN
+ #define RVC_REG         DEFAULT
+-#define RVC_DIR         DEFAULT
++#define RVC_DIR         BLUE
+ #define RVC_CHR         MAGENTA
+ #define RVC_BLK         MAGENTA
+ #define RVC_FIFO        BLUE
+ #define RVC_SOCK        MAGENTA
+-#define RVC_PROMPT      DEFAULT
+-#define RVC_TABNUM      DEFAULT
++#define RVC_PROMPT      GREEN
++#define RVC_TABNUM      MAGENTA
+ #define RVC_MARKS       YELLOW
+ 
+ /* Special symbols used by the TUI. See <curses.h> for available constants. */
+-#define RVS_SCROLLBAR   ACS_CKBOARD
+-#define RVS_MARK        ACS_DIAMOND
++#define RVS_SCROLLBAR   ACS_VLINE
++#define RVS_MARK        ACS_BULLET
+ 
+ /* Prompt strings for line input. */
+ #define RV_PROMPT(S)    S ": "
+diff -u ./Makefile ../rover.old/Makefile
+--- ./Makefile	2016-10-02 07:14:49.773621800 -0500
++++ ../rover.old/Makefile	2016-10-02 07:18:42.220672600 -0500
+@@ -1,5 +1,5 @@
+ LDLIBS=-lncursesw
+-PREFIX=/usr/local
++PREFIX=$(HOME)
+ MANPREFIX=$(PREFIX)/man
+ INSTALL=install -D
+ UNINSTALL=rm
+diff -u ./rover.c ../rover.old/rover.c
+--- ./rover.c	2016-10-02 07:14:49.804871900 -0500
++++ ../rover.old/rover.c	2016-10-02 07:53:48.263980400 -0500
+@@ -1338,8 +1338,8 @@
+             }
+         } else if (!strcmp(key, RVK_DELETE)) {
+             if (rover.nfiles) {
+-                message(YELLOW, "Delete \"%s\"? (Y/n)", ENAME(ESEL));
+-                if (rover_getch() == 'Y') {
++                message(YELLOW, "Delete \"%s\"? (y/n)", ENAME(ESEL));
++                if (rover_getch() == 'y') {
+                     const char *name = ENAME(ESEL);
+                     int ret = ISDIR(ENAME(ESEL)) ? deldir(name) : delfile(name);
+                     reload();
+@@ -1375,8 +1375,8 @@
+             update_view();
+         } else if (!strcmp(key, RVK_MARK_DELETE)) {
+             if (rover.marks.nentries) {
+-                message(YELLOW, "Delete all marked entries? (Y/n)");
+-                if (rover_getch() == 'Y')
++                message(YELLOW, "Delete all marked entries? (y/n)");
++                if (rover_getch() == 'y')
+                     process_marked(NULL, delfile, deldir, "Deleting", "Deleted");
+                 else
+                     clear_message();
