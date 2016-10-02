@@ -1,0 +1,10 @@
+#!/bin/sh
+# ROver Shell Environment
+# used together with l() defined in ~/.bashrc
+if [ ${#STY} -gt 0 ]; then
+  screen -X chdir `cat $1`;
+  screen 1;
+  screen -X chdir;
+else
+  bash;
+fi
