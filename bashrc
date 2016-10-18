@@ -137,7 +137,7 @@ export MANPATH=~/man:$MANPATH
 
 export EDITOR='vim -X'
 alias vi='vim -X'
-export PAGER='less'
+export PAGER='SHELL=/bin/bash less'
 export ROVER_OPEN='rope'
 l () { # run rover in customized environment
   tempfile=$(mktemp 2> /dev/null)

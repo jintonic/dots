@@ -70,7 +70,7 @@ xclock*analog:            false
 xclock*Foreground:        white
 xclock*background:        black
 
-xdvi.shrinkFactor:	6
+xdvi.shrinkFactor:	5
 xdvi.expert:		true
 xdvi.watchFile: 	1
 xfig.splash:		false

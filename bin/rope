@@ -10,17 +10,17 @@ fi
 if [ -x "$1" ]; then $1; exit; fi
 case "$1" in
   *.sty|*.tex|*.bib|*.bbl)
-    gvim -v --servername=VIM --remote-silent $1 ;;
+    gvim -v --servername VIM --remote-silent $1 ;;
   *.aux)
     latexmk -pvc ${1%.aux} ;;
   *.txt|*[Mm]akefile|*.cmake|*.mk)
-    gvim -v --servername=VIM --remote-silent $1 ;;
+    gvim -v --servername VIM --remote-silent $1 ;;
   *rc|*.vim|*emacs|*.el|*Xdefaults|*xsession)
-    gvim -v --servername=VIM --remote-silent $1 ;;
+    gvim -v --servername VIM --remote-silent $1 ;;
   *.cxx|*.[cC]|*.cc|*.cpp|*.hpp*.[hH]|*.hh|*.h)
-    gvim -v --servername=VIM --remote-silent $1 ;;
+    gvim -v --servername VIM --remote-silent $1 ;;
   *.markdown|*.md|*.yml|*.css|*.xml)
-    gvim -v --servername=VIM --remote-silent $1 ;;
+    gvim -v --servername VIM --remote-silent $1 ;;
   *.R)
     Rscript $1 ;;
   *.gnu)
@@ -73,7 +73,7 @@ case "$1" in
 	  *.pbm|*.bmp|*.gif|*.xpm|*.jpg|*.jpeg|*.png|*.JPG|*.PNG|*.JPEG)
 	    nohup display $1 & ;;
 	  *)
-	    less $1
+	    less $1 ;;
 	esac
       fi
     else # for Cygwin
