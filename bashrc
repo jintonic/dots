@@ -130,10 +130,11 @@ export LYNX_LSS=~/.lynx/lynx.lss
 export LC_ALL="en_US.UTF-8"
 
 export TEXMFHOME=~/.texmf
+export TERMINFO=~/.terminfo
 
 export LD_LIBRARY_PATH=$HOME/lib
 
-export MANPATH=~/man:$MANPATH
+export MANPATH=~/man:~/share/man:$MANPATH
 
 export EDITOR='vim -X'
 alias vi='vim -X'
