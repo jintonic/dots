@@ -83,6 +83,8 @@ root:
 	mkdir -p ~/.$@
 	ln -sf $(PWD)/$@/logon.C ~/.$@/logon.C
 
+# cd /path/to/rover && git diff > rover.patch
+# cd /path/to/rover && git apply rover.patch
 rover:
 	mkdir -p ~/github/
 	if [ -d ~/github/$@ ]; then \
@@ -90,7 +92,7 @@ rover:
 	else \
 	  cd ~/github && git clone https://github.com/lecram/$@.git; \
 	fi
-	cd ~/github/$@ && patch -p0 < ../dots/$@.patch && make install
+	cd ~/github/$@ && git apply ../dots/$@.patch && make install
 
 screenrc:
 	ln -sf $(PWD)/$@ ~/.$@
