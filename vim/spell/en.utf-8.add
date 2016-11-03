@@ -49,6 +49,7 @@ cern
 CEvNS
 cgi
 ChangeLog
+charmonium
 Cherenkov
 Chooz
 cladded
@@ -175,6 +176,7 @@ Homestake
 Hosokawa
 Hosokawa's
 HPC
+HPGe
 HSA
 http
 https
@@ -268,6 +270,7 @@ MGDO
 microphonics
 Minamino
 Miuchi
+mK
 MobaXterm
 Mollweide
 moriyama
@@ -348,6 +351,7 @@ Primakoff
 PRL
 PT100
 PTFE
+PuTTY
 QCD
 QE
 QFT
@@ -485,10 +489,3 @@ youtube
 Youtube
 Yukawa
 zotero
-PuTTY
-Fudan
-HPC
-histogramming
-charmonium
-HPGe
-mK
