@@ -88,7 +88,7 @@ root:
 rover:
 	mkdir -p ~/github/
 	if [ -d ~/github/$@ ]; then \
-	  cd ~/github/$@ && git pull; \
+	  cd ~/github/$@ && git pull && git checkout -- '*'; \
 	else \
 	  cd ~/github && git clone https://github.com/lecram/$@.git; \
 	fi
