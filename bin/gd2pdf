@@ -1,0 +1,2 @@
+#!/bin/sh
+drive pull --export pdf --explicitly-export --exports-dir . --same-exports-dir --no-prompt --verbose

@@ -1,12 +1,25 @@
-diff -u ./.gitignore ../rover.old/.gitignore
---- ./.gitignore	2016-10-02 07:14:49.757990100 -0500
-+++ ../rover.old/.gitignore	2016-09-30 03:46:34.685626400 -0500
+diff --git a/.gitignore b/.gitignore
+index d85ed88..4f024dc 100644
+--- a/.gitignore
++++ b/.gitignore
 @@ -1 +1,2 @@
  rover
 +rover.exe
-diff -u ./config.h ../rover.old/config.h
---- ./config.h	2016-10-02 07:14:49.789247400 -0500
-+++ ../rover.old/config.h	2016-09-30 03:45:53.819732000 -0500
+diff --git a/Makefile b/Makefile
+index 9479eda..d221527 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ LDLIBS=-lncursesw
+-PREFIX=/usr/local
++PREFIX=$(HOME)
+ MANPREFIX=$(PREFIX)/man
+ INSTALL=install -D
+ UNINSTALL=rm
+diff --git a/config.h b/config.h
+index c2b644c..abfe8e5 100644
+--- a/config.h
++++ b/config.h
 @@ -15,46 +15,46 @@
  #define RVK_HOME        "H"
  #define RVK_TARGET      "t"
@@ -75,20 +88,27 @@ diff -u ./config.h ../rover.old/config.h
  
  /* Prompt strings for line input. */
  #define RV_PROMPT(S)    S ": "
-diff -u ./Makefile ../rover.old/Makefile
---- ./Makefile	2016-10-02 07:14:49.773621800 -0500
-+++ ../rover.old/Makefile	2016-10-02 07:18:42.220672600 -0500
-@@ -1,5 +1,5 @@
- LDLIBS=-lncursesw
--PREFIX=/usr/local
-+PREFIX=$(HOME)
- MANPREFIX=$(PREFIX)/man
- INSTALL=install -D
- UNINSTALL=rm
-diff -u ./rover.c ../rover.old/rover.c
---- ./rover.c	2016-10-02 07:14:49.804871900 -0500
-+++ ../rover.old/rover.c	2016-10-02 07:53:48.263980400 -0500
-@@ -1338,8 +1338,8 @@
+diff --git a/rover.c b/rover.c
+index 5e43e7a..e932880 100644
+--- a/rover.c
++++ b/rover.c
+@@ -1164,6 +1164,7 @@ main(int argc, char *argv[])
+         } else if (!strcmp(key, RVK_REFRESH)) {
+             reload();
+         } else if (!strcmp(key, RVK_SHELL)) {
++	  if(getenv("ROVER_SHELL")==NULL) { // https://github.com/lecram/rover/pull/24
+             program = getenv("SHELL");
+             if (program) {
+ #ifdef RV_SHELL
+@@ -1173,6 +1174,7 @@ main(int argc, char *argv[])
+ #endif
+                 reload();
+             }
++	  } else { spawn((char *[]) {getenv("ROVER_SHELL"), CWD, NULL}); }
+         } else if (!strcmp(key, RVK_VIEW)) {
+             if (!rover.nfiles || S_ISDIR(EMODE(ESEL))) continue;
+             if (open_with_env("PAGER", ENAME(ESEL)))
+@@ -1338,8 +1340,8 @@ main(int argc, char *argv[])
              }
          } else if (!strcmp(key, RVK_DELETE)) {
              if (rover.nfiles) {
@@ -99,7 +119,7 @@ diff -u ./rover.c ../rover.old/rover.c
                      const char *name = ENAME(ESEL);
                      int ret = ISDIR(ENAME(ESEL)) ? deldir(name) : delfile(name);
                      reload();
-@@ -1375,8 +1375,8 @@
+@@ -1375,8 +1377,8 @@ main(int argc, char *argv[])
              update_view();
          } else if (!strcmp(key, RVK_MARK_DELETE)) {
              if (rover.marks.nentries) {
