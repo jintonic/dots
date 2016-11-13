@@ -121,3 +121,13 @@ bind editor <Tab> complete-query # very useful
 macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add sender"
 # add new key M:
 macro generic,index,pager M "<shell-escape>abook<return>" "launch abook"
+
+#______________________________________________________________________________
+# print
+set print=yes # don't ask yes or no
+# fmt is used to wrap long lines without breaking words,
+# quoted lines have to be formatted using option -p ">".
+# There is no way to control top and bottom margins in a2ps,
+# the left margin is set by --margin=40,
+# right margin is set indirectly by setting numbers of letters in a line.
+set print_command="fmt -p \">\" | fmt -s | a2ps --border=no --margin=40 -l70 -1 -B -=mail -o - 2> /dev/null |ps2pdf - ~/mutt.pdf"
