@@ -12,7 +12,7 @@
    gStyle->SetTitleBorderSize(0);
    gStyle->SetOptStat(1111110); // show more information
    gStyle->SetOptFit(); // show fit result
-   gStyle->SetFitFormat(".0f"); // shorten fit result
+   gStyle->SetFitFormat(".1f"); // shorten fit result
    gStyle->SetStatX(0.99); // top right corner x
    gStyle->SetStatY(0.99); // top right corner yx
    gStyle->SetStatFont(22);
