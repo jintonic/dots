@@ -16,9 +16,6 @@ set smarthome # C-A goes to the 1st non-space letter
 set autoindent # inherit indent from previous line
 set mouse # M-M to toggle, hold shift to revert to normal
 
-set statuscolor white,blue
-set keycolor white,blue
-
 # resamble bash and Windows shortcuts
 bind ^H help main # bound to backspace by default
 
