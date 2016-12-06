@@ -69,6 +69,14 @@ mutt:
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
 
+nano:
+	ln -sf $(PWD)/$@rc ~/.$@rc
+	if [ -d ~/.$@ ]; then \
+	  cd ~/.$@ && git pull; \
+	else \
+	  git clone git@github.com:scopatz/nanorc.git ~/.$@; \
+	fi
+
 profile:
 	ln -sf $(PWD)/$@ ~/.$@
 
