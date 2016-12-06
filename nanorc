@@ -1,4 +1,4 @@
-# settings
+## settings
 set multibuffer # enable multiple file editing
 
 set morespace # use the second line for editing as well
@@ -16,7 +16,7 @@ set smarthome # C-A goes to the 1st non-space letter
 set autoindent # inherit indent from previous line
 set mouse # M-M to toggle, hold shift to revert to normal
 
-# resamble bash and Windows shortcuts
+## resamble bash and Windows shortcuts
 bind ^H help main # bound to backspace by default
 
 bind M-D cutwordright main # not used by default
@@ -36,16 +36,17 @@ bind ^C copytext main # bound to show cursor position by default
 bind ^X cut main # bound to exit by default
 bind ^V uncut main # bound to next page by default
 bind ^Space mark main # bound to forward one word by default
+bind M-Space mark main # bound to backward one word by default
 
 bind ^U undo main # bound to uncut by default
 bind ^Y redo main # bound to preivous page by default
 
 bind ^I indent main # bound to tab by default
-bind ^[ unindent main # not used by default
+bind ^B unindent main # bound to back a letter by default
 
 bind M-C comment main # bound to toggle cursor position by default
 
-# syntax highlighting
+## syntax highlighting (coloring order matters)
 include ~/.nano/nanorc.nanorc
 include ~/.nano/tex.nanorc
 include ~/.nano/c.nanorc
@@ -62,7 +63,7 @@ include ~/.nano/git.nanorc
 include ~/.nano/markdown.nanorc
 include ~/.nano/xresources.nanorc
 
-# commenting
+## commenting
 extendsyntax C comment "//"
 extendsyntax Xresources comment "!"
 extendsyntax TeX comment "%"
