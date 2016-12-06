@@ -29,7 +29,6 @@ bind M-B prevword main # bound to toggle backup file by default
 bind ^F whereis main # bound to go forward one letter by default
 bind ^G searchagain main # bound to help by default
 bind ^R replace main # bound to insert another file by default
-bind ^M mark main # bound to enter by default
 
 bind ^Q exit main # not used by default
 bind ^S savefile main # not used by default
@@ -39,6 +38,7 @@ bind ^O insert main # bound to writeout by default
 bind ^C copytext main # bound to show cursor position by default
 bind ^X cut main # bound to exit by default
 bind ^V uncut main # bound to next page by default
+bind ^Space mark main # bound to forward one word by default
 
 bind ^U undo main # bound to uncut by default
 bind ^Y redo main # bound to preivous page by default
