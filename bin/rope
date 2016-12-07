@@ -9,18 +9,10 @@ fi
 # common settings for all OS
 if [ -x "$1" ]; then $1; exit; fi
 case "$1" in
-  *.sty|*.tex|*.bib|*.bbl)
-    gvim -v --servername VIM --remote-silent $1 ;;
+  *.txt|*[Mm]akefile|*.cmake|*.mk|*.cxx|*.[cC]|*.cc|*.cpp|*.hpp*.[hH]|*.hh|*.h|*.sty|*.tex|*.bib|*.bbl|*rc|*.vim|*emacs|*.el|*Xdefaults|*xsession|*.markdown|*.md|*.yml|*.css|*.xml)
+    gvim -v --servername `/sbin/ifconfig | head -1 | awk '{print $5}' | sed 's/://g'` --remote-silent $1 ;;
   *.aux)
     latexmk -pvc ${1%.aux} ;;
-  *.txt|*[Mm]akefile|*.cmake|*.mk)
-    gvim -v --servername VIM --remote-silent $1 ;;
-  *rc|*.vim|*emacs|*.el|*Xdefaults|*xsession)
-    gvim -v --servername VIM --remote-silent $1 ;;
-  *.cxx|*.[cC]|*.cc|*.cpp|*.hpp*.[hH]|*.hh|*.h)
-    gvim -v --servername VIM --remote-silent $1 ;;
-  *.markdown|*.md|*.yml|*.css|*.xml)
-    gvim -v --servername VIM --remote-silent $1 ;;
   *.R)
     Rscript $1 ;;
   *.gnu)
