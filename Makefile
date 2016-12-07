@@ -11,7 +11,7 @@ endif
 
 EXCLUDE=README.md Makefile xsession fonts rover.patch
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=bin terminfo
+TARGETS+=bin terminfo nano
 
 all:$(TARGETS)
 
