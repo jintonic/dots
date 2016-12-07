@@ -17,7 +17,7 @@ index 9479eda..d221527 100644
  INSTALL=install -D
  UNINSTALL=rm
 diff --git a/config.h b/config.h
-index c2b644c..abfe8e5 100644
+index c2b644c..8399fa9 100644
 --- a/config.h
 +++ b/config.h
 @@ -15,46 +15,46 @@
@@ -88,27 +88,26 @@ index c2b644c..abfe8e5 100644
  
  /* Prompt strings for line input. */
  #define RV_PROMPT(S)    S ": "
+@@ -82,4 +82,4 @@
+    process each time an external  program is invoked. Leave this macro
+    undefined if you prefer external  programs to be launched with just
+    `$EXTERNAL_PROGRAM [arg]`. */
+-#define RV_SHELL        "/bin/sh"
++/*#define RV_SHELL        "/bin/sh"*/
 diff --git a/rover.c b/rover.c
-index 5e43e7a..e932880 100644
+index 2665a98..7b5467b 100644
 --- a/rover.c
 +++ b/rover.c
-@@ -1164,6 +1164,7 @@ main(int argc, char *argv[])
-         } else if (!strcmp(key, RVK_REFRESH)) {
-             reload();
-         } else if (!strcmp(key, RVK_SHELL)) {
-+	  if(getenv("ROVER_SHELL")==NULL) { // https://github.com/lecram/rover/pull/24
-             program = getenv("SHELL");
-             if (program) {
+@@ -1189,7 +1189,7 @@ main(int argc, char *argv[])
  #ifdef RV_SHELL
-@@ -1173,6 +1174,7 @@ main(int argc, char *argv[])
+                 spawn((char *[]) {RV_SHELL, "-c", program, NULL});
+ #else
+-                spawn((char *[]) {program, NULL});
++                spawn((char *[]) {program, CWD, NULL});
  #endif
                  reload();
              }
-+	  } else { spawn((char *[]) {getenv("ROVER_SHELL"), CWD, NULL}); }
-         } else if (!strcmp(key, RVK_VIEW)) {
-             if (!rover.nfiles || S_ISDIR(EMODE(ESEL))) continue;
-             if (open_with_env("PAGER", ENAME(ESEL)))
-@@ -1338,8 +1340,8 @@ main(int argc, char *argv[])
+@@ -1358,8 +1358,8 @@ main(int argc, char *argv[])
              }
          } else if (!strcmp(key, RVK_DELETE)) {
              if (rover.nfiles) {
@@ -119,7 +118,7 @@ index 5e43e7a..e932880 100644
                      const char *name = ENAME(ESEL);
                      int ret = ISDIR(ENAME(ESEL)) ? deldir(name) : delfile(name);
                      reload();
-@@ -1375,8 +1377,8 @@ main(int argc, char *argv[])
+@@ -1395,8 +1395,8 @@ main(int argc, char *argv[])
              update_view();
          } else if (!strcmp(key, RVK_MARK_DELETE)) {
              if (rover.marks.nentries) {
