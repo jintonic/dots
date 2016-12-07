@@ -136,13 +136,14 @@ export LD_LIBRARY_PATH=$HOME/lib
 
 export MANPATH=~/man:~/share/man:$MANPATH
 
-export EDITOR='vim -X'
 alias vi='vim -X'
+export EDITOR='vi'
 export PAGER='less'
 export ROVER_OPEN='rope'
+export ROVER_SHELL="rose" 
 l () { # run rover in customized environment
   tempfile=$(mktemp 2> /dev/null)
-  ROVER_SHELL="rose" rover --save-cwd "$tempfile" "$PWD" ~/overleaf ~/github ~/rdlab ~/Dropbox ~/phys492
+  rover --save-cwd "$tempfile" "$PWD" ~/overleaf ~/github ~/rdlab ~/Dropbox ~/phys492
   cd "$(cat $tempfile)"
   rm -f $tempfile
   if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
