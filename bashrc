@@ -137,8 +137,9 @@ export LD_LIBRARY_PATH=$HOME/lib
 export MANPATH=~/man:~/share/man:$MANPATH
 
 alias vi='vim -X'
-export EDITOR='vi'
+export EDITOR='vim -X'
 export PAGER='less'
+export ROVER_EDITOR='vi'
 export ROVER_OPEN='rope'
 export ROVER_SHELL="rose" 
 l () { # run rover in customized environment
