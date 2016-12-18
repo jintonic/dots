@@ -139,7 +139,7 @@ export MANPATH=~/man:~/share/man:$MANPATH
 alias vi='vim -X'
 export EDITOR='vim -X'
 export PAGER='less'
-export ROVER_EDITOR='vi'
+export ROVER_EDITOR='vim'
 export ROVER_OPEN='rope'
 export ROVER_SHELL="rose" 
 l () { # run rover in customized environment
