@@ -1,2 +1,2 @@
 #!/bin/sh
-vim -X
+vim -X $1
