@@ -71,10 +71,11 @@ mutt:
 
 nano:
 	ln -sf $(PWD)/$@rc ~/.$@rc
-	if [ -d ~/.$@ ]; then \
-	  cd ~/.$@ && git pull; \
+	if [ -d ~/github/$@rc ]; then \
+	  cd ~/github/$@rc && git pull; \
 	else \
-	  git clone https://github.com/scopatz/nanorc.git ~/.$@; \
+	  cd ~/github; \
+	  git clone git@github.com:jintonic/$@rc.git; \
 	fi
 
 profile:

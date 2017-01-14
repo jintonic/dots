@@ -23,9 +23,9 @@
    gStyle->SetTitleSize(0.05,"XYZ");
    gStyle->SetTitleOffset(1.1,"Y");
    gStyle->SetTitleOffset(-0.5,"Z");
-   gStyle->SetPadRightMargin(0.02);
+   //gStyle->SetPadRightMargin(0.02);
    gStyle->SetPadLeftMargin(0.12);
-   gStyle->SetPadTopMargin(0.02);
+   //gStyle->SetPadTopMargin(0.02);
    gStyle->SetPadBottomMargin(0.11);
    // http://root.cern.ch/root/html/TAttText.html#T1
    gStyle->SetTitleAlign(23);
