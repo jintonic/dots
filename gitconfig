@@ -1,5 +1,5 @@
 [push]
-  default = simple
+  default = current
 [user]
   name = Jing LIU
   email = jing.liu@usd.edu
