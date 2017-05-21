@@ -85,6 +85,7 @@ cygwin
 DAMA
 daq
 DAQ
+Daya
 dbus
 Debian
 dewar
@@ -246,6 +247,7 @@ LAr
 LBNE
 LBNL
 Leff
+LEGEND
 Leptogenesis
 LHC
 LIGO
@@ -364,6 +366,7 @@ Primakoff
 PRL
 PT100
 PTFE
+PTR
 PuTTY
 QCD
 QE
@@ -449,6 +452,7 @@ Totani
 Totani's
 Toyama
 TPB
+transformative
 transimpedance
 triboelectric
 Tsinghua
@@ -506,7 +510,3 @@ youtube
 Youtube
 Yukawa
 zotero
-transformative
-PTR
-Daya
-LEGEND
