@@ -75,7 +75,7 @@ nano:
 	  cd ~/github/$@rc && git pull; \
 	else \
 	  cd ~/github; \
-	  git clone git@github.com:jintonic/$@rc.git; \
+	  git clone https://github.com/jintonic/$@rc.git; \
 	fi
 
 profile:
