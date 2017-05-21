@@ -14,7 +14,7 @@ while true; do
   DSK=`df -h | awk '$6=="/" {print $4}'`
   # one needs to worry when load>=8 in a 8-core machine
   CPU=`uptime | awk '{print $(NF-1)}'`
-  MEM=`free | grep - | awk '{printf "%.0f%%", $3/($3+$4)*100}'`
+  MEM=`free | grep Mem | awk '{printf "%.0f%%", ($2-$7)/$2*100}'`
   DAT=`date +'%b.%d %a.%l:%M%P'`
   xsetroot -name "$MAIL, $DSK $CPU $MEM $DAT"
   sleep 1
