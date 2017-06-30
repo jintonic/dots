@@ -9,7 +9,13 @@ else
   endif
 endif
 
-EXCLUDE=README.md Makefile xsession fonts rover.patch
+EXCLUDE=README.md Makefile fonts pygments vifm rover.patch
+ifeq ($(ARC),Linux)
+  EXCLUDE+=minttyrc startxwinrc
+endif
+ifeq ($(ARC),Windows)
+  EXCLUDE+=asoundrc xsession root rootrc
+endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo nano
 
