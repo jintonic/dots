@@ -20,26 +20,17 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein')) " plugins' root path
 
 call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/unite.vim',{'on_cmd': ['Unite']})
-call dein#add('Shougo/unite-outline')
-call dein#add('Shougo/neocomplete.vim', {'on_i': 1})
 call dein#add('Shougo/neosnippet.vim', {'on_i': 1})
 call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
-"call dein#add('Shougo/vimproc.vim', {
-"      \ 'build': {
-"      \     'cygwin': 'make -f make_cygwin.mak',
-"      \     'mac': 'make -f make_mac.mak',
-"      \     'linux': 'make',
-"      \     'unix': 'gmake',
-"      \    },
-"      \ })
+call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('Konfekt/FastFold')
 call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
-call dein#add('bling/vim-airline')
+call dein#add('ap/vim-buftabline')
 call dein#add('altercation/vim-colors-solarized')
 
 call dein#end()
@@ -99,23 +90,19 @@ silent! colorscheme solarized
 set wildmode=list:longest,full
 
 " airline
-""set laststatus=2
-let g:airline_powerline_fonts = 1
+let g:buftabline_show = 1
+let g:buftabline_numbers = 2
 
-let g:airline#extensions#tabline#enabled = 1 " show buffer
-let g:airline#extensions#tabline#buffer_min_count = 2 " not show only 1 buffer
 " map keys to open buffer quickly
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <Leader>1 <Plug>AirlineSelectTab1
-nmap <Leader>2 <Plug>AirlineSelectTab2
-nmap <Leader>3 <Plug>AirlineSelectTab3
-nmap <Leader>4 <Plug>AirlineSelectTab4
-nmap <Leader>5 <Plug>AirlineSelectTab5
-nmap <Leader>6 <Plug>AirlineSelectTab6
-nmap <Leader>7 <Plug>AirlineSelectTab7
-nmap <Leader>8 <Plug>AirlineSelectTab8
-nmap <Leader>9 <Plug>AirlineSelectTab9
-let g:airline#extensions#whitespace#enabled = 0 " turn off trailing space check
+nmap <Leader>1 <Plug>BufTabLine.Go(1)
+nmap <Leader>2 <Plug>BufTabLine.Go(2)
+nmap <Leader>3 <Plug>BufTabLine.Go(3)
+nmap <Leader>4 <Plug>BufTabLine.Go(4)
+nmap <Leader>5 <Plug>BufTabLine.Go(5)
+nmap <Leader>6 <Plug>BufTabLine.Go(6)
+nmap <Leader>7 <Plug>BufTabLine.Go(7)
+nmap <Leader>8 <Plug>BufTabLine.Go(8)
+nmap <Leader>9 <Plug>BufTabLine.Go(9)
 
 " spell {{{1
 " set spell
@@ -168,12 +155,6 @@ set foldlevel=1
 " zF	Create "N" folded lines.
 
 " mapping {{{1
-" mapping of function keys
-" first command toggles options, second reports status
-"nn <F6> :setlocal number! number?<CR>
-"nn <F7> :setlocal spell! spell?<CR>
-"nn <F8> :setlocal paste! paste?<CR>
-"set pastetoggle=<F8> " toggle past in insert mode
 
 map \a :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
 map \s :e %<.cc<CR>
@@ -213,22 +194,6 @@ autocmd FileType mail set fo+=w
 " fugitive {{{1
 nmap <Leader>0 :Gstatus<CR>
 
-" unite {{{1
-" too fuzzy to narrow down candidate:
-"silent! call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" file/async would not allow going up directory
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=outline outline<cr>
-nnoremap <leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
-
-" neocomplete {{{1
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase
-let g:neocomplete#enable_smart_case = 1
-" https://github.com/Shougo/neocomplete.vim/issues/332
-let g:neocomplete#enable_fuzzy_completion = 0
-inoremap <expr><C-g> neocomplete#undo_completion()
-
 " neosnippet {{{1
 " use TAB to expand snippet or jump in between space holders
 imap <expr><TAB> neosnippet#expandable() ?
@@ -238,3 +203,11 @@ imap <expr><TAB> neosnippet#expandable() ?
 let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/after/snippets'
+
+" ctrlp {{{1
+nnoremap <leader>f :CtrlP<CR>
+let g:ctrlp_working_path_mode = 'ca'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
