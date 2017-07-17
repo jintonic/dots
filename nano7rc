@@ -1,0 +1,70 @@
+## settings
+set multibuffer # enable multiple file editing
+
+set morespace # use the second line for editing as well
+set constantshow # constantly show cursor position in status bar
+set softwrap # wrap long lines only in display
+set tabsize "3"
+set tabstospaces # M-Q to toggle for makefile
+set softwrap # M-Q to toggle for makefile
+
+set historylog # save search history
+set positionlog # save cursor locations in 200 recent files
+set locking # prevent another nano to open the same file
+
+set smarthome # C-A goes to the 1st non-space letter
+set autoindent # inherit indent from previous line
+set mouse # M-M to toggle, hold shift to revert to normal
+
+## resamble bash and Windows shortcuts
+bind ^H help main # bound to backspace by default
+
+bind M-D cutwordright main # not used by default
+bind ^W cutwordleft main # bound to search by default
+bind M-F nextword main # bound to toggle multibuffer by default
+bind M-B prevword main # bound to toggle backup file by default 
+bind ^F whereis main # bound to go forward one letter by default
+bind ^G searchagain main # bound to help by default
+bind ^R replace main # bound to insert another file by default
+
+bind M-Q exit main # not used by default
+bind ^S savefile main # not used by default
+bind M-S writeout main # bound to toggle smooth scrolling
+bind ^O insert main # bound to writeout by default
+
+bind ^C copytext main # bound to show cursor position by default
+bind ^X cut main # bound to exit by default
+bind ^V uncut main # bound to next page by default
+bind ^Space mark main # bound to forward one word by default
+bind M-Space mark main # bound to backward one word by default
+
+bind ^U undo main # bound to uncut by default
+bind ^Y redo main # bound to preivous page by default
+
+bind ^I indent main # bound to tab by default
+bind ^B unindent main # bound to back a letter by default
+
+bind M-C comment main # bound to toggle cursor position by default
+
+## syntax highlighting (coloring order matters)
+include ~/github/nanorc/nanorc.nanorc
+include ~/github/nanorc/cfg.nanorc
+include ~/github/nanorc/tex.nanorc
+include ~/github/nanorc/c.nanorc
+include ~/github/nanorc/fortran.nanorc
+include ~/github/nanorc/makefile.nanorc
+include ~/github/nanorc/cmake.nanorc
+include ~/github/nanorc/conf.nanorc
+include ~/github/nanorc/html.nanorc
+include ~/github/nanorc/email.nanorc
+include ~/github/nanorc/sh.nanorc
+include ~/github/nanorc/python.nanorc
+include ~/github/nanorc/perl.nanorc
+include ~/github/nanorc/git.nanorc
+include ~/github/nanorc/markdown.nanorc
+include ~/github/nanorc/xresources.nanorc
+
+## commenting
+extendsyntax C comment "//"
+extendsyntax Xresources comment "!"
+extendsyntax TeX comment "%"
