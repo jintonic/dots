@@ -3,8 +3,9 @@ index 3387817..39fc10f 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -1,5 +1,6 @@
- LDLIBS=-lncursesw
+-LDLIBS=-lncursesw
 -PREFIX=/usr/local
++LDLIBS=-lncursesw -ltinfo
 +CFLAGS+=-I /usr/include/ncursesw
 +PREFIX=$(HOME)
  MANPREFIX=$(PREFIX)/man
