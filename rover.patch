@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 3387817..39fc10f 100644
+index 8fea662..6d37e47 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -1,5 +1,6 @@
@@ -12,12 +12,17 @@ index 3387817..39fc10f 100644
  BINDIR=$(DESTDIR)$(PREFIX)/bin
  MANDIR=$(DESTDIR)$(MANPREFIX)/man1
 diff --git a/config.h b/config.h
-index 3665bde..66eeb4c 100644
+index 3665bde..1837cf5 100644
 --- a/config.h
 +++ b/config.h
-@@ -17,47 +17,47 @@
- #define RVK_COPY_PATH   "y"
- #define RVK_PASTE_PATH  "p"
+@@ -14,50 +14,50 @@
+ #define RVK_CD_UP       "h"
+ #define RVK_HOME        "H"
+ #define RVK_TARGET      "t"
+-#define RVK_COPY_PATH   "y"
+-#define RVK_PASTE_PATH  "p"
++#define RVK_COPY_PATH   "w"
++#define RVK_PASTE_PATH  "u"
  #define RVK_REFRESH     "r"
 -#define RVK_SHELL       "^M"
 +#define RVK_SHELL       "s"
@@ -91,7 +96,7 @@ index 3665bde..66eeb4c 100644
 -#define RV_SHELL        "/bin/sh"
 +/*#define RV_SHELL        "/bin/sh"*/
 diff --git a/rover.c b/rover.c
-index 2e48355..485846d 100644
+index 723c11a..b566422 100644
 --- a/rover.c
 +++ b/rover.c
 @@ -1411,7 +1411,7 @@ paste_path_fail:
