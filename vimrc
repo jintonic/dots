@@ -32,6 +32,7 @@ call dein#add('tpope/vim-repeat')
 call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
 call dein#add('ap/vim-buftabline')
 call dein#add('altercation/vim-colors-solarized')
+call dein#add('jlanzarotta/bufexplorer')
 
 call dein#end()
 
