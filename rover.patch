@@ -1,21 +1,28 @@
 diff --git a/Makefile b/Makefile
-index 3387817..d06360b 100644
+index 8fea662..6d37e47 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -1,5 +1,5 @@
- LDLIBS=-lncursesw
+@@ -1,5 +1,6 @@
+-LDLIBS=-lncursesw
 -PREFIX=/usr/local
++LDLIBS=-lncursesw -ltinfo
++CFLAGS+=-I /usr/include/ncursesw
 +PREFIX=$(HOME)
  MANPREFIX=$(PREFIX)/man
  BINDIR=$(DESTDIR)$(PREFIX)/bin
  MANDIR=$(DESTDIR)$(MANPREFIX)/man1
 diff --git a/config.h b/config.h
-index ef7ad98..6885e14 100644
+index 3665bde..1837cf5 100644
 --- a/config.h
 +++ b/config.h
-@@ -15,47 +15,47 @@
+@@ -14,50 +14,50 @@
+ #define RVK_CD_UP       "h"
  #define RVK_HOME        "H"
  #define RVK_TARGET      "t"
+-#define RVK_COPY_PATH   "y"
+-#define RVK_PASTE_PATH  "p"
++#define RVK_COPY_PATH   "w"
++#define RVK_PASTE_PATH  "u"
  #define RVK_REFRESH     "r"
 -#define RVK_SHELL       "^M"
 +#define RVK_SHELL       "s"
@@ -82,43 +89,30 @@ index ef7ad98..6885e14 100644
  
  /* Prompt strings for line input. */
  #define RV_PROMPT(S)    S ": "
-@@ -83,4 +83,4 @@
+@@ -85,4 +85,4 @@
     process each time an external  program is invoked. Leave this macro
     undefined if you prefer external  programs to be launched with just
     `$EXTERNAL_PROGRAM [arg]`. */
 -#define RV_SHELL        "/bin/sh"
 +/*#define RV_SHELL        "/bin/sh"*/
 diff --git a/rover.c b/rover.c
-index 640d0d5..3559670 100644
+index 723c11a..b566422 100644
 --- a/rover.c
 +++ b/rover.c
-@@ -1189,7 +1189,7 @@ main(int argc, char *argv[])
- #ifdef RV_SHELL
-                 spawn((char *[]) {RV_SHELL, "-c", program, NULL});
- #else
--                spawn((char *[]) {program, NULL});
-+                spawn((char *[]) {program, CWD, NULL});
- #endif
-                 reload();
-             }
-@@ -1370,8 +1370,8 @@ main(int argc, char *argv[])
-             }
+@@ -1411,7 +1411,7 @@ paste_path_fail:
          } else if (!strcmp(key, RVK_DELETE)) {
              if (rover.nfiles) {
--                message(YELLOW, "Delete \"%s\"? (Y/n)", ENAME(ESEL));
+                 message(YELLOW, "Delete \"%s\"? (Y/n)", ENAME(ESEL));
 -                if (rover_getch() == 'Y') {
-+                message(YELLOW, "Delete \"%s\"? (y/n)", ENAME(ESEL));
 +                if (rover_getch() == 'y') {
                      const char *name = ENAME(ESEL);
                      int ret = ISDIR(ENAME(ESEL)) ? deldir(name) : delfile(name);
                      reload();
-@@ -1407,8 +1407,8 @@ main(int argc, char *argv[])
-             update_view();
+@@ -1448,7 +1448,7 @@ paste_path_fail:
          } else if (!strcmp(key, RVK_MARK_DELETE)) {
              if (rover.marks.nentries) {
--                message(YELLOW, "Delete all marked entries? (Y/n)");
+                 message(YELLOW, "Delete all marked entries? (Y/n)");
 -                if (rover_getch() == 'Y')
-+                message(YELLOW, "Delete all marked entries? (y/n)");
 +                if (rover_getch() == 'y')
                      process_marked(NULL, delfile, deldir, "Deleting", "Deleted");
                  else
