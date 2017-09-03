@@ -205,6 +205,10 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/after/snippets'
 
+" buffer explorer {{{1
+let g:bufExplorerDisableDefaultKeyMapping=1
+nnoremap <leader>b :BufExplorer<CR>
+
 " ctrlp {{{1
 nnoremap <leader>f :CtrlP<CR>
 let g:ctrlp_working_path_mode = 'ca'
