@@ -210,8 +210,8 @@ let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <leader>b :BufExplorer<CR>
 
 " ctrlp {{{1
-nnoremap <leader>f :CtrlP<CR>
-let g:ctrlp_working_path_mode = 'ca'
+nnoremap <leader>f :CtrlPCurWD<CR>
+let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
