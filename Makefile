@@ -9,7 +9,13 @@ else
   endif
 endif
 
-EXCLUDE=README.md Makefile xsession fonts rover.patch
+EXCLUDE=README.md Makefile fonts pygments vifm rover.patch
+ifeq ($(ARC),Linux)
+  EXCLUDE+=minttyrc startxwinrc
+endif
+ifeq ($(ARC),Windows)
+  EXCLUDE+=asoundrc xsession root rootrc
+endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo nano
 
@@ -70,12 +76,16 @@ mutt:
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
 
 nano:
-	ln -sf $(PWD)/$@rc ~/.$@rc
+	if (( `nano --version | head -1 | awk -F. '{print $$2}'` > 6 )); then \
+	  ln -sf $(PWD)/$@7rc ~/.$@rc; \
+	else \
+	  ln -sf $(PWD)/$@rc ~/.$@rc; \
+	fi
 	if [ -d ~/github/$@rc ]; then \
 	  cd ~/github/$@rc && git pull; \
 	else \
 	  cd ~/github; \
-	  git clone git@github.com:jintonic/$@rc.git; \
+	  git clone https://github.com/jintonic/$@rc.git; \
 	fi
 
 profile:
@@ -97,7 +107,7 @@ root:
 rover:
 	mkdir -p ~/github/
 	if [ -d ~/github/$@ ]; then \
-	  cd ~/github/$@ && git pull && git checkout -- '*'; \
+	  cd ~/github/$@ && git checkout -- '*' && git pull; \
 	else \
 	  cd ~/github && git clone https://github.com/lecram/$@.git; \
 	fi

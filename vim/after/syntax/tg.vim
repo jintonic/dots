@@ -3,6 +3,8 @@ if exists("b:current_syntax")
   finish
 endif
 
+syn match Comment "//.*$" 
+
 syn keyword Statement isot elem elem_from_isot mate mixt 
 syn keyword Statement mixt_by_weight mixt_by_natoms mixt_by_volume
 syn keyword Statement solid color colour rotm vis check_overlaps

@@ -71,6 +71,27 @@ case "$TERM" in
     ;;
 esac
 
+# http://github.com/joepvd/tty-solarized
+if [ "$TERM" = "linux" ]; then
+  echo -en "\e]PB657b83" # S_base00
+  echo -en "\e]PA586e75" # S_base01
+  echo -en "\e]P0073642" # S_base02
+  echo -en "\e]P62aa198" # S_cyan
+  echo -en "\e]P8002b36" # S_base03
+  echo -en "\e]P2859900" # S_green
+  echo -en "\e]P5d33682" # S_magenta
+  echo -en "\e]P1dc322f" # S_red
+  echo -en "\e]PC839496" # S_base0
+  echo -en "\e]PE93a1a1" # S_base1
+  echo -en "\e]P9cb4b16" # S_orange
+  echo -en "\e]P7eee8d5" # S_base2
+  echo -en "\e]P4268bd2" # S_blue
+  echo -en "\e]P3b58900" # S_yellow
+  echo -en "\e]PFfdf6e3" # S_base3
+  echo -en "\e]PD6c71c4" # S_violet
+  clear # against bg artifacts
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -156,5 +177,9 @@ l () { # run rover in customized environment
     export DISPLAY=`cat ~/.display`
   fi
 }
+
+# nice line drawing in putty 
+# (https://superuser.com/questions/278286/making-256-color-and-line-drawing-characters-both-work-in-putty)
+export NCURSES_NO_UTF8_ACS=1
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi
