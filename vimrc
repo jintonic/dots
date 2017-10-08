@@ -33,6 +33,7 @@ call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
 call dein#add('ap/vim-buftabline')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('jlanzarotta/bufexplorer')
+call dein#add('vim-scripts/taglist.vim')
 
 call dein#end()
 
@@ -216,3 +217,14 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
+
+" taglist {{{1
+nnoremap <leader>t :TlistOpen<CR>
+
+let tlist_tex_settings = 'latex;c:contents;f:figures;t:tables'
+let tlist_bib_settings = 'bibtex;e:entries;a:author;t:title'
+let tlist_make_settings = 'make;m:macros;t:targets'
+
+let Tlist_Close_On_Select = 1
+let Tlist_Show_One_File = 1
+let Tlist_Enable_Fold_Column = 0

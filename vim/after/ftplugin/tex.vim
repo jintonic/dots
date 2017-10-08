@@ -75,3 +75,11 @@ vnoremap j gj
 vnoremap k gk
 nnoremap j gj
 nnoremap k gk
+
+" work with taglist
+" Also, since I use the ‘-‘ and ‘:’ characters a lot in my labels, I find it
+" useful to add those characters to iskeyword
+" iskeyword defines what characters are considered to be a part of the same
+" word by commands like ‘w’ and ‘CTRL-]’
+setlocal iskeyword=@,48-57,_,-,:,192-255,#
+
