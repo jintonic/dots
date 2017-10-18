@@ -1,9 +1,26 @@
 --langdef=latex
---langmap=latex:.tex
---regex-latex=/\\label\{([^}]*)\}/\1/l,label/
---regex-latex=/\\section\{([^}]*)\}/\1/s,section/
---regex-latex=/\\subsection\{([^}]*)\}/\1/t,subsection/
---regex-latex=/\\subsubsection\{([^}]*)\}/\1/u,subsubsection/
---regex-latex=/\\section\*\{([^}]*)\}/\1/s,section/
---regex-latex=/\\subsection\*\{([^}]*)\}/\1/t,subsection/
---regex-latex=/\\subsubsection\*\{([^}]*)\}/\1/u,subsubsection/
+--langmap=latex:.tex .latex
+--regex-latex=/^\\part[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/PART \2/c,part/
+--regex-latex=/^\\part[[:space:]]*\*[[:space:]]*\{([^}]+)\}/PART \1/c,part/
+--regex-latex=/^\\chapter[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/CHAP \2/c,chapter/
+--regex-latex=/^\\chapter[[:space:]]*\*[[:space:]]*\{([^}]+)\}/CHAP \1/c,chapter/
+--regex-latex=/^\\section[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/\2/c,section/
+--regex-latex=/^\\section[[:space:]]*\*[[:space:]]*\{([^}]+)\}/\1/c,section/
+--regex-latex=/^\\subsection[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/-\2/c,subsection/
+--regex-latex=/^\\subsection[[:space:]]*\*[[:space:]]*\{([^}]+)\}/-\1/c,subsection/
+--regex-latex=/^\\subsubsection[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/--\2/c,subsubsection/
+--regex-latex=/^\\subsubsection[[:space:]]*\*[[:space:]]*\{([^}]+)\}/--\1/c,subsubsection/
+--regex-latex=/\\includegraphics[[:space:]]*(\[[^]]*\])?[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/\3/f,figures/
+--regex-latex=/\\lstinputlisting[[:space:]]*(\[[^]]*\])?[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/\3/i,listing/
+--regex-latex=/\\label[[:space:]]*\{t\:([^}]+)\}/\1/t,tables/
+--regex-latex=/\\label[[:space:]]*\{([^}]+)\}/\1/l,label/
+--regex-latex=/\\bibitem[[:space:]]*\[([^]]*)\]\{([^}]+)\}/\1 \2/b,bibitem/
+
+--langdef=bibtex
+--langmap=bibtex:.bib
+--regex-bibtex=/@string\{([^ "#%')(,=}{]+)/\1/s,BibTeX-Strings/i
+--regex-bibtex=/@(article|book|booklet|inbook|incollection|inproceedings|manual|masterthesis|misc|phdthesis|proceedings|techreport|unpublished)\{([^,]+),/\2/e,BibTeX-Entries/i
+--regex-bibtex=/[[:space:]]*author[[:space:]]*=[[:space:]]*("([^"]+)"|\{([^\}]+)\})[[:space:]]*,?[[:space:]]*$/\2\3/a,BibTeX-Authors/i
+--regex-bibtex=/[[:space:]]*title[[:space:]]*=[[:space:]]*["\{](\{[:word:]+\}.+|.+)(["}][[:space:]]*,[[:space:]]*$|$)/\1/t,BibTeX-Titles/i
+
+--regex-make=/^([^:# \t]+)[ \t]*[:]{1,2}/\1/t,targets/
