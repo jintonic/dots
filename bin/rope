@@ -68,6 +68,8 @@ case "$1" in
 	    less $1 ;;
 	esac
       fi
+    elif [ "$OS" = "Darwin" ]; then # for Mac
+      open "$1"
     else # for Cygwin
       cygstart "$1"
     fi
