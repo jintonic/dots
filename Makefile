@@ -10,11 +10,10 @@ else
 endif
 
 EXCLUDE=README.md Makefile fonts pygments vifm rover.patch
-ifeq ($(ARC),Linux)
-  EXCLUDE+=minttyrc startxwinrc
-endif
 ifeq ($(ARC),Windows)
   EXCLUDE+=asoundrc xsession root rootrc
+else
+  EXCLUDE+=minttyrc startxwinrc
 endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo nano
@@ -111,7 +110,12 @@ rover:
 	else \
 	  cd ~/github && git clone https://github.com/lecram/$@.git; \
 	fi
-	cd ~/github/$@ && git apply ../dots/$@.patch && make install
+	cd ~/github/$@ && git apply ../dots/$@.patch
+	if [ "$(ARC)" = "OSX" ]; then \
+	  cd ~/github/$@ && LDFLAGS=-L/usr/local/Cellar/ncurses/6.0_4/lib CFLAGS=-I/usr/local/Cellar/ncurses/6.0_4/include make install; \
+	else \
+	  cd ~/github/$@ && make install; \
+	fi
 
 screenrc:
 	ln -sf $(PWD)/$@ ~/.$@
