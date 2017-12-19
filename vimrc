@@ -221,9 +221,11 @@ let g:ctrlp_custom_ignore = {
 " taglist {{{1
 nnoremap <leader>t :TlistOpen<CR>
 
+" https://github.com/hupili/evermd/tree/master/doc/howto-markdown-in-vim
 let tlist_tex_settings = 'latex;c:contents;f:figures;t:tables'
 let tlist_bib_settings = 'bibtex;e:entries;a:author;t:title'
 let tlist_make_settings = 'make;m:macros;t:targets'
+let tlist_markdown_settings = 'markdown;h:contents'
 
 let Tlist_Close_On_Select = 1
 let Tlist_Show_One_File = 1
