@@ -23,6 +23,10 @@ all:$(TARGETS)
 asoundrc:
 	n=`lspci|grep audio|wc -l`; if [ $$n != "1" ]; then ln -sf $(PWD)/$@ ~/.$@; fi
 
+a2psrc:
+	mkdir -p ~/.a2ps
+	ln -sf $(PWD)/$@ ~/.a2ps/$@
+
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
