@@ -1,16 +1,3 @@
-diff --git a/Makefile b/Makefile
-index 8fea662..6d37e47 100644
---- a/Makefile
-+++ b/Makefile
-@@ -1,5 +1,6 @@
--LDLIBS=-lncursesw
--PREFIX=/usr/local
-+LDLIBS=-lncursesw -ltinfo
-+CFLAGS+=-I /usr/include/ncursesw
-+PREFIX=$(HOME)
- MANPREFIX=$(PREFIX)/man
- BINDIR=$(DESTDIR)$(PREFIX)/bin
- MANDIR=$(DESTDIR)$(MANPREFIX)/man1
 diff --git a/config.h b/config.h
 index 3665bde..1837cf5 100644
 --- a/config.h
@@ -96,10 +83,10 @@ index 3665bde..1837cf5 100644
 -#define RV_SHELL        "/bin/sh"
 +/*#define RV_SHELL        "/bin/sh"*/
 diff --git a/rover.c b/rover.c
-index 723c11a..b566422 100644
+index 6db7dd9..3f74311 100644
 --- a/rover.c
 +++ b/rover.c
-@@ -1411,7 +1411,7 @@ paste_path_fail:
+@@ -1413,7 +1413,7 @@ paste_path_fail:
          } else if (!strcmp(key, RVK_DELETE)) {
              if (rover.nfiles) {
                  message(YELLOW, "Delete \"%s\"? (Y/n)", ENAME(ESEL));
@@ -108,7 +95,7 @@ index 723c11a..b566422 100644
                      const char *name = ENAME(ESEL);
                      int ret = ISDIR(ENAME(ESEL)) ? deldir(name) : delfile(name);
                      reload();
-@@ -1448,7 +1448,7 @@ paste_path_fail:
+@@ -1450,7 +1450,7 @@ paste_path_fail:
          } else if (!strcmp(key, RVK_MARK_DELETE)) {
              if (rover.marks.nentries) {
                  message(YELLOW, "Delete all marked entries? (Y/n)");

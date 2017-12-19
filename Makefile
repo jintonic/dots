@@ -10,11 +10,10 @@ else
 endif
 
 EXCLUDE=README.md Makefile fonts pygments vifm rover.patch
-ifeq ($(ARC),Linux)
-  EXCLUDE+=minttyrc startxwinrc
-endif
 ifeq ($(ARC),Windows)
   EXCLUDE+=asoundrc xsession root rootrc
+else
+  EXCLUDE+=minttyrc startxwinrc
 endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo nano
@@ -23,6 +22,10 @@ all:$(TARGETS)
 
 asoundrc:
 	n=`lspci|grep audio|wc -l`; if [ $$n != "1" ]; then ln -sf $(PWD)/$@ ~/.$@; fi
+
+a2psrc:
+	mkdir -p ~/.a2ps
+	ln -sf $(PWD)/$@ ~/.a2ps/$@
 
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
@@ -111,13 +114,25 @@ rover:
 	else \
 	  cd ~/github && git clone https://github.com/lecram/$@.git; \
 	fi
-	cd ~/github/$@ && git apply ../dots/$@.patch && make install
+	cd ~/github/$@ && git apply ../dots/$@.patch
+	if [ "$(ARC)" = "OSX" ]; then \
+	  cd ~/github/$@ && LDFLAGS=-L/usr/local/Cellar/ncurses/6.0_4/lib CFLAGS=-I/usr/local/Cellar/ncurses/6.0_4/include make install; \
+	else \
+	  cd ~/github/$@ && make install; \
+	fi
 
 screenrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
+	mkdir -p ~/github/
+	if [ -d ~/github/sc ]; then \
+	  cd ~/github/sc && git checkout -- '*' && git pull; \
+	else \
+	  cd ~/github && git clone git://git.debian.org/collab-maint/sc.git; \
+	fi
+	cd ~/github/sc && make install
 
 startxwinrc:
 	ln -sf $(PWD)/$@ ~/.$@
