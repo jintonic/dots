@@ -126,12 +126,13 @@ screenrc:
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
-	mkdir -p ~/github/
+	mkdir -p ~/github/ ~/share/man/man1 ~/share/doc
 	if [ -d ~/github/sc ]; then \
 	  cd ~/github/sc && git checkout -- '*' && git pull; \
 	else \
 	  cd ~/github && git clone git://git.debian.org/collab-maint/sc.git; \
 	fi
+	cd ~/github/sc && git apply ../dots/sc.patch
 	cd ~/github/sc && make install
 
 startxwinrc:
