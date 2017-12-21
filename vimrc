@@ -29,6 +29,7 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
+call dein#add('godlygeek/tabular')
 call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
 call dein#add('ap/vim-buftabline')
 call dein#add('altercation/vim-colors-solarized')
@@ -185,6 +186,15 @@ im <C-E> <End>
 
 im <C-S> <Esc>:w<CR>li
 im <C-Q> <Esc>:wq<CR>
+
+" make gx working
+if has('win32unix')
+  let g:netrw_browsex_viewer="cygstart"
+elseif has('macunix')
+  let g:netrw_browsex_viewer="open"
+else
+  let g:netrw_browsex_viewer="mimeopen"
+endif
 
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that

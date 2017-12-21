@@ -14,7 +14,13 @@ setlocal nojoinspaces
 
 setlocal spell
 
-let g:vim_markdown_frontmatter=1
+" vim-markdown settings
+let g:vim_markdown_math = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_no_extensions_in_markdown = 1
 
 " deal with long lines
 set wrap
