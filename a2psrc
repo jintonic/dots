@@ -1,0 +1,3 @@
+# avoid using proportional fonts in between two single quotes
+# save output to a pdf file
+Options: --prologue=fixed -P pdf

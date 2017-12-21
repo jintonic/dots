@@ -1,7 +1,7 @@
 # ~/.bashrc: executed for non-login shells.
 
 # If not running interactively, just export PATH
-PATH=.:$HOME/bin:$PATH
+PATH=.:$HOME/bin:/usr/sbin:$PATH
 [ -z "$PS1" ] && return
 
 stty -ixon # disable C-q C-s

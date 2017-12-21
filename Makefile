@@ -23,6 +23,10 @@ all:$(TARGETS)
 asoundrc:
 	n=`lspci|grep audio|wc -l`; if [ $$n != "1" ]; then ln -sf $(PWD)/$@ ~/.$@; fi
 
+a2psrc:
+	mkdir -p ~/.a2ps
+	ln -sf $(PWD)/$@ ~/.a2ps/$@
+
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
@@ -122,6 +126,14 @@ screenrc:
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
+	mkdir -p ~/github/ ~/share/man/man1 ~/share/doc
+	if [ -d ~/github/sc ]; then \
+	  cd ~/github/sc && git checkout -- '*' && git pull; \
+	else \
+	  cd ~/github && git clone git://git.debian.org/collab-maint/sc.git; \
+	fi
+	cd ~/github/sc && git apply ../dots/sc.patch
+	cd ~/github/sc && make install
 
 startxwinrc:
 	ln -sf $(PWD)/$@ ~/.$@

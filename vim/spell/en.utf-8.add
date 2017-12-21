@@ -30,7 +30,6 @@ CAEN
 CAMAC
 CAS
 CDEX
-CDM
 CDMS
 CEU
 CEvNS
@@ -232,6 +231,7 @@ ORTEC
 Ogawa
 Ohnishi
 Oka
+Oli
 Orionis
 Ostrovskiy
 Otsuka
@@ -313,6 +313,7 @@ Totani's
 Toyama
 Tsinghua
 Tuebingen
+Tupendra
 UA
 UC
 UHV
@@ -357,6 +358,7 @@ arXiv
 arxiv
 aspherical
 astroparticle
+athermal
 awk
 axion
 baryogenesis
@@ -522,6 +524,7 @@ transimpedance
 triboelectric
 twice
 txt
+undepleted
 undoped
 uninstall
 uri
@@ -529,7 +532,6 @@ vifm
 vim
 virtualbox
 vlc
-voltammetry
 w3m
 weblog
 wiki

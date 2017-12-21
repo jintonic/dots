@@ -1,0 +1,40 @@
+diff --git a/Makefile b/Makefile
+index 324014c..d710506 100644
+--- a/Makefile
++++ b/Makefile
+@@ -20,13 +20,13 @@ NAME=SC
+ # packaging this with an O/S, for example, you'll probably want to change
+ # this to /usr.  Otherwise, /usr/local is probably more appropriate, unless
+ # you're replacing the vendor-supplied version.
+-prefix=/usr
++prefix=${HOME}
+ 
+ # This is where the install step puts it.
+ EXDIR=${prefix}/bin
+ 
+ # This is where the man page goes.
+-MANDIR=${prefix}/man/man1
++MANDIR=${prefix}/share/man/man1
+ MANEXT=1
+ MANMODE=644
+ 
+@@ -51,8 +51,8 @@ BROKENCURSES=
+ USELOCALE=-DUSELOCALE
+ 
+ # Set DOBACKUPS if you would like a backup copy of a source file on a save
+-#DOBACKUPS=
+-DOBACKUPS=-DDOBACKUPS
++DOBACKUPS=
++#DOBACKUPS=-DDOBACKUPS
+ 
+ # Set SIGVOID if signal routines are type void.
+ # use: SIGVOID=-DSIGVOID for:
+@@ -336,7 +336,7 @@ CC=gcc
+ # real effect on the reliability of the program, but may concern some
+ # people who don't understand them.
+ #CFLAGS=-DSYSV3 -O2 -Wall -pipe
+-CFLAGS=-DSYSV3 -O2 -pipe -g
++CFLAGS=-DSYSV3 -O2 -pipe -g -w
+ LIB=-lm -lncurses
+ 
+ # All of the source files
