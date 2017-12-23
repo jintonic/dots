@@ -20,3 +20,4 @@ image/*; display %s;copiousoutput; test=uname|grep -q Linux
 
 # MAC
 application/*; open %s &2>/dev/null;copiousoutput; test=uname|grep -q Darwin
+image/*; open %s;copiousoutput; test=uname|grep -q Darwin
