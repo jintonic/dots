@@ -107,7 +107,9 @@ set reverse_alias=yes
 source $alias_file
 
 # one can directly communicate with google contacts from the command line by
-# installing https://pypi.python.org/pypi/goobook/ and run
+# installing https://pypi.python.org/pypi/goobook/ (in cygwin, one needs to
+# install pip, gdata, httplib2, rsa, pyasn1, pyasn1-modules from the cygwin
+# repository, and run pip2 install goobook), and run
 # goobook authenticate --noauth_local_webserver
 set query_command ="goobook query '%s'"
 # overwrite default create-alias key a:
