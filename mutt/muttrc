@@ -101,7 +101,7 @@ mime_lookup application/octet-stream
 #______________________________________________________________________________
 # contacts
 
-set alias_file= ~/.mutt/aliases
+set alias_file= ~/Dropbox/computer/abook/aliases
 set sort_alias= alias
 set reverse_alias=yes
 source $alias_file
