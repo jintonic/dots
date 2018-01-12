@@ -171,7 +171,7 @@ export ROVER_OPEN='rope'
 export ROVER_SHELL="rose" 
 l () { # run rover in customized environment
   tempfile=$(mktemp 2> /dev/null)
-  rover --save-cwd "$tempfile" "$PWD" ~/overleaf ~/github ~/rdlab ~/Dropbox ~/phys492
+  rover --save-cwd "$tempfile" "$PWD" ~/overleaf ~/github ~/rdlab ~/Dropbox ~/github/dots ~/github/physino/tools ~/github/diary/2018 ~/rdlab/group
   cd "$(cat $tempfile)"
   rm -f $tempfile
   if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
