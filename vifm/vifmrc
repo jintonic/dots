@@ -40,7 +40,7 @@ filetype *.pro qtcreator %f &
 filetype * open,cygstart,mimeopen,xdg-open
 
 nnoremap S :sort<cr>
-nnoremap s :shell<cr>
+nnoremap s :!screen 1<cr>
 nnoremap q :quit!<cr>
 nnoremap o :!vim %f<cr>
 
