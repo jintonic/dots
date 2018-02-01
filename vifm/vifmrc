@@ -39,8 +39,9 @@ filetype *.pro qtcreator %f &
 " this will result in ignoring 'vi[x]cmd' option
 filetype * open,cygstart,mimeopen,xdg-open
 
-nmap q :quit!<cr>
-nnoremap s :sort<cr>
-nnoremap t :shell<cr>
+nnoremap S :sort<cr>
+nnoremap s :shell<cr>
+nnoremap q :quit!<cr>
 nnoremap o :!vim %f<cr>
+
 " vim: filetype=vim :
