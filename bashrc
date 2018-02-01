@@ -171,7 +171,7 @@ export ROVER_OPEN='rope'
 export ROVER_SHELL="rose" 
 # https://wiki.vifm.info/index.php/How_to_set_shell_working_directory_after_leaving_Vifm
 l() {
-  local dst="$(command vifm --choose-dir -)"
+  local dst="$(command vifm . --choose-dir -)"
   if [ -z "$dst" ]; then
     echo 'Directory picking cancelled/failed'
     return 1
