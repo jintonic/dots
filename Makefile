@@ -9,7 +9,7 @@ else
   endif
 endif
 
-EXCLUDE=README.md Makefile fonts pygments vifm rover.patch
+EXCLUDE=README.md Makefile fonts pygments rover.patch
 ifeq ($(ARC),Windows)
   EXCLUDE+=asoundrc xsession root rootrc
 else
@@ -152,11 +152,12 @@ w3m:
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/keymap ~/.$@/keymap
 
+# https://wiki.vifm.info/index.php?title=Obtaining_Vifm
 vifm:
 	mkdir -p ~/.$@
-	ln -sf $(PWD)/$@/vifmrc ~/.$@/vifmrc
+	ln -sf $(PWD)/$@/$@rc ~/.$@/$@rc
 	mkdir -p ~/.$@/colors
-	ln -sf $(PWD)/$@/colors/Default ~/.$@/colors/Default
+	ln -sf $(PWD)/$@/colors/solarized.$@ ~/.$@/colors/
 
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
