@@ -169,7 +169,16 @@ export PAGER='less'
 export ROVER_EDITOR='vx'
 export ROVER_OPEN='rope'
 export ROVER_SHELL="rose" 
-l () { # run rover in customized environment
+# https://wiki.vifm.info/index.php/How_to_set_shell_working_directory_after_leaving_Vifm
+l() {
+  local dst="$(command vifm --choose-dir -)"
+  if [ -z "$dst" ]; then
+    echo 'Directory picking cancelled/failed'
+    return 1
+  fi
+  cd "$dst"
+}
+lr() { # run rover in customized environment
   tempfile=$(mktemp 2> /dev/null)
   rover --save-cwd "$tempfile" "$PWD" ~/overleaf ~/github ~/rdlab ~/Dropbox ~/github/dots ~/github/physino/tools ~/github/diary/2018 ~/rdlab/group
   cd "$(cat $tempfile)"

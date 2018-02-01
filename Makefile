@@ -155,7 +155,9 @@ w3m:
 # https://wiki.vifm.info/index.php?title=Obtaining_Vifm
 vifm:
 	mkdir -p ~/.$@
-	ln -sf $(PWD)/$@/$@rc ~/.$@/vifmrc
+	ln -sf $(PWD)/$@/$@rc ~/.$@/$@rc
+	mkdir -p ~/.$@/colors
+	ln -sf $(PWD)/$@/colors/solarized.$@ ~/.$@/colors/
 
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
