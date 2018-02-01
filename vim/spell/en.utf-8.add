@@ -84,6 +84,7 @@ CRGP
 cryostats
 CsI
 CTA
+CTL
 Ctrl
 CUORE
 CURCS
@@ -291,6 +292,7 @@ Mayle
 mBar
 mBq
 MCA
+md
 metalicity
 metallicities
 metallicity
@@ -369,6 +371,7 @@ photodiode
 photoelectron
 php
 physino
+PIM
 pions
 PIRE
 PI's
@@ -467,6 +470,7 @@ TClonesArray
 terminfo
 tetraphenyl
 TeV
+tex
 TEXONO
 thermalized
 TMC
@@ -544,7 +548,3 @@ youtube
 Youtube
 Yukawa
 zotero
-CTL
-md
-tex
-PIM
