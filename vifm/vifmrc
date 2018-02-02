@@ -10,7 +10,7 @@ set smartcase
 set incsearch
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
-mark 8 ~/github/diary/2018/ 01
+mark 8 ~/github/diary/2018/ 02
 mark a ~/rdlab/teaching/Adv.Res.Ana/18SP README.md
 mark d ~/Dropbox/ computer/
 mark e ~/rdlab/teaching/Exp.Mod.Phys.I/18 README.md
