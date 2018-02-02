@@ -1,6 +1,6 @@
 startup_message off
 vbell 		off
-#deflogin 	off # if no utmp, set it to off
+deflogin 	off # if no utmp, set it to off
 autodetach 	on  #detach on hangup
 
 attrcolor d -d
