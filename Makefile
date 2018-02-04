@@ -173,7 +173,7 @@ vim:
 	ln -sf $(PWD)/$@/after ~/.$@/
 	mkdir -p ~/.$@/dic
 	ln -sf $(PWD)/$@/dic/* ~/.$@/dic
-	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort -f | uniq > /tmp/jspell
+	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort -df | uniq > /tmp/jspell
 	mv /tmp/jspell $@/spell/en.utf-8.add
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
