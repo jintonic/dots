@@ -1,4 +1,6 @@
 only
+filter /^Icon*/
+filter /^\~\$*/
 colorscheme solarized
 set viewcolumns=-{name},10{perms},8{size},16{mtime}
 set timefmt=%y/%m/%d\ %H:%M
