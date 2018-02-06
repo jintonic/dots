@@ -121,8 +121,8 @@ bind ^h
 bind h
 #make them better
 bind 'K' kill
-bind 'I' login on
-bind 'O' login off
+#bind 'I' login on
+#bind 'O' login off
 bind '}' history
 
 bind c screen 1         # Window numbering starts at 1, not 0.

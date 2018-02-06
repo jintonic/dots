@@ -64,9 +64,10 @@ disable_secret_security_check 0
 passwd_file ~/.w3m/passwd
 use_lessopen 0
 bgextviewer 1
-extbrowser3 youtube-dl -q -o- %s | mplayer --really-quiet - &2>/dev/null
+extbrowser4 youtube-dl -q -o- %s | mplayer --really-quiet - &2>/dev/null
+extbrowser3 xdg-open
 extbrowser2 cygstart
-extbrowser xdg-open
+extbrowser open
 mailer 
 mailto_options 1
 editor vim -X

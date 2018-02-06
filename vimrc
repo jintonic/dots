@@ -29,6 +29,7 @@ call dein#add('tpope/vim-unimpaired')
 call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
+call dein#add('godlygeek/tabular')
 call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
 call dein#add('ap/vim-buftabline')
 call dein#add('altercation/vim-colors-solarized')
@@ -186,6 +187,15 @@ im <C-E> <End>
 im <C-S> <Esc>:w<CR>li
 im <C-Q> <Esc>:wq<CR>
 
+" make gx working
+if has('win32unix')
+  let g:netrw_browsex_viewer="cygstart"
+elseif has('macunix')
+  let g:netrw_browsex_viewer="open"
+else
+  let g:netrw_browsex_viewer="mimeopen"
+endif
+
 " mail {{{1
 " Vim knows mutts naming scheme for temporary files. If a file fits that
 " pattern, vim treats it as a mail
@@ -221,9 +231,11 @@ let g:ctrlp_custom_ignore = {
 " taglist {{{1
 nnoremap <leader>t :TlistOpen<CR>
 
+" https://github.com/hupili/evermd/tree/master/doc/howto-markdown-in-vim
 let tlist_tex_settings = 'latex;c:contents;f:figures;t:tables'
 let tlist_bib_settings = 'bibtex;e:entries;a:author;t:title'
 let tlist_make_settings = 'make;m:macros;t:targets'
+let tlist_markdown_settings = 'markdown;h:contents'
 
 let Tlist_Close_On_Select = 1
 let Tlist_Show_One_File = 1

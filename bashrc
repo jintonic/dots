@@ -1,7 +1,7 @@
 # ~/.bashrc: executed for non-login shells.
 
 # If not running interactively, just export PATH
-PATH=.:$HOME/bin:$PATH
+PATH=.:$HOME/bin:/usr/sbin:$PATH
 [ -z "$PS1" ] && return
 
 stty -ixon # disable C-q C-s
@@ -93,6 +93,7 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 # enable color support of ls and also add handy aliases
+export CLICOLOR=1 # enable colorful output of ls in Mac
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
@@ -168,9 +169,18 @@ export PAGER='less'
 export ROVER_EDITOR='vx'
 export ROVER_OPEN='rope'
 export ROVER_SHELL="rose" 
-l () { # run rover in customized environment
+# https://wiki.vifm.info/index.php/How_to_set_shell_working_directory_after_leaving_Vifm
+l() {
+  local dst="$(command vifm . --choose-dir -)"
+  if [ -z "$dst" ]; then
+    echo 'Directory picking cancelled/failed'
+    return 1
+  fi
+  cd "$dst"
+}
+lr() { # run rover in customized environment
   tempfile=$(mktemp 2> /dev/null)
-  rover --save-cwd "$tempfile" "$PWD" ~/overleaf ~/github ~/rdlab ~/Dropbox ~/phys492
+  rover --save-cwd "$tempfile" "$PWD" ~/overleaf ~/github ~/rdlab ~/Dropbox ~/github/dots ~/github/physino/tools ~/github/diary/2018 ~/rdlab/group
   cd "$(cat $tempfile)"
   rm -f $tempfile
   if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then

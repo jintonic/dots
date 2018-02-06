@@ -3,3 +3,6 @@ image/*; cygstart %s; test=uname|grep -q CYGWIN
 
 application/*; mimeopen %s; test=uname|grep -q Linux
 image/*; display %s; test=uname|grep -q Linux
+
+application/*; open %s; test=uname|grep -q Darwin
+image/*; open %s; test=uname|grep -q Darwin

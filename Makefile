@@ -9,12 +9,11 @@ else
   endif
 endif
 
-EXCLUDE=README.md Makefile fonts pygments vifm rover.patch
-ifeq ($(ARC),Linux)
-  EXCLUDE+=minttyrc startxwinrc
-endif
+EXCLUDE=README.md Makefile fonts pygments rover.patch
 ifeq ($(ARC),Windows)
   EXCLUDE+=asoundrc xsession root rootrc
+else
+  EXCLUDE+=minttyrc startxwinrc
 endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo nano
@@ -23,6 +22,10 @@ all:$(TARGETS)
 
 asoundrc:
 	n=`lspci|grep audio|wc -l`; if [ $$n != "1" ]; then ln -sf $(PWD)/$@ ~/.$@; fi
+
+a2psrc:
+	mkdir -p ~/.a2ps
+	ln -sf $(PWD)/$@ ~/.a2ps/$@
 
 bashrc:
 	ln -sf $(PWD)/$@ ~/.$@
@@ -111,13 +114,26 @@ rover:
 	else \
 	  cd ~/github && git clone https://github.com/lecram/$@.git; \
 	fi
-	cd ~/github/$@ && git apply ../dots/$@.patch && make install
+	cd ~/github/$@ && git apply ../dots/$@.patch
+	if [ "$(ARC)" = "OSX" ]; then \
+	  cd ~/github/$@ && LDFLAGS=-L/usr/local/Cellar/ncurses/6.0_4/lib CFLAGS=-I/usr/local/Cellar/ncurses/6.0_4/include make install; \
+	else \
+	  cd ~/github/$@ && make install; \
+	fi
 
 screenrc:
 	ln -sf $(PWD)/$@ ~/.$@
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
+	mkdir -p ~/github/ ~/share/man/man1 ~/share/doc
+	if [ -d ~/github/sc ]; then \
+	  cd ~/github/sc && git checkout -- '*' && git pull; \
+	else \
+	  cd ~/github && git clone git://git.debian.org/collab-maint/sc.git; \
+	fi
+	cd ~/github/sc && git apply ../dots/sc.patch
+	cd ~/github/sc && make install
 
 startxwinrc:
 	ln -sf $(PWD)/$@ ~/.$@
@@ -136,11 +152,12 @@ w3m:
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/keymap ~/.$@/keymap
 
+# https://wiki.vifm.info/index.php?title=Obtaining_Vifm
 vifm:
 	mkdir -p ~/.$@
-	ln -sf $(PWD)/$@/vifmrc ~/.$@/vifmrc
+	ln -sf $(PWD)/$@/$@rc ~/.$@/$@rc
 	mkdir -p ~/.$@/colors
-	ln -sf $(PWD)/$@/colors/Default ~/.$@/colors/Default
+	ln -sf $(PWD)/$@/colors/solarized.$@ ~/.$@/colors/
 
 vim:
 	ln -sf $(PWD)/$@rc ~/.$@rc
@@ -156,8 +173,6 @@ vim:
 	ln -sf $(PWD)/$@/after ~/.$@/
 	mkdir -p ~/.$@/dic
 	ln -sf $(PWD)/$@/dic/* ~/.$@/dic
-	cat $@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add | sort | uniq > /tmp/jspell
-	mv /tmp/jspell $@/spell/en.utf-8.add
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add +"mkspell! %" +q

@@ -1,0 +1,11 @@
+# --prologue=fixed:
+# 	avoid using proportional fonts in between two single quotes
+# -P pdf:
+# 	send output to printer named pdf. This works directly in cygwin. In
+# 	mac, one has to install
+# 	https://sourceforge.net/projects/pdfwriterformac/, and follow
+# 	instructions in the README.pdf file to add a new printer using name
+# 	"pdf" instead of "PDFwriter" (default), and using the ppd file:
+# 	/Library/Printers/Lisanet/PDFwriter/pdfwriter.ppd The output pdf file
+# 	is saved in /Users/Shared/PDFwriter/username/
+Options: --prologue=fixed -P pdf
