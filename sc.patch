@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 324014c..d710506 100644
+index 324014c..785568c 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -20,13 +20,13 @@ NAME=SC
@@ -29,12 +29,23 @@ index 324014c..d710506 100644
  
  # Set SIGVOID if signal routines are type void.
  # use: SIGVOID=-DSIGVOID for:
-@@ -336,7 +336,7 @@ CC=gcc
+@@ -336,8 +336,8 @@ CC=gcc
  # real effect on the reliability of the program, but may concern some
  # people who don't understand them.
  #CFLAGS=-DSYSV3 -O2 -Wall -pipe
 -CFLAGS=-DSYSV3 -O2 -pipe -g
+-LIB=-lm -lncurses
 +CFLAGS=-DSYSV3 -O2 -pipe -g -w
- LIB=-lm -lncurses
++LIB=-lm -lncurses -ltinfo
  
  # All of the source files
+ SRC=Makefile abbrev.c cmds.c color.c crypt.c eres.sed frame.c format.c gram.y \
+@@ -473,7 +473,7 @@ lint: sc.h sc.c lex.c gram.c interp.c cmds.c color.c crypt.c frame.c pipe.c \
+ 	range.c help.c vi.c version.c xmalloc.c format.c vmtbl.c
+ 	lint ${LINTFLAGS} ${CFLAGS} ${SIMPLE} sc.c lex.c gram.c interp.c \
+ 	cmds.c color.c crypt.c frame.c pipe.c range.c help.c vi.c version.c \
+-	xmalloc.c format.c vmtbl.c -lcurses -lm 
++	xmalloc.c format.c vmtbl.c -lcurses -ltinfo -lm 
+ 	make lintqref
+ 
+ lintqref: help.c
