@@ -118,7 +118,11 @@ alias df='df -h'
 alias du='du -h'
 
 alias sb='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
-alias sd='screen -D -RR'
+if [ `uname` = "Darwin" ]; then
+  alias sd='screen -D -RR'
+else
+  alias sd='screen -ln -D -RR'
+fi
 alias sl='screen -list'
 alias sw='screen -wipe'
 alias ss='screen -X source ~/.screenrc'
