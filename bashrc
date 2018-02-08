@@ -118,13 +118,10 @@ alias df='df -h'
 alias du='du -h'
 
 alias sb='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
-if [ `uname` = "Darwin" ]; then
-  alias sd='screen -D -RR'
-else
-  alias sd='screen -ln -D -RR'
-fi
+alias sd='screen -D -RR'
 alias sl='screen -list'
 alias sw='screen -wipe'
+alias sn='screen -X deflogin off'
 alias ss='screen -X source ~/.screenrc'
 # refresh display setting for old screen session
 if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
