@@ -72,7 +72,7 @@ set fcc_attach    # save attachments with the body
 set nomime_forward   # don't forward everything all together
 set forward_format="FW:%s"
 # https://gitlab.com/muttmua/mutt/wikis/MuttFaq/Attachment
-set mime_forward=yes # forward email in its original format
+#set mime_forward=yes # forward email in its original format
 set mime_forward_rest=yes # forward attachment as well
 # http://dev.mutt.org/trac/wiki/MuttFaq/Folder
 folder-hook . 'set record="^"' # keep sent mail in the original thread
