@@ -61,7 +61,7 @@ macro pager,index , "!offlineimap -u Basic^M" "sync imap"
 # msmtp is newer than ssmtp; ssmtp is not maintained anymore
 # msmtp itself cannot send mail, it uses an existing mail server to do it
 # ~/.msmtprc is needed
-set sendmail="msmtp"
+set sendmail="~/github/dots/mutt/check_attachment.sh msmtp"
 set from="jing.liu@usd.edu" # otherwise does not work
 set realname="Jing LIU"
 set include   # include original email in the reply
@@ -71,6 +71,9 @@ set forward_quote = no  # do not quote forwarded message
 set fcc_attach    # save attachments with the body
 set nomime_forward   # don't forward everything all together
 set forward_format="FW:%s"
+# https://gitlab.com/muttmua/mutt/wikis/MuttFaq/Attachment
+set mime_forward=yes # forward email in its original format
+set mime_forward_rest=yes # forward attachment as well
 # http://dev.mutt.org/trac/wiki/MuttFaq/Folder
 folder-hook . 'set record="^"' # keep sent mail in the original thread
 set text_flowed # http://wcm1.web.rice.edu/mutt-tips.html
