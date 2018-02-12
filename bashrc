@@ -117,7 +117,7 @@ alias md='mkdir -p'
 alias df='df -h'
 alias du='du -h'
 
-alias sb='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w"'
+alias sb='screen -X hardstatus alwayslastline "%{= Bk}%H | %-w%{= kB}%n*%t %{-}%+w %= %M %d %D %C %A"'
 alias sd='screen -D -RR'
 alias sl='screen -list'
 alias sw='screen -wipe'
