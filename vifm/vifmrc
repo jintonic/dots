@@ -1,3 +1,4 @@
+screen
 only
 filter /^Icon.*$|^~.*$|.*~$|^desktop.ini$/
 colorscheme solarized
