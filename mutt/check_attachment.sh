@@ -1,15 +1,22 @@
 #!/bin/bash
 # http://wiki.mutt.org/?[ConfigTricks/CheckAttach](ConfigTricks/CheckAttach)
 # Edit muttrc to have this line:
-# set sendmail = "/path/to/check_attachement.sh msmtp"
+# set sendmail = "/path/to/check_attachement.sh"
 
 ## Attachment keywords that the message body will be searched for:
 KEYWORDS='attach|附件'
 
-## Check that sendmail or other program is supplied as first argument.
-if [ $# -lt 1 ]; then echo "Usage: $0 </path/to/mailprog> <args> ..."; exit 2; fi
-prog=`which $1`
-if [ ! -x "$prog" ]; then echo "$prog cannot be found"; exit 2; fi
+## Check if there is sendmail or msmtp
+sender=`which sendmail`
+if [ ! -x "$sender" ]; then 
+  sender=`which msmtp`
+  if [ ! -x "$sender" ]; then
+    echo "neither sendmail nor msmtp can be found"
+    exit 2
+  fi
+else
+  sender="$sender -oi -oem"
+fi
 
 ## Save msg in file to re-use it for multiple tests.
 TMPFILE=`mktemp -t mutt_checkattach.XXXXXX` || exit 2
@@ -32,7 +39,7 @@ function header-override {
 
 ## FINAL DECISION:
 if multipart || ! word-attach || header-override; then
-  "$@" < "$TMPFILE"
+  $sender "$@" < "$TMPFILE"
   EXIT_STATUS=$?
 else
   echo "No file was attached but a search of the message text suggests there should be one."

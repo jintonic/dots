@@ -61,7 +61,7 @@ macro pager,index , "!offlineimap -u Basic^M" "sync imap"
 # msmtp is newer than ssmtp; ssmtp is not maintained anymore
 # msmtp itself cannot send mail, it uses an existing mail server to do it
 # ~/.msmtprc is needed
-set sendmail="~/github/dots/mutt/check_attachment.sh msmtp"
+set sendmail="~/github/dots/mutt/check_attachment.sh"
 set from="jing.liu@usd.edu" # otherwise does not work
 set realname="Jing LIU"
 set include   # include original email in the reply
@@ -104,7 +104,7 @@ mime_lookup application/octet-stream
 #______________________________________________________________________________
 # contacts
 
-set alias_file= ~/Dropbox/computer/abook/aliases
+set alias_file= ~/rdlab/tools/mail/aliases
 set sort_alias= alias
 set reverse_alias=yes
 source $alias_file
