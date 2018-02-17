@@ -7,15 +7,15 @@
 KEYWORDS='attach|附件'
 
 ## Check if there is sendmail or msmtp
-sender=`which sendmail`
+sender=`which msmtp`
 if [ ! -x "$sender" ]; then 
-  sender=`which msmtp`
+  sender=`which sendmail`
   if [ ! -x "$sender" ]; then
     echo "neither sendmail nor msmtp can be found"
     exit 2
+  else
+    sender=$sender -f jing.liu@usd.edu
   fi
-else
-  sender="$sender -oi -oem"
 fi
 
 ## Save msg in file to re-use it for multiple tests.
