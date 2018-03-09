@@ -9,14 +9,14 @@ else
   endif
 endif
 
-EXCLUDE=README.md Makefile fonts pygments rover.patch
+EXCLUDE=README.md Makefile fonts pygments rover.patch youtube-dl
 ifeq ($(ARC),Windows)
   EXCLUDE+=asoundrc xsession root rootrc
 else
   EXCLUDE+=minttyrc startxwinrc
 endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=bin terminfo nano
+TARGETS+=bin terminfo nano ytdl
 
 all:$(TARGETS)
 
@@ -143,6 +143,10 @@ w3m:
 	ln -sf $(PWD)/$@/config ~/.$@/config
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/keymap ~/.$@/keymap
+
+ytdl:
+	mkdir -p ~/.config/youtube-dl
+	ln -sf $(PWD)/youtube-dl.conf ~/.config/youtube-dl/config
 
 # https://wiki.vifm.info/index.php?title=Obtaining_Vifm
 vifm:
