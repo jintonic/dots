@@ -1,4 +1,3 @@
-screen
 only
 filter /^Icon.*$|^~.*$|.*~$|^desktop.ini$/
 colorscheme solarized
@@ -38,6 +37,7 @@ filetype *.dvi xdvi %f 2>/dev/null &
 filetype *.html,*.htm w3m %f
 filetype *.o nm %f | less
 filetype *.pro qtcreator %f &
+filetype *.md,*.cc,*.h,*.cpp,*.hh,*.txt vim %f
 " must be the last to cover things not covered above
 " this will result in ignoring 'vi[x]cmd' option
 filetype * open,cygstart,mimeopen,xdg-open
