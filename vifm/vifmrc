@@ -24,7 +24,7 @@ mark h ~/ mail/
 mark n ~/rdlab/experiment/NICE/ log
 mark o ~/overleaf/
 mark p ~/rdlab/gemadarc/ edu
-mark r ~/rdlab/ tools
+mark t ~/rdlab/ todo.md
 
 filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
