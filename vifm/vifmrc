@@ -12,19 +12,20 @@ set smartcase
 set incsearch
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
-mark 8 ~/github/diary/2018/ 04
-mark a ~/rdlab/teaching/Adv.Res.Ana/18SP README.md
+mark 8 ~/github/diary/2018/ 08
+mark a ~/rdlab/app/ greencard
 mark b ~/github/physino/ tags/
 mark c ~/rdlab/group/ detector\ characterization
 mark d ~/Dropbox/ computer/
-mark e ~/rdlab/teaching/Exp.Mod.Phys.I/18 README.md
+mark e ~/rdlab/teaching/Electrodynamics/18FA
 mark f ~/rdlab/funding/ 19
 mark g ~/github/ dots
 mark h ~/ mail/
+mark j ~/rdlab/family/ Jing
 mark n ~/rdlab/experiment/NICE/ log
 mark o ~/overleaf/
 mark p ~/rdlab/gemadarc/ edu
-mark r ~/rdlab/ tools
+mark t ~/rdlab/ todo.md
 
 filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
