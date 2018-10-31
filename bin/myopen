@@ -1,0 +1,51 @@
+#!/bin/sh
+# handle files that cannot be handled by cygstart and open
+
+# common settings for all OS
+case "$1" in
+  *.sty|*.tex|*.bib|*.bbl)
+    gvim -v --servername `awk 'NR==8{printf("%s",$4)}' /proc/cpuinfo` --remote-silent $1 ;;
+  *.aux)
+    latexmk -pvc ${1%.aux} ;;
+  *.R)
+    Rscript $1 ;;
+  *.gnu)
+    gnuplot $1 ;;
+  *.[1-9]|*.[1-9].gz|*.[1-9]pm)
+    man ./$1 ;;
+  *.root)
+    root -l $1 ;;
+  *.dvi)
+    nohup xdvi $1 >/dev/null 2>&1 & ;;
+  *.ps|*.eps|*.ps.gz)
+    nohup gv $1 >/dev/null 2>&1 & ;;
+  *.fig)
+    nohup xfig $1 >/dev/null 2>&1 & ;;
+  *.heprep)
+    nohup hv $1 >/dev/null 2>&1 &;;
+  *.prim)
+    nohup dawn $1 >/dev/null 2>&1 &;;
+  *.o|*.a|*.so)
+    nm $1 | less ;;
+  *.info.gz)
+    info $1 ;;
+  *.tgz|*.tar.gz)
+    tar xfvz $1 ;;
+  *.tar.bz2|*.tbz2|*.tar.bz)
+    tar xfvj $1 ;;
+  *.sc)
+    sc $1 ;;
+  *.desktop)
+    gov $1 ;;
+  *)
+    OS=`uname`
+    if [ "$OS" = "Linux" ]; then # for Linux
+      if hash mimeopen 2>/dev/null; then
+	nohup mimeopen "$1" >/dev/null &
+      fi
+    elif [ "$OS" = "Darwin" ]; then # for Mac
+      open "$1"
+    else # for Cygwin
+      cygstart "$1"
+    fi
+esac
