@@ -123,6 +123,7 @@ rover:
 
 screenrc:
 	ln -sf $(PWD)/$@ ~/.$@
+	if [ "$(ARC)" = "Windows" ]; then rm -f /var/run/utmp; fi
 
 scrc:
 	ln -sf $(PWD)/$@ ~/.$@
