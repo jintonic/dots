@@ -37,7 +37,6 @@ filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
 filetype *.heprep hv %f &
 filetype *.prim dawn %f 2> /dev/null &
-filetype *.html,*.htm w3m %f
 filetype *.o nm %f | less
 " must be the last to cover things not covered above
 " this will result in ignoring 'vi[x]cmd' option
@@ -46,6 +45,12 @@ filetype *.o nm %f | less
 " mimeopen will ask if it cannot open some file
 filetype * mimeopen,cygstart,open
 "set vicmd='vim -X'
+
+" responses to "e" cmd
+" no space allowed in between patterns
+fileviewer *.tar,*.tar.gz,*.tgz tar -tvf %c
+fileviewer *.html,*.htm w3m %c
+fileviewer *.zip,*.jar,*.war,*.ear zip -sf %c, echo "No zip to preview:"
 
 nnoremap S :sort<cr>
 nnoremap s :!screen 1<cr>
