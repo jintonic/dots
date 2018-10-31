@@ -1,7 +1,7 @@
-screen
 only
 filter /^Icon.*$|^~.*$|.*~$|^desktop.ini$/
 colorscheme solarized
+set vicmd='vim -X'
 set viewcolumns=-{name},10{perms},8{size},16{mtime}
 set timefmt=%y/%m/%d\ %H:%M
 set wildmenu
@@ -21,11 +21,18 @@ mark e ~/rdlab/teaching/Electrodynamics/18FA
 mark f ~/rdlab/funding/ 19
 mark g ~/github/ dots
 mark h ~/ mail/
+mark i ~/rdlab/isotope README.txt
 mark j ~/rdlab/family/ Jing
+mark l ~/rdlab/lab/ computer
+mark m ~/rdlab/material/ scintillator
 mark n ~/rdlab/experiment/NICE/ log
 mark o ~/overleaf/
 mark p ~/rdlab/gemadarc/ edu
+mark t ~/rdlab/statistics README.txt
 mark t ~/rdlab/ todo.md
+mark u ~/rdlab/USD college
+mark v ~/rdlab/video 18
+mark w ~/rdlab/wisdom README.md
 
 filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
@@ -34,19 +41,20 @@ filetype *.heprep hv %f &
 filetype *.prim dawn %f 2> /dev/null &
 filetype *.root root -l %f
 filetype *.sc sc %f
-filetype *.ps,*.ps.gz,*.eps open -a Preview.app, gv %f &, display %f &
+filetype *.ps,*.ps.gz,*.eps open, gv %f &, display %f &
+filetype *.pdf open, cygstart,mimeopen,xdg-open,xpdf %f &
 filetype *.dvi xdvi %f 2>/dev/null &
 filetype *.html,*.htm w3m %f
 filetype *.o nm %f | less
 filetype *.pro qtcreator %f &
-filetype *.md,*.cc,*.h,*.cpp,*.hh,*.txt vim %f
+filetype *.png,*.jpeg,*.jpg,*.PNG,*.JPG,*.gif open,cygstart,mimeopen,xdg-open,display %f
+filetype *.doc,*.ppt,*.xls,*.docx,*.pptx,*.xlsx open,cygstart,mimeopen,xdg-open
 " must be the last to cover things not covered above
 " this will result in ignoring 'vi[x]cmd' option
-filetype * open,cygstart,mimeopen,xdg-open
+"filetype * open,cygstart,mimeopen,xdg-open
 
 nnoremap S :sort<cr>
 nnoremap s :!screen 1<cr>
 nnoremap q :quit!<cr>
-nnoremap o :!vim %f<cr>
 
 " vim: filetype=vim :
