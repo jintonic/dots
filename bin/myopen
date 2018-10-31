@@ -5,6 +5,8 @@ case "$1" in
     gvim -v --servername `awk 'NR==8{printf("%s",$4)}' /proc/cpuinfo` --remote-silent "$1" ;;
   *.aux)
     latexmk -pvc ${1%.aux} ;;
+  *.md)
+    mdp "$1" ;;
   *.R)
     Rscript "$1" ;;
   *.gnu)
