@@ -1,7 +1,5 @@
 #!/bin/sh
-# handle files that cannot be handled by cygstart and open
-
-# common settings for all OS
+# handle files that cannot be relayed to correct programs by cygstart and open
 case "$1" in
   *.sty|*.tex|*.bib|*.bbl)
     gvim -v --servername `awk 'NR==8{printf("%s",$4)}' /proc/cpuinfo` --remote-silent $1 ;;
