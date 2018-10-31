@@ -1,7 +1,6 @@
 only
 filter /^Icon.*$|^~.*$|.*~$|^desktop.ini$/
 colorscheme solarized
-set vicmd='vim -X'
 set viewcolumns=-{name},10{perms},8{size},16{mtime}
 set timefmt=%y/%m/%d\ %H:%M
 set wildmenu
@@ -36,22 +35,17 @@ mark w ~/rdlab/wisdom README.md
 
 filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 filetype *.desktop gov %f &
-filetype *.fig xfig %f 2>/dev/null &
 filetype *.heprep hv %f &
 filetype *.prim dawn %f 2> /dev/null &
-filetype *.root root -l %f
-filetype *.sc sc %f
-filetype *.ps,*.ps.gz,*.eps open, gv %f &, display %f &
-filetype *.pdf open, cygstart,mimeopen,xdg-open,xpdf %f &
-filetype *.dvi xdvi %f 2>/dev/null &
 filetype *.html,*.htm w3m %f
 filetype *.o nm %f | less
-filetype *.pro qtcreator %f &
-filetype *.png,*.jpeg,*.jpg,*.PNG,*.JPG,*.gif open,cygstart,mimeopen,xdg-open,display %f
-filetype *.doc,*.ppt,*.xls,*.docx,*.pptx,*.xlsx open,cygstart,mimeopen,xdg-open
 " must be the last to cover things not covered above
 " this will result in ignoring 'vi[x]cmd' option
-"filetype * open,cygstart,mimeopen,xdg-open
+" open should be listed last, 
+" since the open cmd in Linux calls openvt instead of mimeopen
+" mimeopen will ask if it cannot open some file
+filetype * mimeopen,cygstart,open
+"set vicmd='vim -X'
 
 nnoremap S :sort<cr>
 nnoremap s :!screen 1<cr>
