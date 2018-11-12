@@ -85,3 +85,4 @@ xfig.latexfonts: 	true
 
 !xdvi*font: -*-helvetica-medium-r-*-*-*-*-*-*-*-*-*-*
 
+gnuplot*font: lucidasans-bold2
