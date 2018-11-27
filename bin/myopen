@@ -41,7 +41,7 @@ case "$1" in
     OS=`uname`
     if [ "$OS" = "Linux" ]; then # for Linux
       if hash mimeopen 2>/dev/null; then
-	nohup mimeopen "$1" >/dev/null
+	nohup mimeopen "$1" >/dev/null 2>&1 &
       fi
     elif [ "$OS" = "Darwin" ]; then # for Mac
       open "$1"
