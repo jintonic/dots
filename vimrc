@@ -140,6 +140,7 @@ set hlsearch 		" highlight search
 set ignorecase
 
 autocmd BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif
+autocmd! BufRead,BufNewFile *.C set filetype=cpp
 
 " folding {{{1
 set fillchars=          "default vert:|,fold:-
