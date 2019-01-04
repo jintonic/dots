@@ -1,4 +1,5 @@
 # ~/.bashrc: executed for non-login shells.
+umask 022
 
 # If not running interactively, just export PATH
 PATH=.:$HOME/bin:/usr/sbin:$PATH
@@ -129,6 +130,8 @@ if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
 else
   echo $DISPLAY > ~/.display
 fi
+# https://superuser.com/questions/1195962/cannot-make-directory-var-run-screen-permission-denied
+export SCREENDIR=$HOME/.screen
 
 alias mdp='TERM=xterm-256color mdp'
 alias ev='emacs -nw'
