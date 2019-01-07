@@ -12,7 +12,8 @@ set incsearch
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 set runexec
 
-mark 8 ~/github/diary/2018/ 08
+mark 4 ~/rdlab/tools/ Geant4
+mark 9 ~/github/diary/2019/ 01
 mark a ~/rdlab/app/ associate
 mark b ~/github/physino/ tags/
 mark c ~/rdlab/group/ detector\ characterization
