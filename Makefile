@@ -79,7 +79,7 @@ mutt:
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
 
 nano:
-	if (( `nano --version | head -1 | awk -F. '{print $$2}'` > 6 )); then \
+	if (( `nano --version | head -1 | awk -F. '{print $$2}'` -gt 6 )); then \
 	  ln -sf $(PWD)/$@7rc ~/.$@rc; \
 	else \
 	  ln -sf $(PWD)/$@rc ~/.$@rc; \
