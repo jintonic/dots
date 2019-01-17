@@ -123,7 +123,11 @@ rover:
 	fi
 
 screenrc:
-	ln -sf $(PWD)/$@ ~/.$@
+	if [ "$(ARC)" = "OSX" ]; then \
+	  rm -f ~/.$@ && sed 's/deflogin/#deflogin/' $@ > ~/.$@;\
+	else\
+	  ln -sf $(PWD)/$@ ~/.$@;\
+	fi
 	mkdir -p ~/.screen && chmod 700 ~/.screen
 	if [ "$(ARC)" = "Windows" ]; then rm -f /var/run/utmp; fi
 
