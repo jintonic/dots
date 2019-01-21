@@ -9,7 +9,7 @@ else
   endif
 endif
 
-EXCLUDE=README.md Makefile fonts pygments rover.patch youtube-dl
+EXCLUDE=README.md Makefile fonts pygments rover.patch youtube-dl mutt
 ifeq ($(ARC),Windows)
   EXCLUDE+=asoundrc xsession root rootrc
 else
@@ -17,6 +17,7 @@ else
 endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
 TARGETS+=bin terminfo nano ytdl
+NANOVERSION=$(shell nano --version | head -1 | awk -F. '{print $$2}')
 
 all:$(TARGETS)
 
@@ -79,7 +80,7 @@ mutt:
 	ln -sf $(PWD)/$@/muttrc ~/.$@/muttrc
 
 nano:
-	if (( `nano --version | head -1 | awk -F. '{print $$2}'` > 6 )); then \
+	if [ $(NANOVERSION) -gt 6 ]; then \
 	  ln -sf $(PWD)/$@7rc ~/.$@rc; \
 	else \
 	  ln -sf $(PWD)/$@rc ~/.$@rc; \
@@ -122,8 +123,12 @@ rover:
 	fi
 
 screenrc:
-	ln -sf $(PWD)/$@ ~/.$@
-	mkdir ~/.screen && chmod 700 ~/.screen
+	if [ "$(ARC)" = "OSX" ]; then \
+	  rm -f ~/.$@ && sed 's/deflogin/#deflogin/' $@ > ~/.$@;\
+	else\
+	  ln -sf $(PWD)/$@ ~/.$@;\
+	fi
+	mkdir -p ~/.screen && chmod 700 ~/.screen
 	if [ "$(ARC)" = "Windows" ]; then rm -f /var/run/utmp; fi
 
 scrc:
