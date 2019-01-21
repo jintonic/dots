@@ -1,2 +1,17 @@
 bind x any toggleOutline
 urlCommand "if [ `uname | awk -F_ '{print $1}'` = CYGWIN ]; then cygstart %s; else mimeopen %s; fi"
+
+fontFile Times-Roman		~/github/gsfonts/n021003l.pfb
+fontFile Times-Italic		~/github/gsfonts/n021023l.pfb
+fontFile Times-Bold		~/github/gsfonts/n021004l.pfb
+fontFile Times-BoldItalic	~/github/gsfonts/n021024l.pfb
+fontFile Helvetica		~/github/gsfonts/n019003l.pfb
+fontFile Helvetica-Oblique	~/github/gsfonts/n019023l.pfb
+fontFile Helvetica-Bold		~/github/gsfonts/n019004l.pfb
+fontFile Helvetica-BoldOblique	~/github/gsfonts/n019024l.pfb
+fontFile Courier		~/github/gsfonts/n022003l.pfb
+fontFile Courier-Oblique	~/github/gsfonts/n022023l.pfb
+fontFile Courier-Bold		~/github/gsfonts/n022004l.pfb
+fontFile Courier-BoldOblique	~/github/gsfonts/n022024l.pfb
+fontFile Symbol			~/github/gsfonts/s050000l.pfb
+fontFile ZapfDingbats		~/github/gsfonts/d050000l.pfb
