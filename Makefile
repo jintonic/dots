@@ -186,8 +186,25 @@ xfig:
 	  tar xfvz Feynman_Diagrams.tgz; rm -f Feynman_Diagrams.tgz; \
 	  mv Feynman_Diagrams ~/.xfig; fi
 
+# https://bugs.archlinux.org/task/50297
+# some fonts are not available in gsfonts anymore, download them manually
 xpdfrc:
 	ln -sf $(PWD)/$@ ~/.$@
+	if [ ! -d ~/github/gsfonts ]; then \
+	  mkdir -p ~/github/gsfonts;\
+	  cd ~/github/gsfonts;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n021003l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n021004l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n021023l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n019003l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n019004l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n019023l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n022003l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n022004l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n022023l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/s050000l.pfb;\
+	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/d050000l.pfb;\
+	fi
 
 xsession:
 	ln -sf $(PWD)/$@ ~/.$@
