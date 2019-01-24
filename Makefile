@@ -143,6 +143,11 @@ terminfo:
 	rm -f /tmp/ti.src
 
 w3m:
+	if [ -d ~/github/w3m ]; then \
+	  cd ~/github/w3m && git pull;\
+	else\
+	  cd ~/github && git clone https://github.com/tats/w3m.git;\
+	fi
 	mkdir -p ~/.$@
 	ln -sf $(PWD)/$@/cgi-bin ~/.$@
 	ln -sf $(PWD)/$@/urimethodmap ~/.$@/urimethodmap
