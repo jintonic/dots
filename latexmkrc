@@ -18,5 +18,5 @@ if ( $^O eq "darwin" ) {{
     $pdf_update_command='xpdf -remote %R -reload';
   }} else {{
     $pdf_update_method=2; # latexmk send SIGHUP signal to $pdf_previewer
-    $pdf_previewer='mupdf-x11';
+    $pdf_previewer='mupdf';
   }};
