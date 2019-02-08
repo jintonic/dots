@@ -15,30 +15,30 @@ snippet dmo
 #DOCUMENT
 snippet thm
 	\begin[${1:author}]{${2:thm}}
-	${3}
+	  ${3}
 	\end{$1}
 # Gather(ed)
 snippet gat
 	\begin{gather${1:ed}}
-		${2}
+	  ${2}
 	\end{gather$1}
 # Equation
 snippet eq
 options head
-	\begin{equation}
-		${1}
+	\begin{equation}\label{e:${1}}
+	  ${2}
 	\end{equation}
 # Equation
 snippet eq*
 options head
 	\begin{equation*}
-		${1}
+	  ${1}
 	\end{equation*}
 # Unnumbered Equation
 snippet \
 options head
 	\[
-		${1}
+	  ${1}
 	\]
 # Itemize
 snippet itm
@@ -49,7 +49,7 @@ options head
 snippet it
 options head
 alias   item \item
-    \item ${0}
+        \item ${1}
 
 # Matrix
 snippet mat
@@ -61,15 +61,30 @@ snippet spl
 	\begin{split}
 	  ${1}
 	\end{split}
-snippet Figure
-	${1:Figure}~\ref{f:${2}}${3}
-snippet Table
-	${1:Table}~\ref{t:${2}}${3}
-snippet Listing
+snippet fig
+        \begin{figure}[htbp]\centering
+          \includegraphics[width=${1}\linewidth]{${2}}
+          \caption{${3}}\label{f:${4}}
+        \end{figure}
+snippet tab
+        \begin{table}[htbp]\centering
+          \caption{${1}}\label{t:${2}}
+          \begin{tabular}{${3}}\toprule
+            ${4} & \\\midrule
+                 & \\\bottomrule
+          \end{tabularx}
+        \end{table}
+snippet Eq
+	${1:Eq.}~\ref{e:${2}}${3}
+snippet Fig
+	${1:Fig.}~\ref{f:${2}}${3}
+snippet Tab
+	${1:Tab.}~\ref{t:${2}}${3}
+snippet Lst
 	${1:Listing}~\ref{${2:list}}${3}
-snippet Section
-	${1:Section}~\ref{s:${2}}${3}
-snippet Page
+snippet Sec
+	${1:Sec.}~\ref{s:${2}}${3}
+snippet Pg
 	${1:page}~\pageref{${2}}${3}
 snippet Index
 	\index{${1:index}}${2}
@@ -77,8 +92,8 @@ snippet Index
 snippet fcite
 	\footcite[${1}]{${2}}${3}
 #Formating text: italic, bold, underline, small capital, emphase ..
-snippet underline
-	\underline{${1:text}}
+snippet ul
+	\ul{${1:text}}
 snippet \emph
 alias emph \emph{
 	\emph{${1:text}}${0}
@@ -94,29 +109,29 @@ snippet sum
 snippet frame
 options head
 alias   \begin{frame} \frame
-    \begin{frame}{${1:#:frametitle}}
-        ${2:TARGET}
-    \end{frame}
+        \begin{frame}{${1:#:frametitle}}
+          ${2:TARGET}
+        \end{frame}
 
 snippet block
 options head
 alias   \begin{block}
-    \begin{block}{${1:#:title}}
-        ${2:TARGET}
-    \end{block}
+        \begin{block}{${1:#:title}}
+          ${2:TARGET}
+        \end{block}
 
 snippet columns
 options head
 alias   \begin{columns} \columns
-    \begin{columns}
-        \begin{column}{${1:#:width}${2:\\textwidth}}
-            ${0:#:body}
-        \end{column}
-    \end{columns}
+        \begin{columns}
+          \begin{column}{${1:#:width}${2:\\textwidth}}
+              ${0:#:body}
+          \end{column}
+        \end{columns}
 
 snippet column
 options head
 alias   \begin{column} \column
-    \begin{column}{${1:#:width}${2:\\textwidth}}
-        ${0:#:body}
-    \end{column}
+        \begin{column}{${1:#:width}${2:\\textwidth}}
+          ${0:#:body}
+        \end{column}
