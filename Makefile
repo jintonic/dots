@@ -151,6 +151,13 @@ w3m:
 	ln -sf $(PWD)/$@/mailcap ~/.$@/mailcap
 	ln -sf $(PWD)/$@/keymap ~/.$@/keymap
 
+getw3m:
+	if [ -d ~/github/w3m ]; then \
+	  cd ~/github/w3m && git pull;\
+	else\
+	  cd ~/github && git clone https://github.com/tats/w3m.git;\
+	fi
+
 ytdl:
 	mkdir -p ~/.config/youtube-dl
 	ln -sf $(PWD)/youtube-dl.conf ~/.config/youtube-dl/config

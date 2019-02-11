@@ -1,6 +1,9 @@
 " vim: filetype=vim :
 highlight Win        cterm=none    ctermfg=default ctermbg=none
 
+highlight TabLine    cterm=none    ctermfg=blue    ctermbg=white
+highlight TabLineSel cterm=none    ctermfg=white   ctermbg=blue
+
 highlight TopLine    cterm=none    ctermfg=white   ctermbg=blue
 highlight TopLineSel cterm=none    ctermfg=white   ctermbg=blue
 highlight StatusLine cterm=none    ctermfg=white   ctermbg=blue
