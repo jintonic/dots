@@ -161,6 +161,7 @@ set foldlevel=1
 " mapping {{{1
 
 map \a :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
+map \e :e <cfile><CR>
 map \s :e %<.cc<CR>
 map \h :e %<.h<CR>
 map \u :source ~/.vimrc<CR>
