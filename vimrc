@@ -74,12 +74,11 @@ set lz "lazyredraw: no redraw while executing macros, registers and other
 set go=
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Book\ 12,9x15
 
-" 256 color is a must for solarized to work
 if has("gui_running")
   set columns=94
   set number
 else
-  set term=xterm-256color
+  set t_Co=16
 endif
 set background=dark
 silent! colorscheme solarized
