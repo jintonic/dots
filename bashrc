@@ -155,6 +155,7 @@ alias news='newsbeuter -q'
 #  complete -o nospace -F _task t
 #fi
 
+export GS_OPTIONS="-dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite"
 export WWW_HOME=~/.w3m/bookmark.html
 export LYNX_CFG=~/.lynx/lynx.cfg
 export LYNX_LSS=~/.lynx/lynx.lss
