@@ -27,12 +27,13 @@ mark j ~/rdlab/family/ Jing
 mark k ~/rdlab/people/ Kyler.Kooi
 mark l ~/rdlab/lab/ computer
 mark m ~/rdlab/material/ scintillator
+mark m ~/rdlab/teaching/Num.Meth/20SP
 mark o ~/overleaf/
 mark p ~/rdlab/gemadarc/ edu
 mark q ~/rdlab/finance/ salary
 mark r ~/rdlab/audio/ kids
 mark s ~/rdlab/outreach SPS
-mark t ~/rdlab/ todo.md
+mark t ~/rdlab/teaching exam
 mark u ~/rdlab/USD college
 mark v ~/rdlab/video 18
 mark w ~/rdlab/wisdom wisdom.md
