@@ -18,26 +18,25 @@ mark a ~/rdlab/app/ associate
 mark b ~/github/physino/ tags/
 mark c ~/rdlab/group/ detector\ characterization
 mark d ~/Dropbox/ computer/
-mark e ~/rdlab/teaching/Electrodynamics/19SP
-mark f ~/rdlab/funding/ 19
+mark e ~/rdlab/experiment/ ICE
+mark f ~/rdlab/funding/ 20
 mark g ~/github/ dots
-mark h ~/ mail/
+mark h ~/
 mark i ~/rdlab/isotope README.txt
 mark j ~/rdlab/family/ Jing
 mark k ~/rdlab/people/ Kyler.Kooi
 mark l ~/rdlab/lab/ computer
 mark m ~/rdlab/material/ scintillator
-mark n ~/rdlab/experiment/ NICE
 mark o ~/overleaf/
 mark p ~/rdlab/gemadarc/ edu
 mark q ~/rdlab/finance/ salary
 mark r ~/rdlab/audio/ kids
-mark s ~/rdlab/statistics README.txt
+mark s ~/rdlab/outreach SPS
 mark t ~/rdlab/ todo.md
 mark u ~/rdlab/USD college
 mark v ~/rdlab/video 18
 mark w ~/rdlab/wisdom wisdom.md
-mark x ~/rdlab/photo 18
+mark x ~/rdlab/photo 19
 
 filetype *.sfs FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
 " must be the last to cover things not covered above
