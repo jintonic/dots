@@ -42,11 +42,11 @@ dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
 
 fonts:
-	mkdir -p ~/github/
-	if [ -d ~/github/powerline-fonts ]; then \
-	  cd ~/github/powerline-fonts && git pull && install.sh; \
+	mkdir -p ~/git/
+	if [ -d ~/git/powerline-fonts ]; then \
+	  cd ~/git/powerline-fonts && git pull && install.sh; \
 	else \
-	  cd ~/github; \
+	  cd ~/git; \
 	  git clone https://github.com/powerline/fonts.git powerline-fonts; \
 	fi
 
@@ -85,10 +85,10 @@ nano:
 	else \
 	  ln -sf $(PWD)/$@rc ~/.$@rc; \
 	fi
-	if [ -d ~/github/$@rc ]; then \
-	  cd ~/github/$@rc && git pull; \
+	if [ -d ~/git/$@rc ]; then \
+	  cd ~/git/$@rc && git pull; \
 	else \
-	  cd ~/github; \
+	  cd ~/git; \
 	  git clone https://github.com/jintonic/$@rc.git; \
 	fi
 
@@ -109,17 +109,17 @@ root:
 # cd /path/to/rover && git diff > rover.patch
 # cd /path/to/rover && git apply rover.patch
 rover:
-	mkdir -p ~/github/
-	if [ -d ~/github/$@ ]; then \
-	  cd ~/github/$@ && git checkout -- '*' && git pull; \
+	mkdir -p ~/git/
+	if [ -d ~/git/$@ ]; then \
+	  cd ~/git/$@ && git checkout -- '*' && git pull; \
 	else \
-	  cd ~/github && git clone https://github.com/lecram/$@.git; \
+	  cd ~/git && git clone https://github.com/lecram/$@.git; \
 	fi
-	cd ~/github/$@ && git apply ../dots/$@.patch
+	cd ~/git/$@ && git apply ../dots/$@.patch
 	if [ "$(ARC)" = "OSX" ]; then \
-	  cd ~/github/$@ && LDFLAGS=-L/usr/local/Cellar/ncurses/6.0_4/lib CFLAGS=-I/usr/local/Cellar/ncurses/6.0_4/include make install; \
+	  cd ~/git/$@ && LDFLAGS=-L/usr/local/Cellar/ncurses/6.0_4/lib CFLAGS=-I/usr/local/Cellar/ncurses/6.0_4/include make install; \
 	else \
-	  cd ~/github/$@ && make install; \
+	  cd ~/git/$@ && make install; \
 	fi
 
 screenrc:
@@ -152,10 +152,10 @@ w3m:
 	ln -sf $(PWD)/$@/keymap ~/.$@/keymap
 
 getw3m:
-	if [ -d ~/github/w3m ]; then \
-	  cd ~/github/w3m && git pull;\
+	if [ -d ~/git/w3m ]; then \
+	  cd ~/git/w3m && git pull;\
 	else\
-	  cd ~/github && git clone https://github.com/tats/w3m.git;\
+	  cd ~/git && git clone https://github.com/tats/w3m.git;\
 	fi
 
 ytdl:
@@ -197,9 +197,9 @@ xfig:
 # some fonts are not available in gsfonts anymore, download them manually
 xpdfrc:
 	ln -sf $(PWD)/$@ ~/.$@
-	if [ ! -d ~/github/gsfonts ]; then \
-	  mkdir -p ~/github/gsfonts;\
-	  cd ~/github/gsfonts;\
+	if [ ! -d ~/git/gsfonts ]; then \
+	  mkdir -p ~/git/gsfonts;\
+	  cd ~/git/gsfonts;\
 	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n021003l.pfb;\
 	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n021004l.pfb;\
 	  wget https://github.com/frappe/fonts/raw/master/usr_share_fonts/type1/gsfonts/n021023l.pfb;\
