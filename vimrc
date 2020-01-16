@@ -237,6 +237,7 @@ let tlist_tex_settings = 'latex;c:contents;f:figures;t:tables'
 let tlist_bib_settings = 'bibtex;e:entries;a:author;t:title'
 let tlist_make_settings = 'make;m:macros;t:targets'
 let tlist_markdown_settings = 'markdown;h:contents'
+let tlist_liquid_settings = 'markdown;h:contents'
 
 let Tlist_Close_On_Select = 1
 let Tlist_Show_One_File = 1
