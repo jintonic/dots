@@ -1,6 +1,7 @@
 # vim: ft=perl:
 @default_files = ('main.tex'); # only process main.tex
-$clean_ext = "bbl spl nav out snm";
+$clean_ext = "spl nav out snm";
+$bibtex_use=1; # only use bibtex or biber if the bib files exist; never delete .bbl files in a cleanup
 
 # dvi
 $latex='latex --src %O %S';
@@ -13,10 +14,12 @@ if ( $^O eq "darwin" ) {{
     $pdf_previewer='open -a Skim';
     $pdf_update_method=0; # skim can automatically update itself
   }} elsif ( $^O eq "cygwin" ) {{
-    $pdf_previewer='start xpdf -remote %R %O %S'; # %R is the file name without suffix
-    $pdf_update_method=4; # run $pdf_update_command to do the update
-    $pdf_update_command='xpdf -remote %R -reload';
+    $pdf_previewer='"c:/Program Files/SumatraPDF/SumatraPDF.exe"';
+    $pdf_update_method=3;
+    #$pdf_previewer='start xpdf -remote %R %O %S'; # %R is the file name without suffix
+    #$pdf_update_method=4; # run $pdf_update_command to do the update
+    #$pdf_update_command='xpdf -remote %R -reload';
   }} else {{
     $pdf_update_method=2; # latexmk send SIGHUP signal to $pdf_previewer
-    $pdf_previewer='mupdf';
+    $pdf_previewer='mupdf-x11';
   }};
