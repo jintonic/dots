@@ -56,9 +56,9 @@ CYAN="\[\e[1;36m\]"
 PLAIN="\[\e[0m\]"
 
 if [ "$color_prompt" = yes ]; then
-  PS1="${GREEN}\u@\H:${BLUE}\w\n${MAGENTA}[\!]${PLAIN} "
+  PS1="${green}\u@\h:${blue}\w\n${magenta}[\!]${PLAIN} "
 else
-  PS1='\u@\H:\w\n[\!] '
+  PS1='\u@\h:\w\n[\!] '
 fi
 unset color_prompt
 
@@ -98,12 +98,8 @@ export CLICOLOR=1 # enable colorful output of ls in Mac
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
-  alias dir='dir --color=auto'
-  alias vdir='vdir --color=auto'
 
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
+  alias grep='grep -iR --color=auto'
 fi
 
 # some more ls aliases
@@ -125,11 +121,11 @@ alias sw='screen -wipe'
 alias sn='screen -X deflogin off'
 alias ss='screen -X source ~/.screenrc'
 # refresh display setting for old screen session
-if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
-  export DISPLAY=`cat ~/.display`
-else
-  echo $DISPLAY > ~/.display
-fi
+#if [ ${#STY} -gt 0 ] && [ ${#SSH_TTY} -gt 0 ]; then
+#  export DISPLAY=`cat ~/.display`
+#else
+#  echo $DISPLAY > ~/.display
+#fi
 # https://superuser.com/questions/1195962/cannot-make-directory-var-run-screen-permission-denied
 export SCREENDIR=$HOME/.screen
 
