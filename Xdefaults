@@ -47,13 +47,13 @@ Rxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
 ! ./install.sh
 ! fc-list | grep Powerline
 ! apt-get install fonts-wqy-zenhei
-URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12:Bold,xft:WenQuanYi Zen Hei Sharp,9x15
+URxvt.font: 9x15,xft:DejaVu Sans Mono for Powerline:size=9:bold,xft:WenQuanYi Zen Hei Sharp
 URxvt.imlocale: en_US.utf8
 Rxvt.inputMethod:xim
 
+URxvt.perl-ext:           default,matcher,tabbed
 ! make clickable url in rxvt, man urxvt-matcher
-URxvt.perl-ext:           default,matcher
-URxvt.url-launcher:       iceweasel
+URxvt.url-launcher:       firefox
 URxvt.keysym.C-Delete:    perl:matcher:last
 URxvt.keysym.M-Delete:    perl:matcher:list
 URxvt.matcher.button:     1
@@ -61,9 +61,34 @@ URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt.matcher.launcher.2: vim +$2 $1
 
-*VT100*font: 9x15
-*VT100*background: black
-*VT100*foreground: gray80
+!TABS
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 6
+URxvt.tabbed.tab-fg:    7
+URxvt.tabbed.tab-bg:    8
+
+!! Xterm setup
+xterm*font: -*-courier-*-*-*-34-*
+*VT100*scrollBar: false
+*VT100*color0: #073642
+*VT100*color8: #002b36
+*VT100*color1: #dc322f
+*VT100*color9: #cb4b16
+*VT100*color2: #859900
+*VT100*color10: #586e75
+*VT100*color3: #b58900
+*VT100*color11: #657b83
+*VT100*color4: #268bd2
+*VT100*color12: #839496
+*VT100*color5: #d33682
+*VT100*color13: #6c71c4
+*VT100*color6: #2aa198
+*VT100*color14: #93a1a1
+*VT100*color7: #eee8d5
+*VT100*color15: #fdf6e3
+*VT100*background: #002b36
+*VT100*foreground: #657b83
+*VT100*cursorColor: #93a1a1
 
 xclock*update:            1
 xclock*analog:            false
