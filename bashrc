@@ -166,7 +166,7 @@ export LD_LIBRARY_PATH=$HOME/lib
 export MANPATH=~/man:~/share/man:$MANPATH
 
 export EDITOR='vim -X'
-export PAGER='less'
+export PAGER='less -r'
 export ROVER_EDITOR='vx'
 export ROVER_OPEN='rope'
 export ROVER_SHELL="rose" 
