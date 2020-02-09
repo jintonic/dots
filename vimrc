@@ -242,3 +242,11 @@ let tlist_liquid_settings = 'markdown;h:contents'
 let Tlist_Close_On_Select = 1
 let Tlist_Show_One_File = 1
 let Tlist_Enable_Fold_Column = 0
+
+" abbrivs {{{1
+ab teh the
+ab waht what
+ab gerda GERDA
+ab mjd MJD
+ab ppc PPC
+ab usd University of South Dakota
