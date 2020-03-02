@@ -16,7 +16,7 @@ else
   EXCLUDE+=minttyrc startxwinrc
 endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=bin terminfo nano ytdl
+TARGETS+=bin terminfo nano ytdl fluxbox
 NANOVERSION=$(shell nano --version | head -1 | awk -F. '{print $$2}')
 
 all:$(TARGETS)
@@ -41,6 +41,10 @@ ctags:
 dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
 
+fluxbox:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/keys ~/.$@/keys
+	ln -sf $(PWD)/$@/overlay ~/.$@/overlay
 fonts:
 	mkdir -p ~/git/
 	if [ -d ~/git/powerline-fonts ]; then \
