@@ -47,7 +47,7 @@ Rxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
 ! ./install.sh
 ! fc-list | grep Powerline
 ! apt-get install fonts-wqy-zenhei
-URxvt.font: 9x15,xft:DejaVu Sans Mono for Powerline:size=9:bold,xft:WenQuanYi Zen Hei Sharp
+URxvt.font: 9x15,10x20, xft:DejaVu Sans Mono for Powerline:size=9:bold,xft:WenQuanYi Zen Hei Sharp
 URxvt.imlocale: en_US.utf8
 Rxvt.inputMethod:xim
 
