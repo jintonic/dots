@@ -1,0 +1,10 @@
+background: mod
+background.modX: 16
+background.modY: 16
+background.color: Gray30
+background.colorTo: DarkSlateGray
+!menu.title.font: 9x15
+!menu.frame.font: 9x15
+!toolbar.clock.font: 9x15
+!toolbar.workspace.font: 9x15
+!*font: 9x15
