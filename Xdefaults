@@ -51,7 +51,7 @@ URxvt.font: 9x15,10x20, xft:DejaVu Sans Mono for Powerline:size=9:bold,xft:WenQu
 URxvt.imlocale: en_US.utf8
 Rxvt.inputMethod:xim
 
-URxvt.perl-ext:           default,matcher,tabbed
+URxvt.perl-ext:           default,matcher
 ! make clickable url in rxvt, man urxvt-matcher
 URxvt.url-launcher:       firefox
 URxvt.keysym.C-Delete:    perl:matcher:last
