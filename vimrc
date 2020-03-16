@@ -14,6 +14,9 @@ function! s:DeleteBufferIfEmpty()
   endif
 endfunction
 
+" auto save when change in normal mode or leave insert mode
+autocmd TextChanged,InsertLeave <buffer> silent write
+
 " plugins {{{1
 " https://herringtondarkholme.github.io/2016/02/26/dein/
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
