@@ -7,3 +7,7 @@
   [app] (name=urxvt)
   [app] (name=xterm)
 [end]
+
+[app] (class=Firefox)
+  [Deco]  {BORDER}
+[end]
