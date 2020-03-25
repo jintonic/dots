@@ -51,7 +51,7 @@ URxvt.font: 9x15,10x20, xft:DejaVu Sans Mono for Powerline:size=9:bold,xft:WenQu
 URxvt.imlocale: en_US.utf8
 Rxvt.inputMethod:xim
 
-URxvt.perl-ext:           default,matcher,tabbed
+URxvt.perl-ext:           default,matcher
 ! make clickable url in rxvt, man urxvt-matcher
 URxvt.url-launcher:       firefox
 URxvt.keysym.C-Delete:    perl:matcher:last
@@ -62,10 +62,11 @@ URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt.matcher.launcher.2: vim +$2 $1
 
 !TABS
-URxvt.tabbed.tabbar-fg: 8
-URxvt.tabbed.tabbar-bg: 6
-URxvt.tabbed.tab-fg:    7
-URxvt.tabbed.tab-bg:    8
+!URxvt.perl-ext:           default,matcher,tabbed
+!URxvt.tabbed.tabbar-fg: 8
+!URxvt.tabbed.tabbar-bg: 6
+!URxvt.tabbed.tab-fg:    7
+!URxvt.tabbed.tab-bg:    8
 
 !! Xterm setup
 xterm*font: -*-courier-*-*-*-34-*

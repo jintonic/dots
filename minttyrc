@@ -25,3 +25,5 @@ BoldWhite=253,246,227
 BoldAsFont=no
 CursorType=block
 AltFnShortcuts=no
+CopyAsRTF=no
+ClicksPlaceCursor=yes

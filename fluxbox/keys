@@ -51,10 +51,6 @@ Control 2 :Tab 2
 Control 3 :Tab 3
 Control 4 :Tab 4
 Control 5 :Tab 5
-Control 6 :Tab 6
-Control 7 :Tab 7
-Control 8 :Tab 8
-Control 9 :Tab 9
 
 # open a terminal
 Mod4 Shift Return :Exec urxvt

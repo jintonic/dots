@@ -9,9 +9,11 @@ yPosition=25
 
 divider=0.6
 backgroundColor=255,255,255
-initialOrientation=Top
+initialOrientation=Beam
 mouseMode=Rotation
 fastMode=true
+
+showStatus=true
 
 group=Standard
 quiet=true
