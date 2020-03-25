@@ -43,6 +43,7 @@ dircolors:
 
 fluxbox:
 	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/apps ~/.$@/apps
 	ln -sf $(PWD)/$@/keys ~/.$@/keys
 	ln -sf $(PWD)/$@/overlay ~/.$@/overlay
 fonts:
