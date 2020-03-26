@@ -182,15 +182,6 @@ cmap <Esc>b <S-Left>
 cmap <Esc>f <S-Right>
 cmap <C-U> <C-E><C-U>
 
-" Emacs key bindings in insert mode
-im <C-B> <Left>
-im <C-F> <Right>
-im <C-A> <Home>
-im <C-E> <End>
-
-im <C-S> <Esc>:w<CR>li
-im <C-Q> <Esc>:wq<CR>
-
 " make gx working
 if has('win32unix')
   let g:netrw_browsex_viewer="cygstart"
