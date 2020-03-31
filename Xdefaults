@@ -68,6 +68,9 @@ URxvt.matcher.launcher.2: vim +$2 $1
 !URxvt.tabbed.tab-fg:    7
 !URxvt.tabbed.tab-bg:    8
 
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+
 !! Xterm setup
 xterm*font: -*-courier-*-*-*-34-*
 *VT100*scrollBar: false
