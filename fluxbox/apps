@@ -11,3 +11,7 @@
 [app] (class=Firefox)
   [Deco]  {BORDER}
 [end]
+
+[app] (class=firefox)
+  [Deco]  {BORDER}
+[end]
