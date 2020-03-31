@@ -22,7 +22,7 @@ NANOVERSION=$(shell nano --version | head -1 | awk -F. '{print $$2}')
 all:$(TARGETS)
 
 asoundrc:
-	n=`lspci|grep audio|wc -l`; if [ $$n != "1" ]; then ln -sf $(PWD)/$@ ~/.$@; fi
+	if [ `lspci|grep audio|wc -l` -gt 1 ]; then ln -sf $(PWD)/$@ ~/.$@; fi
 
 a2psrc:
 	mkdir -p ~/.a2ps
