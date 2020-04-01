@@ -54,6 +54,8 @@ Control 5 :Tab 5
 
 # open a terminal
 Mod4 Shift Return :Exec urxvt
+Mod4 x :Exec xcompmgr
+Mod4 Shift x :Exec killall xcompmgr
 
 # open a dialog to run programs
 #Mod4 p :Exec fbrun
@@ -61,9 +63,9 @@ Mod4 p :Exec dmenu_run
 
 # volume settings, using common keycodes
 # if these don't work, use xev to find out your real keycodes
-176 :Exec amixer sset Master,0 1+
-174 :Exec amixer sset Master,0 1-
-160 :Exec amixer sset Master,0 toggle
+XF86AudioRaiseVolume :Exec amixer set Master 5%+
+XF86AudioLowerVolume :Exec amixer set Master 5%-
+XF86AudioMute :Exec amixer set Master toggle
 
 # current window commands
 Mod1 F4 :Close
@@ -82,9 +84,9 @@ Mod4 r :Reconfigure
 Control Mod1 Left :PrevWorkspace
 Control Mod1 Right :NextWorkspace
 
-# send the current window to previous/next workspace
-Mod4 Shift Left :SendToPrevWorkspace
-Mod4 Shift Right :SendToNextWorkspace
+# send the current window to previous/next monitor
+Mod4 Shift Left :SendToPrevHead
+Mod4 Shift Right :SendToNextHead
 
 # send the current window and follow it to previous/next workspace
 Control Mod4 Left :TakeToPrevWorkspace
