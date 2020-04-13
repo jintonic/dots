@@ -7,6 +7,6 @@
   [app] (name=xterm)
 [end]
 
-[app] (.*)
-  [Deco]  {BORDER}
+[app] (class=.irefox)
+  [Deco]  {NONE}
 [end]
