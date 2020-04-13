@@ -29,15 +29,17 @@ call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('Konfekt/FastFold')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-unimpaired')
-call dein#add('tpope/vim-liquid', {'on_ft': ['html']})
+" https://github.com/tpope/vim-liquid/issues/18
+"call dein#add('tpope/vim-liquid', {'on_ft': 'liquid'})
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 call dein#add('godlygeek/tabular')
-call dein#add('plasticboy/vim-markdown', {'on_ft':['markdown']})
+call dein#add('plasticboy/vim-markdown', {'on_ft': 'markdown'})
 call dein#add('ap/vim-buftabline')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('jlanzarotta/bufexplorer')
 call dein#add('vim-scripts/taglist.vim')
+call dein#add('majutsushi/tagbar')
 
 call dein#end()
 
@@ -223,8 +225,31 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 
-" taglist {{{1
-nnoremap <leader>t :TlistOpen<CR>
+" outline {{{1
+" https://github.com/majutsushi/tagbar
+nnoremap <leader>t :TagbarToggle<CR>
+" help tagbar
+let g:tagbar_autoclose = 1
+let g:tagbar_left = 1
+let g:tagbar_sort = 0
+let g:tagbar_compact = 1
+" Add support for markdown files in tagbar.
+" https://github.com/jszakmeister/markdown2ctags
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : 'markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+nnoremap <leader>T :TlistOpen<CR>
 
 " https://github.com/hupili/evermd/tree/master/doc/howto-markdown-in-vim
 let tlist_tex_settings = 'latex;c:contents;f:figures;t:tables'
