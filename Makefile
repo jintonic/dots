@@ -191,7 +191,13 @@ vim:
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add +"mkspell! %" +q
-
+	if [ -d ~/git/markdown2ctags ]; then \
+	  cd ~/git/markdown2ctags && git pull;\
+	else\
+	  cd ~/git && git clone https://github.com/jszakmeister/markdown2ctags;\
+	fi
+	mkdir -p ~/bin
+	ln -sf ~/git/markdown2ctags/markdown2ctags.py ~/bin
 xfig:
 	if [ ! -d ~/.xfig ]; then \
 	  wget https://gsalam.web.cern.ch/gsalam/repository/software/Feynman_Diagrams.tgz; \
