@@ -72,7 +72,14 @@ URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
 
 !! Xterm setup
-xterm*font: -*-courier-*-*-*-34-*
+! disable ttf font:
+*vt100.renderFont: false
+! ttf font (can be enabled by ctrl + right click)
+*vt100.faceName: DejaVu Sans Mono
+*vt100.faceSize: 11
+! non ttf font:
+xterm*font: 9x15
+
 *VT100*scrollBar: false
 *VT100*color0: #073642
 *VT100*color8: #002b36
