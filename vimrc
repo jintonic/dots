@@ -268,4 +268,3 @@ ab waht what
 ab gerda GERDA
 ab mjd MJD
 ab ppc PPC
-ab usd University of South Dakota
