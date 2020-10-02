@@ -47,22 +47,22 @@ bind ^B unindent main # bound to back a letter by default
 #bind M-C comment main # bound to toggle cursor position by default
 
 ## syntax highlighting (coloring order matters)
-include ~/github/nanorc/nanorc.nanorc
-include ~/github/nanorc/cfg.nanorc
-include ~/github/nanorc/tex.nanorc
-include ~/github/nanorc/c.nanorc
-include ~/github/nanorc/fortran.nanorc
-include ~/github/nanorc/makefile.nanorc
-include ~/github/nanorc/cmake.nanorc
-include ~/github/nanorc/conf.nanorc
-include ~/github/nanorc/html.nanorc
-include ~/github/nanorc/email.nanorc
-include ~/github/nanorc/sh.nanorc
-include ~/github/nanorc/python.nanorc
-include ~/github/nanorc/perl.nanorc
-include ~/github/nanorc/git.nanorc
-include ~/github/nanorc/markdown.nanorc
-include ~/github/nanorc/xresources.nanorc
+include ~/git/nanorc/nanorc.nanorc
+include ~/git/nanorc/cfg.nanorc
+include ~/git/nanorc/tex.nanorc
+include ~/git/nanorc/c.nanorc
+include ~/git/nanorc/fortran.nanorc
+include ~/git/nanorc/makefile.nanorc
+include ~/git/nanorc/cmake.nanorc
+include ~/git/nanorc/conf.nanorc
+include ~/git/nanorc/html.nanorc
+include ~/git/nanorc/email.nanorc
+include ~/git/nanorc/sh.nanorc
+include ~/git/nanorc/python.nanorc
+include ~/git/nanorc/perl.nanorc
+include ~/git/nanorc/git.nanorc
+include ~/git/nanorc/markdown.nanorc
+include ~/git/nanorc/xresources.nanorc
 
 ## commenting
 #extendsyntax C comment "//"
