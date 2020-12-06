@@ -15,3 +15,9 @@
   clean = git-lfs clean -- %f
 [pull]
 	rebase = false
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	grep = auto
