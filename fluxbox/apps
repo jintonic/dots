@@ -1,0 +1,12 @@
+[app] (name=fbrun)
+  [Position]	(WINCENTER)	{0 0}
+  [Layer]	{2}
+[end]
+
+[group] (workspace=[current])
+  [app] (name=xterm)
+[end]
+
+[app] (class=.irefox)
+  [Deco]  {NONE}
+[end]

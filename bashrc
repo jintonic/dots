@@ -99,7 +99,7 @@ if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
 
-  alias grep='grep -iR --color=auto'
+  alias grep='grep -i --color=auto'
 fi
 
 # some more ls aliases
@@ -192,5 +192,7 @@ lr() { # run rover in customized environment
 # nice line drawing in putty 
 # (https://superuser.com/questions/278286/making-256-color-and-line-drawing-characters-both-work-in-putty)
 export NCURSES_NO_UTF8_ACS=1
+
+export PYTHONSTARTUP=~/git/dots/startup.py
 
 if [ -f $HOME/.bash_local ]; then source $HOME/.bash_local; fi

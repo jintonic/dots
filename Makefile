@@ -16,13 +16,13 @@ else
   EXCLUDE+=minttyrc startxwinrc
 endif
 TARGETS=$(filter-out $(EXCLUDE), $(wildcard *))
-TARGETS+=bin terminfo nano ytdl
+TARGETS+=bin terminfo nano ytdl fluxbox
 NANOVERSION=$(shell nano --version | head -1 | awk -F. '{print $$2}')
 
 all:$(TARGETS)
 
 asoundrc:
-	n=`lspci|grep audio|wc -l`; if [ $$n != "1" ]; then ln -sf $(PWD)/$@ ~/.$@; fi
+	if [ `lspci|grep audio|wc -l` -gt 1 ]; then ln -sf $(PWD)/$@ ~/.$@; fi
 
 a2psrc:
 	mkdir -p ~/.a2ps
@@ -41,6 +41,11 @@ ctags:
 dircolors:
 	ln -sf $(PWD)/$@ ~/.$@
 
+fluxbox:
+	mkdir -p ~/.$@
+	ln -sf $(PWD)/$@/apps ~/.$@/apps
+	ln -sf $(PWD)/$@/keys ~/.$@/keys
+	ln -sf $(PWD)/$@/overlay ~/.$@/overlay
 fonts:
 	mkdir -p ~/git/
 	if [ -d ~/git/powerline-fonts ]; then \
@@ -186,7 +191,13 @@ vim:
 	mkdir -p ~/.$@/spell
 	ln -sf $(PWD)/$@/spell/en.utf-8.add ~/.$@/spell/en.utf-8.add
 	vim -X ~/.$@/spell/en.utf-8.add +"mkspell! %" +q
-
+	if [ -d ~/git/markdown2ctags ]; then \
+	  cd ~/git/markdown2ctags && git pull;\
+	else\
+	  cd ~/git && git clone https://github.com/jszakmeister/markdown2ctags;\
+	fi
+	mkdir -p ~/bin
+	ln -sf ~/git/markdown2ctags/markdown2ctags.py ~/bin
 xfig:
 	if [ ! -d ~/.xfig ]; then \
 	  wget https://gsalam.web.cern.ch/gsalam/repository/software/Feynman_Diagrams.tgz; \

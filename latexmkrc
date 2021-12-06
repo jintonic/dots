@@ -5,8 +5,6 @@ $bibtex_use=1; # only use bibtex or biber if the bib files exist; never delete .
 
 # dvi
 $latex='latex --src %O %S';
-$CPU=`awk 'NR==8{printf("%s", \$4)}' /proc/cpuinfo`;
-$dvi_previewer="start xdvi -editor \"gvim -v --servername $CPU --remote-silent +%l %f\" %O %S";
 
 # pdf, turn it on by set $pdf_mode=1, or latexmk -pdf
 $pdflatex='pdflatex -synctex=1 %O %S';
@@ -22,4 +20,6 @@ if ( $^O eq "darwin" ) {{
   }} else {{
     $pdf_update_method=2; # latexmk send SIGHUP signal to $pdf_previewer
     $pdf_previewer='mupdf-x11';
+    $CPU=`awk 'NR==8{printf("%s", \$4)}' /proc/cpuinfo`;
+    $dvi_previewer="start xdvi -editor \"gvim -v --servername $CPU --remote-silent +%l %f\" %O %S";
   }};

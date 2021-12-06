@@ -47,11 +47,11 @@ Rxvt*print-pipe: cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
 ! ./install.sh
 ! fc-list | grep Powerline
 ! apt-get install fonts-wqy-zenhei
-URxvt.font: 9x15,xft:DejaVu Sans Mono for Powerline:size=9:bold,xft:WenQuanYi Zen Hei Sharp
+URxvt.font: 9x15,10x20, xft:DejaVu Sans Mono for Powerline:size=9:bold,xft:WenQuanYi Zen Hei Sharp
 URxvt.imlocale: en_US.utf8
 Rxvt.inputMethod:xim
 
-URxvt.perl-ext:           default,matcher,tabbed
+URxvt.perl-ext:           default,matcher
 ! make clickable url in rxvt, man urxvt-matcher
 URxvt.url-launcher:       firefox
 URxvt.keysym.C-Delete:    perl:matcher:last
@@ -62,13 +62,24 @@ URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt.matcher.launcher.2: vim +$2 $1
 
 !TABS
-URxvt.tabbed.tabbar-fg: 8
-URxvt.tabbed.tabbar-bg: 6
-URxvt.tabbed.tab-fg:    7
-URxvt.tabbed.tab-bg:    8
+!URxvt.perl-ext:           default,matcher,tabbed
+!URxvt.tabbed.tabbar-fg: 8
+!URxvt.tabbed.tabbar-bg: 6
+!URxvt.tabbed.tab-fg:    7
+!URxvt.tabbed.tab-bg:    8
+
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
 
 !! Xterm setup
-xterm*font: -*-courier-*-*-*-34-*
+! disable ttf font:
+*vt100.renderFont: false
+! ttf font (can be enabled by ctrl + right click)
+*vt100.faceName: DejaVu Sans Mono
+*vt100.faceSize: 11
+! non ttf font:
+xterm*font: 9x15
+
 *VT100*scrollBar: false
 *VT100*color0: #073642
 *VT100*color8: #002b36

@@ -110,7 +110,8 @@ termcapinfo xterm* 'k1=\EOP:k2=\EOQ:k3=\EOR:k4=\EOS'
 # keybindings
 #
 #escape `` # change escape key from ^a to `
-escape ^Qq # change escape key from ^a to ^q
+#escape ^Qq # change escape key from ^a to ^q
+escape ^`` # change escape key from ^a to ^`
 
 #remove some stupid / dangerous key bindings
 bind k

@@ -1,0 +1,128 @@
+# click on the desktop to get menus
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+
+# scroll on the desktop to change workspaces
+OnDesktop Mouse4 :PrevWorkspace
+OnDesktop Mouse5 :NextWorkspace
+
+# scroll on the toolbar to change current window
+OnToolbar Mouse4 :PrevWindow {static groups} (iconhidden=no)
+OnToolbar Mouse5 :NextWindow {static groups} (iconhidden=no)
+
+# alt + left/right click to move/resize a window
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindowBorder Move1 :StartMoving
+
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+
+# alt + middle click to lower the window
+OnWindow Mod1 Mouse2 :Lower
+
+# control-click a window's titlebar and drag to attach windows
+OnTitlebar Control Mouse1 :StartTabbing
+
+OnTitlebar Double Mouse1 :Maximize
+
+# left click on the titlebar to move the window
+OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
+OnTitlebar Move1  :StartMoving
+
+# middle click on the titlebar to lower
+OnTitlebar Mouse2 :Lower
+
+# right click on the titlebar for a menu of options
+OnTitlebar Mouse3 :WindowMenu
+
+# alt-tab
+Mod1 Tab :NextWindow {groups}
+Mod1 Shift Tab :PrevWindow {groups}
+
+# cycle through tabs in the current window
+Mod4 Tab :NextTab
+Mod4 Shift Tab :PrevTab
+
+# go to a specific tab in the current window
+Control 1 :Tab 1
+Control 2 :Tab 2
+Control 3 :Tab 3
+Control 4 :Tab 4
+Control 5 :Tab 5
+
+# open a terminal
+Mod4 Shift Return :Exec urxvt
+Mod4 x :Exec xcompmgr
+Mod4 Shift x :Exec killall xcompmgr
+
+# open a dialog to run programs
+#Mod4 p :Exec fbrun
+Mod4 p :Exec dmenu_run
+
+# volume settings, using common keycodes
+# if these don't work, use xev to find out your real keycodes
+XF86AudioRaiseVolume :Exec amixer set Master 5%+
+XF86AudioLowerVolume :Exec amixer set Master 5%-
+XF86AudioMute :Exec amixer set Master toggle
+
+# current window commands
+Mod1 F4 :Close
+Mod1 F5 :Kill
+Mod4 m :Minimize
+Mod1 F11 :Fullscreen
+
+# open the window menu
+Mod1 space :RootMenu
+
+# exit fluxbox
+Mod4 q :Exit
+Mod4 r :Reconfigure
+
+# change to previous/next workspace
+Control Mod1 Left :PrevWorkspace
+Control Mod1 Right :NextWorkspace
+
+# send the current window to previous/next monitor
+Mod4 Shift Left :SendToPrevHead
+Mod4 Shift Right :SendToNextHead
+
+# send the current window and follow it to previous/next workspace
+Control Mod4 Left :TakeToPrevWorkspace
+Control Mod4 Right :TakeToNextWorkspace
+
+# change to a specific workspace
+Mod4 1 :Workspace 1
+Mod4 2 :Workspace 2
+Mod4 3 :Workspace 3
+Mod4 4 :Workspace 4
+
+Mod4 Shift F1 :Exec xrandr -s 1
+Mod4 Shift F2 :Exec xrandr -s 2
+Mod4 Shift F3 :Exec xrandr -s 3
+Mod4 Shift F4 :Exec xrandr -s 4
+Mod4 Shift F5 :Exec xrandr -s 5
+Mod4 Shift F6 :Exec xrandr -s 6
+Mod4 Shift F7 :Exec xrandr -s 7
+Mod4 Shift F8 :Exec xrandr -s 8
+Mod4 Shift F9 :Exec xrandr -s 9
+Mod4 Shift F10 :Exec xrandr -s 10
+Mod4 Shift F11 :Exec xrandr -s 11
+Mod4 Shift F12 :Exec xrandr -s 0
+
+# send the current window to a specific workspace
+#Mod4 F12 :SendToWorkspace 12
+
+# send the current window and change to a specific workspace
+#Control Mod4 F12 :TakeToWorkspace 12
+
+# Tiling
+Mod4 Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Left}
+Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Right}
+Mod4 Up :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 TopRight}
+Mod4 Down :MacroCmd {ResizeTo 50% 50%} {MoveTo 00 00 BottomRight}
+Mod4 Return :ToggleCmd {Maximize} {Restore}
+
+# screen shot
+Mod4 Shift s :Exec import png:- | xclip -selection clipboard -t image/png
