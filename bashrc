@@ -161,7 +161,7 @@ export LC_ALL="en_US.UTF-8"
 export TEXMFHOME=~/.texmf
 export TERMINFO=~/.terminfo
 
-export LD_LIBRARY_PATH=$HOME/lib
+if [[ `uname` != "Darwin" ]]; then export LD_LIBRARY_PATH=$HOME/lib; fi
 
 export MANPATH=~/man:~/share/man:$MANPATH
 
