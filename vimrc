@@ -25,7 +25,8 @@ call dein#begin(expand('~/.vim/dein')) " plugins' root path
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/neosnippet.vim', {'on_i': 1})
 call dein#add('Shougo/neosnippet-snippets', {'on_i': 1})
-call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('paradigm/SkyBison')
+call dein#add('pelodelfuego/vim-swoop')
 call dein#add('Konfekt/FastFold')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-unimpaired')
@@ -164,6 +165,7 @@ set foldlevel=1
 
 " mapping {{{1
 
+nnoremap : :<c-u>call SkyBison("")<cr>
 map \a :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
 map \e :e <cfile><CR>
 map \s :e %<.cc<CR>
@@ -201,7 +203,7 @@ autocmd FileType mail set spell
 autocmd FileType mail set fo+=w
 
 " fugitive {{{1
-nmap <Leader>0 :Gstatus<CR>
+nmap <Leader>0 :Git<CR>
 
 " neosnippet {{{1
 " use TAB to expand snippet or jump in between space holders
@@ -216,14 +218,6 @@ let g:neosnippet#snippets_directory='~/.vim/after/snippets'
 " buffer explorer {{{1
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <leader>b :BufExplorer<CR>
-
-" ctrlp {{{1
-nnoremap <leader>f :CtrlPCurWD<CR>
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
 
 " outline {{{1
 " https://github.com/majutsushi/tagbar
@@ -268,3 +262,7 @@ ab waht what
 ab gerda GERDA
 ab mjd MJD
 ab ppc PPC
+
+" SkyBison {{{1
+" https://github.com/paradigm/SkyBison
+let g:skybison_fuzz=2
