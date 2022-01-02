@@ -165,9 +165,9 @@ set foldlevel=1
 
 " mapping {{{1
 
-nnoremap : :<c-u>call SkyBison("")<cr>
+nnoremap \\ :call SkyBison("")<cr>
 map \a :e %:p:s,.hh$,.X123X,:s,.cc$,.hh,:s,.X123X$,.cc,<CR>
-map \e :e <cfile><CR>
+map \e :call SkyBison("e ")<cr>
 map \s :e %<.cc<CR>
 map \h :e %<.h<CR>
 map \u :source ~/.vimrc<CR>
@@ -175,7 +175,7 @@ map \v :e ~/.vimrc<CR>
 "map \g :execute "vimgrep /" . expand("<cword>") . "/j *.cc *.hh" <Bar> cw<CR> 
 map \g :execute "grep! --exclude=*Dict*" expand("<cword>") "*.cc *.hh" <Bar>cw<CR>
 map \m :make<CR>:cw<CR>
-map <space> <C-E>
+map <space> :wincmd w<cr>
 
 if has("win32unix")
   map \o :!cygstart.exe <cfile><CR><CR>
