@@ -14,10 +14,21 @@
   required = true
   clean = git-lfs clean -- %f
 [pull]
-  rebase = false
+  rebase = true
+  ff = only
 [color]
   branch = auto
   diff = auto
   interactive = auto
   status = auto
   grep = auto
+[tig]
+  line-graphics = utf-8
+  main-view-line-number-display = yes
+  main-view-date-display = relative-compact
+  tab-size = 2
+[tig "bind"]
+  refs = n !@git branch "%(prompt)"
+  status = + !git commit --amend
+  status = P !git push origin
+  status = x !sh -c "echo %(file) >> .gitignore && vi .gitignore"
